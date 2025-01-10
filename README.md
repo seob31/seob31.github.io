@@ -1,6 +1,9 @@
 ### devlopr-jekyll - A Beautiful Jekyll Theme Built for Developers
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Gem Version](https://badge.fury.io/rb/devlopr.svg)](https://badge.fury.io/rb/devlopr)
@@ -10,7 +13,6 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 [![Bakers](https://opencollective.com/devlopr-jekyll/tiers/badge.svg)](https://opencollective.com/devlopr-jekyll/)
 
-
 You can use Devlopr as a starter for building your own Site. we purposely keep the styling minimal and bare to make it easier to add your own flare and markup. (Under Active Development) !
 
 Highly Customizable and No Hosting or Maintainence Cost is required !
@@ -19,23 +21,22 @@ Highly Customizable and No Hosting or Maintainence Cost is required !
 
 devlopr uses Markdown Files to generate data like Blog Posts, Gallery, Shop Products etc. No external database is required.
 
-
 ### Launch your Static Site using Devlopr in minutes :rocket:
 
 To get started follow this [Tutorial](https://devlopr.netlify.app/get-started)
 
 or if you want to try fast :
 
-### Follow this steps in browser (takes 5-10 mins): 
-1. Fork this Repo with your name as  your_username.github.io
+### Follow this steps in browser (takes 5-10 mins):
+
+1. Fork this Repo with your name as your_username.github.io
 2. Visit your Fork repo at https://github.com/your_username/your_username.github.io
 3. Press "." in keyboard (this will open up vs-code editor in browser) of the repo.
 4. Customize config.yml file according to your needs (eg. change your Name, Email... etc.)
-5. Commit your changes, and push 
+5. Commit your changes, and push
 6. Wait for CI/CD to build your website. Visit Github Actions to see the build process.
-7. Once Ready, Your website will be ready at https://your_username.github.io :sparkles: 
+7. Once Ready, Your website will be ready at https://your_username.github.io :sparkles:
 8. Happy Hacking your new site ! For Local changes you can clone locally.
-
 
 ## Local Development Steps :
 
@@ -55,6 +56,7 @@ Step 3: Now follow the below guides based on your OS.
 To work locally with ubuntu, follow this commands.
 
 Install Ruby :
+
 ```s
 $ sudo apt install ruby-full
 $ ruby --version
@@ -74,7 +76,7 @@ $ bundle exec jekyll serve --livereload
 To work locally with windows machine, follow this commands. You might need to download and install [ruby (with devkit)](https://www.ruby-lang.org/en/downloads/) and [git](https://git-scm.com/downloads).
 
 ```s
-$ ruby -v 
+$ ruby -v
 (ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [universal.x86_64-darwin21])
 
 $ gem install jekyll bundler
@@ -84,7 +86,7 @@ Bundler version 2.3.23
 
 $ bundle update
 $ bundle install
-$ bundle exec jekyll -v 
+$ bundle exec jekyll -v
 jekyll 4.2.2
 
 $ bundle exec jekyll serve --livereload
@@ -98,6 +100,7 @@ $ bundle update
 $ bundle install
 $ bundle exec jekyll serve
 ```
+
 Start the server locally at http://127.0.0.1:4000/ or http://localhost:4000/
 
 ### For MacOS :
@@ -110,9 +113,9 @@ Run the following in your terminal :
 
 `brew install ruby`
 
-Add the below in ~/.zshrc file: 
+Add the below in ~/.zshrc file:
 
-Edit either the  ~/.zshrc and ~/.zprofile files:
+Edit either the ~/.zshrc and ~/.zprofile files:
 
 `$ open -e ~/.zshrc`
 
@@ -125,7 +128,7 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 ```
 
-### For Mac Intel 
+### For Mac Intel
 
 On Mac Intel, add this at the end of your ~/.zshrc or ~/.zprofile file.
 
@@ -135,18 +138,22 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 ```
+
 Save the file. This sets the Homebrew-installed Ruby to a higher priority than the system Ruby and adds the directory used for Ruby gems.
 
 ### Reset the shell session
+
 Close and reopen the Terminal window to pick up the changes to the configuration file. Or enter source ~/.zshrc or source ~/.zprofile to reset the shell environment without closing the Terminal window.
 
 ```sh
 $ source ~/.zprofile
 $ source ~/.zshrc
 ```
+
 The source command reads and executes a shell script file, resetting the shell environment.
 
 You should be able to see this :
+
 ```sh
 $ ruby -v
 ruby 3.3.4 (2024-07-09 revision be1089c8ec) [arm64-darwin23]
@@ -157,7 +164,7 @@ ruby 3.3.4 (2024-07-09 revision be1089c8ec) [arm64-darwin23]
 We will be using [ruby-install](https://github.com/postmodern/ruby-install) to install ruby and [chruby](https://github.com/postmodern/chruby) to change the current ruby version.
 
 `brew install chruby ruby-install`
- Install latest ruby version 
+Install latest ruby version
 
 `ruby-install ruby`
 
@@ -168,10 +175,11 @@ echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
 echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
 echo "chruby ruby-3.3.4" >> ~/.zshrc
 ```
+
 If you are facing any problems not getting the version that you just now installed, here is a amazing guide :
 [how to uninstall ruby on mac](https://mac.install.guide/ruby/9)
 
-If you’re using Bash, replace *.zshrc* with *.bash_profile*.
+If you’re using Bash, replace _.zshrc_ with _.bash_profile_.
 
 Quit and relaunch Terminal, then check that everything is working:
 
@@ -189,13 +197,13 @@ Bundler version 2.5.15
 
 $ bundle update
 
-$ bundle exec jekyll -v 
+$ bundle exec jekyll -v
 jekyll 4.3.3
 
 $ bundle exec jekyll serve --livereload
 ```
 
-### Security 
+### Security
 
 We use codeQL and dependabot alerts for vulnerabality analysis & fixes.
 
@@ -212,11 +220,12 @@ $ bundle audit
 ### Github Actions
 
 This Project has actions to auto deploy jekyll to github pages and firebase. The deployment target can be set by editing the `DEPLOY_STRATEGY` file. Valid values are:
+
 - `none`: default value. use this if you don't want to deploy the site.
 - `gh-pages`: deploys to github pages. This uses a custom action available in the Marketplace - [Jekyll Deploy Action](https://github.com/marketplace/actions/deploy-jekyll-site)
 - `firebase`: deploys to firebase. Before you can use this you need to first create a firebase project [here](https://console.firebase.google.com/). You can signup for a Free Spark Plan. Then, in your github repo's settings, go to the secrets section and add the following:
-  * `FIREBASE_TOKEN`: your firebase token. you can get this by running `firebase login:ci` with the firebase cli.
-  * `FIREBASE_PROJECT_ID`: the project id of the project you just created
+  - `FIREBASE_TOKEN`: your firebase token. you can get this by running `firebase login:ci` with the firebase cli.
+  - `FIREBASE_PROJECT_ID`: the project id of the project you just created
 
 ### Demo (Hosted Apps)
 
@@ -236,7 +245,6 @@ This Project has actions to auto deploy jekyll to github pages and firebase. The
 - Comments using [Hyvor](https://talk.hyvor.com/) and [Disqus](https://disqus.com/)
 - SEO-optimized
 - Real Time Search - [Algolia](https://sujaykundu.com/blog/adding-real-time-search-to-jekyll-site-using-algolia/)
-- Sell Stuff (Ecommerce) in your Blog using [Snipcart](https://snipcart.com/)
 - Send Newsletters using [Mailchimp](https://mailchimp.com/)
 - Contact Forms Support for [Getform](https://getform.io), [Formspree](https://formspree.io/)
 - Coding Activity using [Wakatime](https://wakatime.com/)
@@ -244,10 +252,10 @@ This Project has actions to auto deploy jekyll to github pages and firebase. The
 - CI/CD Support using [Travis CI](https://sujaykundu.com/blog/deploy-jekyll-blog-using-github-pages-and-travis-ci/)
 
 #### Jekyll Admin
+
 You can easily manage the site locally using the Jekyll admin : [http://localhost:4000/admin](http://localhost:4000/admin)
 
 ![Jekyll Admin](https://github.com/sujaykundu777/devlopr-jekyll/blob/master/assets/img/jekyll-admin.PNG?raw=true)
-
 
 You can check out for all changelogs [here](https://devlopr.olvy.co/)
 
@@ -299,6 +307,7 @@ Once everything is good and ready to go live -
 ## Contributors:
 
 This project exists thanks to all the people who contribute.
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -332,22 +341,20 @@ This project exists thanks to all the people who contribute.
 
 Contributions are more than just welcome. Fork this repo and create a new branch, then submit a pull request
 
-- 1.Fork it [http://github.com/sujaykundu777/devlopr-jekyll/fork](http://github.com/sujaykundu777/devlopr-jekyll/fork )
+- 1.Fork it [http://github.com/sujaykundu777/devlopr-jekyll/fork](http://github.com/sujaykundu777/devlopr-jekyll/fork)
 
 - 2.Create your feature branch
-`git checkout -b my-new-feature`
+  `git checkout -b my-new-feature`
 
 - 3.Commit your changes
-`git commit -am 'Add some feature'`
+  `git commit -am 'Add some feature'`
 
 - 4.Push to the branch
-`git push origin my-new-feature`
+  `git push origin my-new-feature`
 
 - 5.Create new Pull Request
 
 ## Support this Project:
-
-Back this project by Donating to our [Open Collective](https://opencollective.com/devlopr-jekyll/donate) or if you like my work [Buymeacoffee](https://buymeacoffee.com/sujaykundu).
 
 Thanks to all our Backers ! [Become a Backer](https://opencollective.com/devlopr-jekyll/donate)
 
@@ -362,4 +369,3 @@ You can contact me, if you need any help via [Email](mailto:sujaykundu777@gmail.
 ## Licence
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT). You can do anything you want, including projects for your clients, as long as you mention an attribution back (credit links in footer). See the [Licence](https://github.com/sujaykundu777/devlopr-jekyll/blob/master/LICENSE) file
-
