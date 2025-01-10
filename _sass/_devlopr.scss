@@ -110,6 +110,11 @@ ul {
   margin-left: 30px !important;
 }
 
+.ui-nav {
+  margin-left: 0 !important;
+  float: right;
+}
+
 /* Progress bar */
 .progressline .bar {
   background: #f69801;
@@ -123,7 +128,7 @@ ul {
   width: 100%;
   overflow: hidden;
   z-index: 1;
-  margin-top: 2px;
+  margin-top: 15px;
 }
 
 body {
@@ -531,7 +536,7 @@ header {
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: 25px;
+  font-size: 34px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -857,8 +862,8 @@ footer {
     display: inline-block;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
+    margin-left: 30px;
+    font-size: 2rem;
     line-height: inherit;
     white-space: nowrap;
   }
@@ -934,8 +939,8 @@ footer {
     display: inline-block;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
+    margin-left: 30px;
+    font-size: 2rem;
     line-height: inherit;
     white-space: nowrap;
     margin-left: -30px;
@@ -1023,8 +1028,8 @@ footer {
 
 .switch {
   position: relative;
-  width: 80px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   margin: 3px;
   appearance: none;
   -webkit-appearance: none;
@@ -1379,3 +1384,62 @@ footer {
 .highlight .gi {
   color: #a6e22e;
 } /* Generic.Inserted & Diff Inserted */
+
+
+.navbar {
+  background-color: #111;
+}
+
+.navbar .navbar-brand {
+  color: orange;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  flex-direction: row; /* 큰 화면에서는 가로 정렬 */
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px; /* 메뉴 간 간격 */
+}
+
+.navbar-nav .nav-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: orange; /* 호버 시 메뉴 색상 */
+}
+
+.navbar .toggle-search-button {
+  color: #f06529; /* 검색 아이콘 색상 */
+  margin-right: 10px;
+}
+
+.navbar .user-icon img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* 작은 화면에서 레이아웃 변경 */
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column; /* 작은 화면에서는 세로 정렬 */
+    margin-top: 10px;
+    text-align: left; /* 메뉴 텍스트 정렬 */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 5px 0; /* 메뉴 항목 간 간격 */
+  }
+
+  .container-fluid {
+    flex-direction: column; /* 전체를 세로 정렬 */
+  }
+
+  .d-flex {
+    margin-top: 10px; /* 검색 및 사용자 아이콘 아래로 이동 */
+  }
+}
