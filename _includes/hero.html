@@ -4,37 +4,49 @@
     background-color: var(--main-background-color) !important;
     background-image: url("/assets/img/{{site.hero_cover_img}}");
     text-align: center;
-    background-attachment: fixed;
+    background-attachment: inherit;
     background-size: cover;
     background-position: center;
+    margin: auto;
+    height: 370px;
+    padding: 7rem 2rem !important;
   }
   .jumbotron-btns {
     display: block;
     margin-top: 50px;
   }
 
-  .jumbotron-heading,
-  .lead {
-    color: #fff;
+  .jumbotron-heading{
+    color: #eb7404;
+    font-weight: 700 !important;
+    font-size: 35px !important;
   }
+  .lead{
+    color: #fffdfc;
+    font-size: 35px !important;
+    font-weight: 400 !important;
+  }
+  
 </style>
 
 <!-- home hero section -->
-<div class="jumbotron">
-  <img
+<div class="jumbotron col-lg-8">
+  <!-- <img
     class="author-profile-img"
     src="{{site.url}}{{site.baseurl}}/assets/img/{{site.author_logo}}"
-  />
-  <p class="jumbotron-heading">Hi, I am {{site.author}} !</p>
+  /> -->
 
+
+  <p class="jumbotron-heading">{{site.author_main}}</p>
   <p class="lead" id="typewriteText"></p>
 
   <!-- uncomment/modify buttons as you want-->
-  <div class="jumbotron-btns">
+   <!-- 나중에 수정(사이드 구역 띄우기) -->
+  <!-- <div class="jumbotron-btns">
     <a id="olvy-target">
       <button class="btn btn-md btn-default">
         <strong>What's New</strong>
       </button>
     </a>
-  </div>
+  </div> -->
 </div>

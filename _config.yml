@@ -1,34 +1,36 @@
 title: GILog
 subtitle: Software Developer
 description: >- # this means to ignore newlines until "baseurl:"
-  devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
 
 url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
-  - text: Home
-    url: /
+  # - text: Home
+  #   url: /
   - text: About
     url: /about
   - text: Blog
     url: /blog
-  - text: Gallery
-    url: /gallery
-  - text: Contact
-    url: /contact
+  - text: News
+    url: /News
+  # - text: Gallery
+  #   url: /gallery
+  # - text: Contact
+  #   url: /contact
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
-author_logo: profile.png
+author_logo: authors/me.png
 author: Gilseob Kim
-author_bio: Hi, my name is Gilseob Kim. I built this site using devlopr-jekyll :D
+author_main: GILog
+author_bio: Back-end Developer.
 author_email: "seob31@gmail.com"
 author_location: Korea
 author_website_url:
-typewrite-text: devlopr is a jekyll framework built for developers. You can edit this in _config.yml file
-hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
+typewrite-text: "[info] System Startup - Welcome to my blog..."
+hero_cover_img: sample_cover.jpg
 
 # Experiences
 author_work_experiences:
@@ -37,13 +39,13 @@ author_work_experiences:
     company_url: https://google.com
     designation: Software Engineer
     description: Worked on various Google Products
-    visibility: true
+    visibility: false
   - company_name: Microsoft
     company_logo: microsoft.png
     company_url: https://microsoft.com
     designation: Azure Developer
     description: Worked on various Azure Cloud Products
-    visibility: true
+    visibility: false
 
 # Education
 author_education_details:
@@ -52,7 +54,7 @@ author_education_details:
     college_url: https://mit.org
     college_degree: CS Engineer
     description: Bachelor of Technology
-    visibility: true
+    visibility: false
 
 # Projects
 author_project_details:
@@ -60,18 +62,17 @@ author_project_details:
     project_title: Gamers Hub
     project_description: A Platform built for Gamers and Game Devs
     project_url: https://gamershub.in
-    visibility: true
+    visibility: false
   - project_thumbnail: hack4r.PNG
     project_title: Hack4r
     project_description: A Platform built for Hackers and Penetration Testers
     project_url: https://hack4r.com
-    visibility: true
+    visibility: false
 
 # social links
-twitter_username: xplor4r
-github_username: sujaykundu777
-instagram_username: xplor4r
-# facebook_username: johndoe
+# github_username: seob31
+# instagram_username: gilseob_eric
+# facebook_username: GilseobEric
 # linkedin_username: johndoe
 # behance_username: johndoe
 # medium_username: johndoe
