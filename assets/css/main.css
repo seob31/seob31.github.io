@@ -3309,6 +3309,10 @@ input[type="button"].btn-block {
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
 
+.search-bar-w100{
+  width: 100%;
+}
+
 .navbar-nav {
   display: flex;
   flex-direction: column;
