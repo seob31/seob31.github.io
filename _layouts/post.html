@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign author = site.authors[page.author] %}
-<div class="container">
+<div class="container-lg post_padding">
   <div
     class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative"
   >
@@ -47,14 +47,14 @@ layout: default
   </div>
 </div>
 
-<div class="container-lg pt-4 pb-4">
+<div class="container-lg pt-4 pb-4 post_padding">
   <div class="row justify-content-center">
-    <div class="col-md-12 col-lg-10">
+    <div class="col-md-12 col-lg-12">
       <!-- Article -->
       <article class="article-post">{{ content }}</article>
 
       {% include blog-list.html %}
-
+      
       <!-- Tags -->
       <!-- <div class="mb-4">
         <span class="taglist">
@@ -69,7 +69,7 @@ layout: default
       </div> -->
 
       <!-- Comments -->
-      {% if page.comments != false %} {% include comments.html %} {% endif %}
+        {% if page.comments != false %} {% include comments.html %} {% endif %}
     </div>
   </div>
 </div>

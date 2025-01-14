@@ -44,29 +44,63 @@ a.text-dark:hover {
   z-index: 1;
 }
 
+/* post container */
+.post_padding{
+  padding: 0px 2rem 0px 2rem;
+}
+
 /* blog-list */
 .blog-list {
   list-style-type: none;
   padding: 0;
 }
-
 .blog-list li {
   margin: 10px 0;
 }
-
 .blog-list li h2 {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-.blog-list li h2 a {
+.blog-list li h2 a, .blog-item-date {
   text-decoration: none;
   color: #008080; /* 원하는 색상 */
 }
-
-.blog-list li h2 a:hover {
+.blog-list li h2 a:hover, .blog-item-date {
   color: #005555; /* 호버 시 색상 */
 }
+.blog-list .this {
+  color: #c0ddd0;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.blog-list-title{
+  font-weight: bolder;
+  color:teal;
+}
+.blog-list-container{
+  margin: 70px 0px 30px 0px;
+}
+.blog-item-title{
+  display: inline-block;
+  width: 100%;
+}
+.blog-item-date{
+  display: block;
+  float: right;
+  font-size: 15px;
+  width: auto;
+  text-align: right;
+}
+
+/* comment */
+.comment-box{
+  width: 100%;
+  text-align: left;
+}
+.utterances{
+  max-width: none !important;
+}
+
 
 /* default */
 @media (max-width: 991.98px) {

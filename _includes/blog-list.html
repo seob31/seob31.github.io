@@ -1,33 +1,41 @@
-<ul class="blog-list">
-  <!-- Assign all posts in the same category -->
-  {% assign category_posts = site.posts | where: "categories",
-  page.categories[0] %}
+<div class="blog-list-container">
+  <h5 class="blog-list-title"> Other posts in the category </h5>
+  <hr>
+  <ul class="blog-list">
+    <!-- 모든 게시물을 내림차순으로 정렬 -->
+    {% assign category_posts = site.posts | where: "categories", page.categories[0] | sort: "date" | reverse %}
 
-  <!-- Previous 2 posts -->
-  {% assign previous_posts = category_posts | where_exp: "post", "post.date <
-  page.date" | sort: "date" | reverse | slice: 0, 2 %} {% for post in
-  previous_posts %}
-  <li>
-    <h2>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-  </li>
-  {% endfor %}
+    <!-- 현재 포스트의 인덱스를 찾음 -->
+    {% assign current_index = 0 %}
+    {% for post in category_posts %}
+      {% if post.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
 
-  <!-- Current post -->
-  <li>
-    <h2>
-      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-    </h2>
-  </li>
+    <!-- slice의 시작 인덱스를 계산 -->
+    {% assign start_index = current_index | minus: 2 %}
+    {% if start_index < 0 %}
+      {% assign start_index = 0 %}
+    {% endif %}
 
-  <!-- Next 2 posts -->
-  {% assign next_posts = category_posts | where_exp: "post", "post.date >
-  page.date" | sort: "date" | slice: 0, 2 %} {% for post in next_posts %}
-  <li>
-    <h2>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-  </li>
-  {% endfor %}
-</ul>
+    <!-- 현재 포스트를 중심으로 slice -->
+    {% assign surrounding_posts = category_posts | slice: start_index, 5 %}
+
+    <!-- 게시물 출력 -->
+    {% for post in surrounding_posts %}
+    <li>
+      <h6 class="blog-item-title">
+        {% if post.url == page.url %}
+        <a class="this" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="blog-item-date this">{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% else %}
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% endif %}
+      </h6>
+    </li>
+    {% endfor %}
+  </ul>
+  <hr>
+</div>
