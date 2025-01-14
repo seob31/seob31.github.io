@@ -61,7 +61,7 @@ a.text-dark:hover {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.blog-list li h2 a, .blog-item-date {
+.blog-list li h2 a {
   text-decoration: none;
   color: #008080; /* 원하는 색상 */
 }
@@ -69,13 +69,13 @@ a.text-dark:hover {
   color: #005555; /* 호버 시 색상 */
 }
 .blog-list .this {
-  color: #c0ddd0;
+  color: #c0ddd0 !important;
   font-weight: 700;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .blog-list-title{
   font-weight: bolder;
-  color:#008080;
+  color:#008080 !important;
 }
 .blog-list-container{
   margin: 70px 0px 30px 0px;
@@ -90,6 +90,7 @@ a.text-dark:hover {
   font-size: 15px;
   width: auto;
   text-align: right;
+  color: #008080 !important;
 }
 
 /* comment */
