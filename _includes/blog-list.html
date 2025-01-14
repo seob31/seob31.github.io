@@ -1,0 +1,33 @@
+<ul class="blog-list">
+  <!-- Assign all posts in the same category -->
+  {% assign category_posts = site.posts | where: "categories",
+  page.categories[0] %}
+
+  <!-- Previous 2 posts -->
+  {% assign previous_posts = category_posts | where_exp: "post", "post.date <
+  page.date" | sort: "date" | reverse | slice: 0, 2 %} {% for post in
+  previous_posts %}
+  <li>
+    <h2>
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </li>
+  {% endfor %}
+
+  <!-- Current post -->
+  <li>
+    <h2>
+      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    </h2>
+  </li>
+
+  <!-- Next 2 posts -->
+  {% assign next_posts = category_posts | where_exp: "post", "post.date >
+  page.date" | sort: "date" | slice: 0, 2 %} {% for post in next_posts %}
+  <li>
+    <h2>
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,23 +1,25 @@
 # Site
-name: 'GILog'
-description: 'Software Developer'
+name: "GILog"
+description: "Software Developer"
+favicon: "assets/images/logo/favicon2.ico"
+baseurl: ""
+email: "seob31@gmail.com"
+utterances:
+  repo: "seob31/blog-reply"
+  issue-term: "pathname"
+  theme: "github-light"
 # logo: 'assets/images/logo/gilog.png'
-favicon: 'assets/images/logo/favicon2.ico'
-baseurl: ''
-disqus: 'demowebsite'
-email: 'seob31@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
 include: ["_pages"]
 permalink: /:title/
 
 # Plugins
-plugins: 
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  
+
 topics:
   Spring:
     name: Spring
@@ -28,24 +30,23 @@ topics:
     name: Cloud
     img: assets/images/cloud.png
     bio: "Blogger"
- 
+
 # Defaults
 defaults:
-
   # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
-      author: Gil
-      avatar: assets/images/avatar1.jpg
-      
+      # author: Gil
+      # avatar: assets/images/avatar1.jpg
+
   # all pages
   - scope:
       path: "_pages"
     values:
       layout: page
-      
+
 # Syntax
 markdown: kramdown
 highlighter: rouge
@@ -53,7 +54,13 @@ highlighter: rouge
 # Paginate
 paginate: 10
 
-
-
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+exclude:
+  [
+    README.markdown,
+    package.json,
+    grunt.js,
+    Gruntfile.js,
+    Gruntfile.coffee,
+    node_modules,
+  ]
