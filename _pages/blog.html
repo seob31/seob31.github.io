@@ -5,31 +5,32 @@ permalink: "/blog.html"
 ---
 
 <div class="container">
-<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-    <div class="row gap-y listrecent listrecent listauthor">
+  <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
+  <div class="row gap-y listrecent listrecent listauthor">
     {% for topic in site.topics %}
-        <div class="col-lg-6 mb-4">
-            <div class="p-4 border rounded">
-                <div class="row">
-                    <div class="col-md-3 mb-4 mb-md-0">
-                        <img alt="{{ topic[1].name }}" src="{{site.baseurl}}/{{ topic[1].img }}" class="rounded-circle" height="80" width="80">
-                    </div>
-                    <div class="col-md-9">
-                        <a href="{{site.baseurl}}/topic-{{ topic[1].name | slugify }}">
-                            <h4 class="text-dark mb-0"> {{ topic[1].name }} </h4>
-                        <!-- <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small> -->
-                        <!-- <div class="excerpt">{{ "1"}}</div> -->
-                        </a>
-                        <div class="icon-block mt-3 d-flex justify-content-between">  
-                            <div>
-                            <!-- <a target="_blank" href="#"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
-                            <a target="_blank" href="#"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp; -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-lg-6 mb-4">
+      <a href="{{site.baseurl}}/{{ topic[1].url | slugify }}">
+        <div class="p-4 border rounded c-pointer text-default-hover">
+          <div class="row">
+            <div class="col-md-3 mb-4 mb-md-0">
+              <img
+                alt="{{ topic[1].name }}"
+                src="{{site.baseurl}}/{{ topic[1].img }}"
+                class="rounded-0"
+                height="80"
+                width="80"
+              />
+              <!-- rounded-circle -->
             </div>
+            <div class="m-auto">
+              <h4 class="text-dark mb-0">{{ topic[1].name }}</h4>
+              <!-- <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small> -->
+              <!-- <div class="excerpt">{{ "1"}}</div> -->
+            </div>
+          </div>
         </div>
-    {% endfor %}
+      </a>
     </div>
+    {% endfor %}
+  </div>
 </div>

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Options for creating a new site with Jekyll"
-author: jane
-categories: [ Jekyll, tutorial ]
+title: "Options for creating a new site with Jekyll"
+topic: backend
+categories: [Jekyll, tutorial]
 image: assets/images/13.jpg
 ---
 

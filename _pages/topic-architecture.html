@@ -1,7 +1,7 @@
 ---
-title: "Cloud"
+title: "Architecture"
 layout: default
-permalink: "/cloud.html"
+permalink: "/architecture.html"
 ---
 
 <div class="container">
@@ -16,8 +16,8 @@ permalink: "/cloud.html"
         </div>
         <div class="col-md-3 text-right">
           <img
-            alt="{{ site.topics.cloud.name }}"
-            src="{{site.baseurl}}/{{ site.topics.cloud.img }}"
+            alt="{{ site.topics.architecture.name }}"
+            src="{{site.baseurl}}/{{ site.topics.architecture.img }}"
             class="rounded-0"
             height="70"
             width="70"
@@ -27,8 +27,8 @@ permalink: "/cloud.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where:"topic","cloud" %} {% for post in
-      posts %} {% include main-loop-card.html %} {% endfor %}
+      {% assign posts = site.posts | where:"topic","architecture" %} {% for post
+      in posts %} {% include main-loop-card.html %} {% endfor %}
     </div>
   </div>
 </div>

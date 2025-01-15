@@ -20,16 +20,40 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
+# blog topics
 topics:
-  Spring:
-    name: Spring
-    img: assets/images/spring.png
-    bio: "Hi"
-
-  Cloud:
-    name: Cloud
-    img: assets/images/cloud.png
-    bio: "Blogger"
+  architecture:
+    name: Architecture
+    img: assets/images/topic/architecture.png
+    url: architecture
+  backend:
+    name: Back-end
+    img: assets/images/topic/backend.png
+    url: backend
+  frontend:
+    name: Front-end
+    img: assets/images/topic/frontend.png
+    url: frontend
+  cloud:
+    name: Cloud&Container
+    img: assets/images/topic/cloud.png
+    url: cloud
+  devops:
+    name: DevOps
+    img: assets/images/topic/devOps.png
+    url: devops
+  db:
+    name: DataBase
+    img: assets/images/topic/db.png
+    url: db
+  os:
+    name: OS
+    img: assets/images/topic/os.png
+    url: os
+  others:
+    name: Others
+    img: assets/images/topic/others.png
+    url: others
 
 # Defaults
 defaults:
@@ -38,8 +62,6 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      # author: Gil
-      # avatar: assets/images/avatar1.jpg
 
   # all pages
   - scope:

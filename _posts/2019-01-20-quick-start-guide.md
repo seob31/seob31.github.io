@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Quick Start Guide"
-author: sal
-categories: [ Jekyll, tutorial ]
+title: "Quick Start Guide"
+topic: backend
+categories: [Jekyll, tutorial]
 image: assets/images/12.jpg
 ---
 
