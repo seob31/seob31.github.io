@@ -1,36 +1,39 @@
 ---
 title: "Tags"
 layout: default
-<!-- permalink: "/tags.html" -->
+permalink: "/tags.html"
 ---
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-        <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1>
-            
-        {% for tag in site.tags %} 
-        <h4 class="font-weight-bold spanborder text-capitalize" id="{{ tag[0] | downcase }}"><span>{{ tag[0] }}</span></h4>
-            
-        {% assign pages_list = tag[1] %}
-        {% for post in pages_list %}
-        {% if post.title != null %}
-          {% if group == null or group == post.group %}
-         
-            {% include main-loop-card.html %}
-          {% endif %}
-        {% endif %}
-        {% endfor %}
-        {% assign pages_list = nil %}
-        {% assign group = nil %}
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="col-md-9 half-w-70">
+        <a class="text-title-green c-pointer topic_title" href="/stories">
+          <h2 class="font-weight-bold">
+            <img
+              src="assets/images/blog/back.png"
+              alt="back"
+              width="30px"
+              height="30px"
+            />
+            Tags
+          </h2>
+        </a>
+      </div>
 
-        {% endfor %}
+      <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1> -->
 
-        </div>
-        
-            <div class="col-md-4">
-        {% include sidebar-featured.html %}    
+      {% for story in site.stories %}
+      <h4
+        class="font-weight-bold spanborder text-capitalize"
+        id="{{ story.tag[0] | downcase }}"
+      >
+        <span>{{ story.tag[0] }}</span>
+      </h4>
+
+      {% include main-loop-card.html %} {% endfor %}
     </div>
-        
-    </div>
+
+    <!-- <div class="col-md-4">{% include sidebar-featured.html %}</div> -->
+  </div>
 </div>

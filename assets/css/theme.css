@@ -53,6 +53,15 @@ a.text-dark:hover {
 .half-w-50 {
   width: 49.9% !important;
 }
+.half-w-70 {
+  width: 70% !important;
+}
+.half-w-60 {
+  width: 60% !important;
+}
+.half-w-30 {
+  width: 29.5% !important;
+}
 /* post container */
 .post_padding {
   padding: 0px 2rem 0px 2rem;
@@ -101,6 +110,33 @@ a.text-dark:hover {
   width: auto;
   text-align: right;
   color: #008080 !important;
+}
+.list-btn {
+  display: inline-block;
+  padding: 4px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff !important;
+  background-color: #008080;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80px;
+  height: 30px;
+}
+.list-btn:hover {
+  background-color: #005959;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* topic */
+.topic_title img:hover,
+h2:hover {
+  opacity: 0.5 !important;
+  transition: opacity 0.3s ease;
 }
 
 /* comment */

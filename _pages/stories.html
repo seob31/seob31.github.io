@@ -1,0 +1,15 @@
+---
+title: "Stories"
+layout: default
+permalink: "/stories.html"
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Stories</h1> -->
+      {% for story in site.stories %} {% include story-loop-card.html
+      story=story%} {% endfor %}
+    </div>
+  </div>
+</div>

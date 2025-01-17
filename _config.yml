@@ -69,6 +69,19 @@ defaults:
     values:
       layout: page
 
+    # all stroy
+  - scope:
+      path: "_stories"
+      type: stories
+    values:
+      layout: story
+
+#collections
+collections:
+  stories:
+    output: true
+    permalink: /:title/
+
 # Syntax
 markdown: kramdown
 highlighter: rouge

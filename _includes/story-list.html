@@ -3,35 +3,23 @@
     <table class="w-100">
       <tr>
         <th class="half-w-70">
-          <h5 class="blog-list-title">Other posts in the category</h5>
+          <h5 class="blog-list-title">Other Story</h5>
         </th>
         <th class="text-right">
-          {% assign topic = site.topics[page.topic] %}
-          <a id="list-btn" class="list-btn" href="/{{topic.url}}">List</a>
+          <a class="list-btn" href="/stories">List</a>
         </th>
       </tr>
     </table>
   </div>
   <hr />
   <ul class="blog-list">
-    <!-- 카테고리와 topic이 같은 게시물만 필터링 -->
-    {% assign category_posts = site.posts | where: "categories",
-    page.categories[0] | where: "topic", page.topic | sort: "date" | reverse %}
-
-    <!-- 현재 포스트의 인덱스를 찾음 -->
-    {% assign current_index = 0 %} {% for post in category_posts %} {% if
-    post.url == page.url %} {% assign current_index = forloop.index0 %} {% endif
-    %} {% endfor %}
-
-    <!-- slice의 시작 인덱스를 계산 -->
-    {% assign start_index = current_index | minus: 2 %} {% if start_index < 0 %}
-    {% assign start_index = 0 %} {% endif %}
-
-    <!-- 현재 포스트를 중심으로 slice -->
-    {% assign surrounding_posts = category_posts | slice: start_index, 5 %}
-
-    <!-- 게시물 출력 -->
-    {% for post in surrounding_posts %}
+    {% assign story_posts = site.posts | where: "topic", "story" | sort: "date"
+    | reverse %} {% assign current_index = 0 %} {% for post in story_posts %} {%
+    if post.url == page.url %} {% assign current_index = forloop.index0 %} {%
+    endif %} {% endfor %} {% assign start_index = current_index | minus: 2 %} {%
+    if start_index < 0 %} {% assign start_index = 0 %} {% endif %} {% assign
+    surrounding_posts = story_posts | slice: start_index, 5 %} {% for post in
+    surrounding_posts %}
     <li>
       <h6 class="blog-item-title">
         {% if post.url == page.url %}
@@ -54,18 +42,6 @@
   </ul>
   <hr />
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const from = params.get("from");
-
-    const list = document.getElementById("list-btn");
-    if (from === "categories") {
-      list.href = "/categories";
-    }
-  });
-</script>
 
 <!-- 모든 게시물을 내림차순으로 정렬 -->
 <!-- <div class="blog-list-container">

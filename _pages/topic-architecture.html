@@ -8,13 +8,21 @@ permalink: "/architecture.html"
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="row align-items-center mb-5">
-        <div class="col-md-9 half-w-50">
-          <a class="text-title-green c-pointer" href="/blog">
-            <h2 class="font-weight-bold">{{page.title}}</h2>
+        <div class="col-md-9 half-w-70">
+          <a class="text-title-green c-pointer topic_title" href="/blog">
+            <h2 class="font-weight-bold">
+              <img
+                src="assets/images/blog/back.png"
+                alt="back"
+                width="30px"
+                height="30px"
+              />
+              {{page.title}}
+            </h2>
           </a>
           <!-- <p class="excerpt">{{ site.authors.sal.bio }}</p> -->
         </div>
-        <div class="col-md-3 text-right half-w-50">
+        <div class="col-md-3 text-right half-w-30">
           <img
             alt="{{ site.topics.architecture.name }}"
             src="{{site.baseurl}}/{{ site.topics.architecture.img }}"
