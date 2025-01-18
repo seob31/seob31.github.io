@@ -82,9 +82,11 @@ a.text-dark:hover {
   border-radius: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
   transition: opacity 0.3s;
+  opacity: 0.5;
 }
 .scroll-Top-Btn:hover {
   background-color: #005959;
+  opacity: 1;
 }
 
 /* post container */
@@ -206,9 +208,10 @@ h2:hover {
 
 @media (min-width: 1400px) {
   .scroll-Top-Btn {
-    right: calc((100vw - 1400px) / 2 + 50px);
+    right: calc((100vw - 1500px) / 2 + 20px);
   }
 }
+
 
 /* default */
 @media (max-width: 991.98px) {
