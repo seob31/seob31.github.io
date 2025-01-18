@@ -1,9 +1,9 @@
 ---
-title: "Software Developer"
+title: "Back-end Developer"
 layout: default
 pagination:
     enabled: true
-description: "Software Developer"
+description: "Back-end Developer"
 ---
 
 <div class="container">
@@ -46,7 +46,8 @@ description: "Software Developer"
     <div class="col-md-6">
         
         <!-- second latest post -->
-        {%- assign second_post = site.posts[1] -%}        
+        {%- assign second_post = site.posts[1] -%}
+        {% if second_post != nil %}
         <div class="mb-3 d-flex align-items-center">                
                 {% if second_post.image %}
                 <div class="col-md-4">
@@ -71,9 +72,10 @@ description: "Software Developer"
                     </small>
                 </div>
             </div>
-        
+        {% endif %}
         <!-- third latest post -->
-        {%- assign third_post = site.posts[2] -%}        
+        {%- assign third_post = site.posts[2] -%}   
+        {% if third_post != nil %}     
         <div class="mb-3 d-flex align-items-center">                
                 {% if third_post.image %}
                 <div class="col-md-4">
@@ -98,9 +100,10 @@ description: "Software Developer"
                     </small>
                 </div>
             </div>
-        
+        {% endif %}
         <!-- fourth latest post -->
-        {%- assign fourth_post = site.posts[3] -%}        
+        {%- assign fourth_post = site.posts[3] -%}     
+        {% if fourth_post != nil %}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if fourth_post.image %}
                 <div class="col-md-4">
@@ -125,25 +128,24 @@ description: "Software Developer"
                     </small>
                 </div>
             </div>
-        
+        {% endif %}
     </div>
-    
 </div>
     
 <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-{% for post in site.posts %} 
-{% if post.tags contains "sticky" %}
+{% for story in site.stories %} 
+{% if story.tags contains "sticky" %}
 <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
     <div class="pl-4 pr-0 h-100 tofront">
         <div class="row justify-content-between">
             <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h1 class="mb-3">{{post.title}}</h1>
+                <h1 class="mb-3">{{story.title}}</h1>
                 <p class="mb-3 lead">
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+                    {{ story.excerpt | strip_html | strip_newlines | truncate: 136 }}
                 </p>
-                <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
+                <a href="{{site.baseurl}}{{story.url}}" class="btn btn-dark">Read More</a>
             </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">	
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ story.image }});">	
             </div>
         </div>
     </div>
@@ -165,10 +167,9 @@ description: "Software Developer"
         
 
         {% for post in paginator.posts %}
-        
             {% include main-loop-card.html %}
-        
         {% endfor %}
+
         
         <div class="mt-5">
          <!-- Pagination links -->

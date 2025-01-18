@@ -1,10 +1,10 @@
 # Site
 name: "GILog"
-description: "Software Developer"
+description: "Back-end Developer"
 favicon: "assets/images/logo/favicon2.ico"
 baseurl: ""
 email: "seob31@gmail.com"
-photo: assets/images/me/me.png
+photo: assets/images/me/me.jpg
 utterances:
   repo: "seob31/blog-reply"
   issue-term: "pathname"
@@ -88,7 +88,7 @@ markdown: kramdown
 highlighter: rouge
 
 # Paginate
-paginate: 10
+paginate: 5
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude:

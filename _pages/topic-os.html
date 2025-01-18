@@ -35,8 +35,16 @@ permalink: "/os.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where:"topic","os" %} {% for post in posts
-      %} {% include main-loop-card.html %} {% endfor %}
+      {% assign posts = site.posts | where: "topic", "os" %}
+      {% if posts.size > 0 %}
+        {% for post in posts %}
+          {% include main-loop-card.html %}
+        {% endfor %}
+      {% else %}
+      <div class="no-posts">
+        <h2 class="text-muted">No posts</h2>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>

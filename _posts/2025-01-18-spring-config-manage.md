@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Quick Start Guide"
+title: "Spring 설정 파일 통합 관리"
 topic: backend
-categories: [Jekyll, tutorial]
-image: assets/images/12.jpg
+categories: [spring]
+image: assets/images/blog/backend/spring-config-manage.jpg
+tags: [featured]
 ---
 
 If you already have a full Ruby development environment with all headers and RubyGems installed (see Jekyll’s requirements), you can create a new Jekyll site by doing the following:

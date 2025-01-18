@@ -36,7 +36,7 @@ layout: default
           </div>
         </div>
         {% if page.image %}
-        <div class="col-md-6 pr-0 align-self-center">
+        <div class="col-md-6 pr-0 align-self-center post-img-box">
           <img class="rounded" src="{% if page.image contains "://" %}{{
           page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}"
           alt="{{ page.title }}">
