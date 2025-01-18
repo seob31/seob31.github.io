@@ -11,7 +11,7 @@ permalink: "/tags.html"
         <a class="text-title-green c-pointer topic_title" href="/stories">
           <h2 class="font-weight-bold">
             <img
-              src="assets/images/blog/back.png"
+              src="assets/images/icon/back.png"
               alt="back"
               width="30px"
               height="30px"
@@ -22,18 +22,41 @@ permalink: "/tags.html"
       </div>
 
       <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1> -->
+      {% assign all_tags = site.stories | map: "tags" | join: "," | split: "," | uniq %}
 
-      {% for story in site.stories %}
-      <h4
-        class="font-weight-bold spanborder text-capitalize"
-        id="{{ story.tag[0] | downcase }}"
-      >
-        <span>{{ story.tag[0] }}</span>
-      </h4>
+      {% for tag in all_tags %}
+        <h4
+          class="font-weight-bold spanborder text-capitalize"
+          id="{{ tag | downcase | strip }}"
+        >
+          <span>{{ tag | strip }}</span>
+        </h4>
 
-      {% include main-loop-card.html %} {% endfor %}
+        <div class="tag-section">
+          {% assign tagged_stories = site.stories | where_exp: "story", "story.tags contains tag" %}
+          {% for story in tagged_stories %}
+            {% if story.title %}
+              {% include story-loop-card.html story=story %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+
     </div>
 
     <!-- <div class="col-md-4">{% include sidebar-featured.html %}</div> -->
   </div>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+    if (hash != null && hash != undefined) {
+      const tagUrl = document.querySelectorAll("#tagUrl");
+      tagUrl.forEach((tagUrl) => {
+        tagUrl.href = tagUrl.href+"?from=tags"+hash;
+      });
+    }
+  });
+</script>

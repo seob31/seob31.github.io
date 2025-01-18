@@ -8,8 +8,14 @@ permalink: "/stories.html"
   <div class="row justify-content-center">
     <div class="col-md-12">
       <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Stories</h1> -->
-      {% for story in site.stories %} {% include story-loop-card.html
-      story=story%} {% endfor %}
+      
+      
+      <h4 class="font-weight-bold spanborder text-capitalize">
+        <span>Stories</span>
+      </h4>
+
+      {% assign sorted_stories = site.stories | sort: "date" | reverse %}
+      {% for story in sorted_stories %} {% include story-loop-card.html %} {% endfor %}
     </div>
   </div>
 </div>

@@ -35,9 +35,9 @@
     <li>
       <h6 class="blog-item-title">
         {% if post.url == page.url %}
-        <a
+        <a id="other_post"
           style="text-decoration: underline"
-          class="this"
+          class="this overflow-wrap"
           href="{{ post.url | prepend: site.baseurl }}"
           >{{ post.title }}</a
         >
@@ -45,7 +45,7 @@
           >{{ post.date | date: "%Y-%m-%d" }}</span
         >
         {% else %}
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a id="other_post" class="overflow-wrap" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         {% endif %}
       </h6>
@@ -60,9 +60,15 @@
     const params = new URLSearchParams(window.location.search);
     const from = params.get("from");
 
-    const list = document.getElementById("list-btn");
+    
     if (from === "categories") {
+      const list = document.getElementById("list-btn");
       list.href = "/categories";
+
+      const others = document.querySelectorAll("#other_post");
+      others.forEach((other) => {
+        other.href = other.href+"?from=categories";
+      });
     }
   });
 </script>

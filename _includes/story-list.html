@@ -6,14 +6,14 @@
           <h5 class="blog-list-title">Other Story</h5>
         </th>
         <th class="text-right">
-          <a class="list-btn" href="/stories">List</a>
+          <a id="list-btn" class="list-btn" href="/stories">List</a>
         </th>
       </tr>
     </table>
   </div>
   <hr />
   <ul class="blog-list">
-    {% assign story_posts = site.posts | where: "topic", "story" | sort: "date"
+    {% assign story_posts = site.stories | sort: "date"
     | reverse %} {% assign current_index = 0 %} {% for post in story_posts %} {%
     if post.url == page.url %} {% assign current_index = forloop.index0 %} {%
     endif %} {% endfor %} {% assign start_index = current_index | minus: 2 %} {%
@@ -23,9 +23,9 @@
     <li>
       <h6 class="blog-item-title">
         {% if post.url == page.url %}
-        <a
+        <a id="other_story"
           style="text-decoration: underline"
-          class="this"
+          class="this overflow-wrap"
           href="{{ post.url | prepend: site.baseurl }}"
           >{{ post.title }}</a
         >
@@ -33,7 +33,9 @@
           >{{ post.date | date: "%Y-%m-%d" }}</span
         >
         {% else %}
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a id="other_story" class="overflow-wrap" href="{{ post.url | prepend: site.baseurl }}">
+          {{ post.title }}
+        </a>
         <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         {% endif %}
       </h6>
@@ -42,6 +44,24 @@
   </ul>
   <hr />
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get("from");
+
+    if (from === "tags") {
+      const list = document.getElementById("list-btn");
+      list.href = "/tags";
+
+      const others = document.querySelectorAll("#other_story");
+      others.forEach((other) => {
+        other.href = other.href+"?from=tags";
+      });
+    }
+  });
+</script>
+
 
 <!-- 모든 게시물을 내림차순으로 정렬 -->
 <!-- <div class="blog-list-container">

@@ -2,14 +2,12 @@
   <div class="pr-3">
     <h2 class="mb-1 h4 font-weight-bold">
       {% if page.url contains 'categories' %}
-      <a class="text-dark" href="{{site.baseurl}}{{post.url}}?from=categories"
-        >{{ post.title }}
+        <a class="text-dark" href="{{site.baseurl}}{{post.url}}?from=categories">
       {% else %}
-      <a class="text-dark" href="{{site.baseurl}}{{post.url}}"
-        >
+        <a class="text-dark" href="{{site.baseurl}}{{post.url}}">
       {% endif %}
-	  {{ post.title }}</a
-      >
+	      {{ post.title }}
+      </a>
     </h2>
     <p class="excerpt">
       {{ post.excerpt | strip_html | strip_newlines | truncate: 186}}
@@ -18,8 +16,9 @@
       In
       <span class="catlist">
         {% for category in post.categories %}
+        <!-- text-muted -->
         <a
-          class="text-capitalize text-muted smoothscroll"
+          class="text-capitalize smoothscroll font-weight-bold" 
           href="{{site.baseurl}}/categories.html#{{ category | downcase }}"
           >{{ category }}</a
         ><span class="sep">, </span>
