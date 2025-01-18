@@ -4,6 +4,7 @@ description: "Software Developer"
 favicon: "assets/images/logo/favicon2.ico"
 baseurl: ""
 email: "seob31@gmail.com"
+photo: assets/images/me/me.png
 utterances:
   repo: "seob31/blog-reply"
   issue-term: "pathname"

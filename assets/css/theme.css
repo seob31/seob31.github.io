@@ -83,7 +83,6 @@ a.text-dark:hover {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
   transition: opacity 0.3s;
 }
-
 .scroll-Top-Btn:hover {
   background-color: #005959;
 }
@@ -172,6 +171,31 @@ h2:hover {
 }
 .utterances {
   max-width: none !important;
+}
+
+/* about */
+.about-side{
+  width: 100%;
+  text-align: center;
+}
+.profile-photo{
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.side-introduce{
+  margin-top: 15px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .about-side {
+    display: none !important;
+  }
 }
 
 @media (min-width: 1300px) {
