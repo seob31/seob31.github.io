@@ -6,12 +6,9 @@ pagination:
 description: "Software Developer"
 ---
 
-
 <div class="container">
     
 {% if page.url == "/" %}
-    
-    
     
 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
 <div class="row remove-site-content-margin">
@@ -155,12 +152,8 @@ description: "Software Developer"
 {% endfor %}
 
 
-    
-
-
 {% endif %} <!--endif page url is / -->
     
-
 
 <!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
     
@@ -168,7 +161,7 @@ description: "Software Developer"
    
     <div class="col-md-8 main-loop">
         
-        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+        <h4 class="font-weight-bold spanborder"><span>All Posts</span></h4>
         
 
         {% for post in paginator.posts %}
