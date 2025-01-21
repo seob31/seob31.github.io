@@ -62,7 +62,7 @@ a.text-dark:hover {
 .half-w-30 {
   width: 29.5% !important;
 }
-.overflow-wrap{
+.overflow-wrap {
   overflow-wrap: break-word;
 }
 
@@ -176,11 +176,11 @@ h2:hover {
 }
 
 /* about */
-.about-side{
+.about-side {
   width: 100%;
   text-align: center;
 }
-.profile-photo{
+.profile-photo {
   border-radius: 15px;
   display: inline-block;
   width: 90%;
@@ -190,16 +190,17 @@ h2:hover {
   background-size: cover;
   box-shadow: 2px 2px 5px #000;
 }
-.side-introduce{
+.side-introduce {
   margin-top: 15px;
   width: 95%;
   overflow-wrap: break-word;
 }
-.side-introduce .header{
+.side-introduce .header {
   font-size: 1.25rem;
   margin-bottom: 5px;
 }
-.side-introduce p, .side-introduce article {
+.side-introduce p,
+.side-introduce article {
   font-size: 14px;
   margin-bottom: 10px;
   font-family: Lora;
@@ -213,10 +214,11 @@ h2:hover {
   height: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.intro-container p{
+.intro-container p {
   margin-bottom: 0 !important;
 }
-.skills-container, .projects-container {
+.skills-container,
+.projects-container {
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -224,7 +226,9 @@ h2:hover {
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.skills-container h2, .projects-container h2, .intro-container h2 {
+.skills-container h2,
+.projects-container h2,
+.intro-container h2 {
   color: #0056b3;
   font-size: 17px;
   margin-bottom: 15px;
@@ -238,13 +242,15 @@ h2:hover {
   font-weight: bold;
   font-size: 14px;
 }
-.skills-container ul, .projects-container ul {
+.skills-container ul,
+.projects-container ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.skills-container ul li::before, .projects-container ul li::before {
+.skills-container ul li::before,
+.projects-container ul li::before {
   content: "• ";
   color: #0056b3;
   font-weight: bold;
@@ -252,20 +258,23 @@ h2:hover {
 }
 
 /* post */
-.post-img-box{
+.post-img-box {
   text-align: right !important;
+}
+.font-content p {
+  font-size: 20px;
 }
 @media (max-width: 768px) {
   .about-side {
     display: none !important;
   }
-  .post-img-box{
+  .post-img-box {
     text-align: center !important;
   }
 }
 
 @media (min-width: 1300px) {
-  .scroll-Top-Btn{
+  .scroll-Top-Btn {
     right: 2%;
   }
 }
@@ -275,7 +284,6 @@ h2:hover {
     right: calc((100vw - 1500px) / 2 + 20px);
   }
 }
-
 
 /* default */
 @media (max-width: 991.98px) {
