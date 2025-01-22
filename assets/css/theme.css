@@ -295,6 +295,12 @@ h2:hover {
   margin-left: .5rem;
 }
 
+/* header Navi */
+.headerborder{
+  border-bottom: none;
+}
+
+
 @media (max-width: 768px) {
   .about-side {
     display: none !important;
@@ -336,6 +342,9 @@ h2:hover {
   }
   .site-content{
     margin-top: 70px;
+  }
+  .headerborder{
+    border-bottom: 1px solid #ebebeb;
   }
   
 }

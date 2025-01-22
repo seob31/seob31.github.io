@@ -6710,6 +6710,16 @@ button.close {
   vertical-align: text-top !important;
 }
 
+.bg-lightgreen {
+  background-color: #e8f3ec !important;
+}
+a.bg-lightgreen:hover,
+a.bg-lightgreen:focus,
+button.bg-lightgreen:hover,
+button.bg-lightgreen:focus {
+  background-color: #e8f3ec !important;
+}
+
 .bg-primary {
   background-color: #03a87c !important;
 }

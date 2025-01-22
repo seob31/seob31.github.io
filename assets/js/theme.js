@@ -155,3 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 });
+
+
+function changeHeaderStyle(){
+    var headerNav = document.getElementById("MagicMenu");
+    headerNav.classList.toggle("headerborder");
+}
+
+

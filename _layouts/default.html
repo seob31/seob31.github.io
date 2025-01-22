@@ -39,7 +39,16 @@
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ site.baseurl }}/index"><strong>{{site.name}}</strong></a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <button 
+            class="navbar-toggler collapsed" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarColor02" 
+            aria-controls="navbarColor02" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+            onclick="changeHeaderStyle();"
+            >
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbarColor02" style="">
@@ -50,11 +59,11 @@
             <div class="sub-header-wrap">
                 <div class="radio-group">
                     <div class="radio">
-                        <input type="radio" name="language" id="ko" checked>
+                        <input type="radio" name="language" id="ko" value="ko" checked>
                         <label for="ko">한국어</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" name="language" id="en">
+                        <input type="radio" name="language" id="en" value="en">
                         <label for="en">English</label>
                     </div>
                 </div>
