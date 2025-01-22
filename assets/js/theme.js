@@ -163,3 +163,18 @@ function changeHeaderStyle(){
 }
 
 
+
+// multiligual
+document.querySelectorAll('input[name="language"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        localStorage.setItem('myLang', this.value);
+        let url = new URL(window.location.href);
+        url.searchParams.set('lang', this.value);
+        window.location.href = url.toString();
+    });
+});
+
+window.onload = function() {
+    let savedLang = localStorage.getItem('myLang') || 'ko';
+    document.getElementById(savedLang).checked = true;
+};

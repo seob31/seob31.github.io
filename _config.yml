@@ -11,9 +11,6 @@ utterances:
   theme: "github-light"
 # logo: 'assets/images/logo/gilog.png'
 
-include: ["_pages"]
-permalink: /:title/
-
 # Plugins
 plugins:
   - jekyll-feed
@@ -56,20 +53,24 @@ topics:
     img: assets/images/topic/others.png
     url: others
 
+include: ["_pages"]
+permalink: /:title/
+
 # Defaults
 defaults:
+
   # all posts
   - scope:
       path: "_posts/en"
     values:
       layout: post
-      permalink: 'en/:title'
+      permalink: 'en/posts/:title'
       language: en
   - scope:
       path: "_posts/ko"
     values:
       layout: post
-      permalink: 'ko/:title'
+      permalink: 'posts/:title'
       language: ko
 
   # all pages
@@ -84,14 +85,14 @@ defaults:
       type: stories
     values:
       layout: story
-      permalink: 'ko/:title'
+      permalink: 'stories/:title'
       language: ko
   - scope:
       path: "_stories/en"
       type: stories
     values:
       layout: story
-      permalink: 'en/:title'
+      permalink: 'en/stories/:title'
       language: en
 
 
