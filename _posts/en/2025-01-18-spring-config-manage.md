@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Unified Management of Spring Configuration Files(Spring 설정파일 통합 관리)"
+title: "Unified Management of Spring Configuration Files"
 topic: backend
 categories: [spring]
 image: assets/images/blog/backend/spring-config-manage.jpg
 tags: [featured]
+language: en
 ---
 
 Spring 설정파일 통합 관리에 대해 공유하려 합니다.

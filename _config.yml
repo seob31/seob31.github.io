@@ -60,9 +60,17 @@ topics:
 defaults:
   # all posts
   - scope:
-      path: "_posts"
+      path: "_posts/en"
     values:
       layout: post
+      permalink: 'en/:title'
+      language: en
+  - scope:
+      path: "_posts/ko"
+    values:
+      layout: post
+      permalink: 'ko/:title'
+      language: ko
 
   # all pages
   - scope:
@@ -72,10 +80,20 @@ defaults:
 
     # all stroy
   - scope:
-      path: "_stories"
+      path: "_stories/ko"
       type: stories
     values:
       layout: story
+      permalink: 'ko/:title'
+      language: ko
+  - scope:
+      path: "_stories/en"
+      type: stories
+    values:
+      layout: story
+      permalink: 'en/:title'
+      language: en
+
 
 #collections
 collections:
