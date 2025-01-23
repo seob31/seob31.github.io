@@ -18,6 +18,11 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
+
+include: ["_pages"]
+permalink: /:title/
+
+
 # blog topics
 topics:
   architecture:
@@ -53,8 +58,6 @@ topics:
     img: assets/images/topic/others.png
     url: others
 
-include: ["_pages"]
-permalink: /:title/
 
 # Defaults
 defaults:

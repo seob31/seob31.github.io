@@ -57,16 +57,7 @@
             </ul>
 
             <div class="sub-header-wrap">
-                <div class="radio-group">
-                    <div class="radio">
-                        <input type="radio" name="language" id="ko" value="ko">
-                        <label for="ko">한국어</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="language" id="en" value="en">
-                        <label for="en">English</label>
-                    </div>
-                </div>
+                {% include menu-multiligual.html %}
 
                 <ul class="navbar-nav ml-auto d-flex align-items-center search-box">
                     {% include search-lunr.html %}
