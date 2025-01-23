@@ -8,3 +8,22 @@
       <label for="en">English</label>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    document.querySelectorAll('input[name="language"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        if (this.value === 'en') {
+          if (!window.location.pathname.includes('/en/')) {
+            window.location.href = '/en' + window.location.pathname;
+          }
+        } else if (this.value === 'ko') {
+          if (window.location.pathname.includes('/en/')) {
+            window.location.href = window.location.pathname.replace('/en', '');
+          }
+        }
+      });
+    });
+  });
+</script>

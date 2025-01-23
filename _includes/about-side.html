@@ -2,22 +2,20 @@
     <img class="profile-photo" src="{{site.baseurl}}/{{ site.photo }}">
     <div class="side-introduce">
         <p class="header font-weight-normal">Welcome to Gilog.</p>
-
+        
+        {% if page.language == 'ko' %}
         <article class="text-left">
-            GILog는 제 이름에서 '길'을 따온 것이고, 한국어로 '길'은 영어로 'WAY', 'PATH'를 뜻하기도 합니다. 
-            'Path'와 'Way'라는 단어가 잘 어울리는 곳이 되었으면 좋겠습니다.
+            GILog는 제 이름에서 '길'을 따온 것이고, '길'은 영어로 'WAY', 'PATH'를 뜻하기도 합니다. 
+            'Path'와 'Way'라는 단어가 잘 어울리는 곳이 되었으면 하는 바램과 이 블로그에서 기록된 작은 정보가 도움이 되었으면 좋겠습니다.
         </article>
-        <p class="text-left">
-            제 영어 실력이 썩 좋지 않아, 영어와 한국어를 병행하여 게시물이 쓰여질 것입니다.
-        </p>
-
+        {% endif %}
+        {% if page.language == 'en' %}
         <article class="text-left">
-            GILog represents 'GIL' from my name, and in Korean, 'GIL' also means 'WAY', 'PATH' in English.
-            I hope this becomes a place where the words 'Path' and 'Way' fit well together.
+            GILog represents 'GIL' from my Korean name, which means 'WAY', 'PATH' in English.
+            I hope this becomes a place where the words 'Path' and 'Way' complement each other well, 
+            and that the small pieces of information recorded in this blog prove to be helpful.
         </article>
-        <p class="text-left">
-            My English skills are not very good, but to improve them, the posts will be written in both English and Korean.
-        </p>
+        {% endif %}
     </div>
 </div>
 

@@ -162,7 +162,3 @@ function changeHeaderStyle(){
     headerNav.classList.toggle("headerborder");
 }
 
-
-
-// multiligual
-
