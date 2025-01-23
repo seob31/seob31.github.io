@@ -297,7 +297,7 @@ h2:hover {
 
 /* header Navi */
 .headerborder{
-  border-bottom: none;
+  box-shadow: none;
 }
 
 
@@ -344,7 +344,7 @@ h2:hover {
     margin-top: 70px;
   }
   .headerborder{
-    border-bottom: 1px solid #ebebeb;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 50%);
   }
   
 }

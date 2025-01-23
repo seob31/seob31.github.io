@@ -15,13 +15,11 @@ utterances:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-seo-tag
-
+  # - jekyll-paginate
 
 include: ["_pages"]
 permalink: /:title/
-
 
 # blog topics
 topics:
@@ -58,6 +56,8 @@ topics:
     img: assets/images/topic/others.png
     url: others
 
+# Paginate
+# paginate: 5
 
 # Defaults
 defaults:
@@ -65,12 +65,14 @@ defaults:
   # all posts
   - scope:
       path: "_posts/en"
+      type: posts
     values:
       layout: post
       permalink: 'en/posts/:title'
       language: en
   - scope:
       path: "_posts/ko"
+      type: posts
     values:
       layout: post
       permalink: 'posts/:title'
@@ -103,7 +105,8 @@ defaults:
 collections:
   stories:
     output: true
-    permalink: /:title/
+  posts:
+    output: true
 
 # Syntax
 markdown: kramdown
@@ -114,8 +117,6 @@ kramdown:
   parse_block_html: true
 highlighter: rouge
 
-# Paginate
-paginate: 5
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude:

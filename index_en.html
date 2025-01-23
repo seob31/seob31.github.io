@@ -4,16 +4,16 @@ layout: default
 pagination:
     enabled: true
 description: "Back-end Developer"
-language: ko
-permalink: "/"
+language: en
+permalink: "/en/"
 ---
 
 <div class="container">
     
-{% if page.url == "/" %}
+{% if page.url =="/en/" %}
+    
 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
- 
-
+    
 <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
 {% assign stories = site.stories | where : "language", page.language %}
 {% for story in stories %} 
@@ -41,7 +41,6 @@ permalink: "/"
     
 
 <!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
-
 <div class="row mt-3">
    
     <div class="col-md-8 main-loop">
@@ -51,10 +50,8 @@ permalink: "/"
         {% for post in pagePost limit:5 %}
             {% include main-loop-card.html %}
         {% endfor %}
+        
     </div>
-    
- <!-- Pagination links -->
-
     <div class="col-md-4">
         {% include sidebar-featured.html %}    
     </div>

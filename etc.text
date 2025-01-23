@@ -1,21 +1,11 @@
----
-title: "Back-end Developer"
-layout: default
-pagination:
-    enabled: true
-description: "Back-end Developer"
-language: en
----
+==== index.html
 
-<div class="container">
-    
-{% if page.url == "/" or page.url =="/en/" %}
-    
 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
 <div class="row remove-site-content-margin">
     
     <!-- latest post -->
-    {% assign latest_post = site.posts[0] %}
+    {% assign posts = site.posts | where : "language", page.language %}
+    {% assign latest_post = posts[0] %}
     <div class="col-md-6">
     <div class="card border-0 mb-4 box-shadow">   
     <a href="{{site.baseurl}}{{latest_post.url}}">
@@ -47,7 +37,7 @@ language: en
     <div class="col-md-6">
         
         <!-- second latest post -->
-        {%- assign second_post = site.posts[1] -%}
+        {%- assign second_post = posts[1] -%}
         {% if second_post != nil %}
         <div class="mb-3 d-flex align-items-center">                
                 {% if second_post.image %}
@@ -75,7 +65,7 @@ language: en
             </div>
         {% endif %}
         <!-- third latest post -->
-        {%- assign third_post = site.posts[2] -%}   
+        {%- assign third_post = posts[2] -%}   
         {% if third_post != nil %}     
         <div class="mb-3 d-flex align-items-center">                
                 {% if third_post.image %}
@@ -103,7 +93,7 @@ language: en
             </div>
         {% endif %}
         <!-- fourth latest post -->
-        {%- assign fourth_post = site.posts[3] -%}     
+        {%- assign fourth_post = posts[3] -%}     
         {% if fourth_post != nil %}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if fourth_post.image %}
@@ -132,47 +122,16 @@ language: en
         {% endif %}
     </div>
 </div>
-    
-<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-{% for story in site.stories %} 
-{% if story.tags contains "sticky" %}
-<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
-    <div class="pl-4 pr-0 h-100 tofront">
-        <div class="row justify-content-between">
-            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h1 class="mb-3">{{story.title}}</h1>
-                <p class="mb-3 lead">
-                    {{ story.excerpt | strip_html | strip_newlines | truncate: 136 }}
-                </p>
-                <a href="{{site.baseurl}}{{story.url}}" class="btn btn-dark">Read More</a>
-            </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ story.image }});">	
-            </div>
-        </div>
-    </div>
-</div> 
-{% endif %}
-{% endfor %}
 
 
-{% endif %} <!--endif page url is / -->
-    
-
-<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
-    
-<div class="row mt-3">
-   
-    <div class="col-md-8 main-loop">
-        
-        <h4 class="font-weight-bold spanborder"><span>All Posts</span></h4>
-        
-        {% for post in paginator.posts %}
+        {% assign pagePost = paginator.posts | where : "language", page.language %}
+        {% for post in pagePost limit:5 %}
             {% include main-loop-card.html %}
         {% endfor %}
 
-        
+
+ <!-- Pagination links -->
         <div class="mt-5">
-         <!-- Pagination links -->
             {% if paginator.total_pages > 1 %}
             <ul class="pagination"> 
               {% if paginator.previous_page %}
@@ -199,15 +158,3 @@ language: en
             </ul>
             {% endif %}      
         </div>
-        
-    </div>
-    
-    <div class="col-md-4">
-        {% include sidebar-featured.html %}    
-    </div>
-    
-</div>
-
-
-
-</div>
