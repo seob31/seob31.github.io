@@ -1,9 +1,10 @@
 ---
 title: "Stories"
 layout: default
-permalink: "/stories.html"
-language: ko
+permalink: "/en/stories.html"
+language: en
 ---
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-12">
@@ -14,7 +15,7 @@ language: ko
         <span>Stories</span>
       </h4>
       {% assign stories = site.stories | where : "language", page.language %}
-      {% assign sorted_stories = stories| sort: "date" | reverse %}
+      {% assign sorted_stories = stories | sort: "date" | reverse %}
       {% for story in sorted_stories %} 
         {% include story-loop-card.html %} 
       {% endfor %}

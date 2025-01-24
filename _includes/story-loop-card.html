@@ -19,7 +19,7 @@
         <!-- text-muted -->
         <a
           class="text-capitalize font-weight-bold smoothscroll" 
-          href="{{ site.baseurl }}/tags.html#{{ tag | downcase }}">
+          href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/tags.html#{{ tag | downcase }}">
           {{ tag }}
         </a>
         {% if forloop.last == false %}, {% endif %} {% endfor %} ] {% else %} No
