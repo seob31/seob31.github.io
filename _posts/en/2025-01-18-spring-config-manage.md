@@ -3,7 +3,7 @@ layout: post
 title: "Unified Management of Spring Configuration Files"
 topic: backend
 categories: [spring]
-image: assets/images/blog/backend/spring-config-manage.jpg
+image: assets/images/blog/backend/250118/spring-config-manage.jpg
 tags: [featured]
 language: en
 ---
@@ -38,7 +38,7 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 ---
 > 간단하게 프로젝트를 아래 그림과 같이 구성했습니다.
 
-> ![createProject](/assets/images/blog/backend/configManage/createProject.png)
+> ![createProject](/assets/images/blog/backend/250118/createProject.png)
 
 <br>
 
@@ -104,9 +104,9 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 
 ---
 
->![configMenu](/assets/images/blog/backend/configManage/configMenu.png)
+>![configMenu](/assets/images/blog/backend/250118/configMenu.png)
 
->![config](/assets/images/blog/backend/configManage/config.png)
+>![config](/assets/images/blog/backend/250118/config.png)
 
 <br>
 
@@ -114,7 +114,7 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 
 ---
 
->![result](/assets/images/blog/backend/configManage/result.png)  
+>![result](/assets/images/blog/backend/250118/result.png)  
 
 config server를 이용하고 계시다면 위와 같이 적절하게 사용하시면 될 것 같습니다.  
 이상으로 이번 포스팅을 마치겠습니다.

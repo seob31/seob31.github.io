@@ -2,7 +2,7 @@
 layout: story
 title: "나의 첫번째 블로그!"
 topic: story
-image: assets/images/story/firstBlog.jpg
+image: assets/images/story/250117/firstBlog.jpg
 tags: [life]
 sticky: true
 language: ko

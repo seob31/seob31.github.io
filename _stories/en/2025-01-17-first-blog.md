@@ -2,7 +2,7 @@
 layout: story
 title: "I’ve launched my first blog!"
 topic: story
-image: assets/images/story/firstBlog.jpg
+image: assets/images/story/250117/firstBlog.jpg
 tags: [life]
 sticky: true
 language: en
