@@ -1,7 +1,8 @@
 ---
 title: "Cloud&Container"
 layout: default
-permalink: "/cloud.html"
+permalink: "/posts/cloud.html"
+language: ko
 ---
 
 <div class="container">
@@ -35,7 +36,8 @@ permalink: "/cloud.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where: "topic", "cloud" %}
+      {% assign post_list = site.posts | where: "language", page.language %}
+      {% assign posts = post_list | where: "topic", "cloud" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}

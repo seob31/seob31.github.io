@@ -7,21 +7,26 @@
         </th>
         <th class="text-right">
           {% assign topic = site.topics[page.topic] %}
-          <a id="list-btn" class="list-btn" href="/{{topic.url}}">List</a>
+          <a id="list-btn" class="list-btn" href="{% if page.language == 'en' %}/en{% endif %}/posts/{{ topic.url }}">List</a>
         </th>
       </tr>
     </table>
   </div>
+
   <hr />
   <ul class="blog-list">
     <!-- 카테고리와 topic이 같은 게시물만 필터링 -->
-    {% assign category_posts = site.posts | where: "categories",
+    {% assign site_posts = site.posts | where: "language", page.language %}
+    {% assign category_posts = site_posts | where: "categories",
     page.categories[0] | where: "topic", page.topic | sort: "date" | reverse %}
 
     <!-- 현재 포스트의 인덱스를 찾음 -->
-    {% assign current_index = 0 %} {% for post in category_posts %} {% if
-    post.url == page.url %} {% assign current_index = forloop.index0 %} {% endif
-    %} {% endfor %}
+    {% assign current_index = 0 %} 
+    {% for post in category_posts %} 
+      {% if post.url == page.url %} 
+        {% assign current_index = forloop.index0 %} 
+      {% endif %} 
+    {% endfor %}
 
     <!-- slice의 시작 인덱스를 계산 -->
     {% assign start_index = current_index | minus: 2 %} {% if start_index < 0 %}
@@ -60,14 +65,16 @@
     const params = new URLSearchParams(window.location.search);
     const from = params.get("from");
 
-    
+    const isEnglish = window.location.pathname.includes("/en");
+
     if (from === "categories") {
       const list = document.getElementById("list-btn");
-      list.href = "/categories";
+
+      list.href = isEnglish ? "/en/categories" : "/categories";
 
       const others = document.querySelectorAll("#other_post");
       others.forEach((other) => {
-        other.href = other.href+"?from=categories";
+        other.href = other.href + "?from=categories";
       });
     }
   });

@@ -1,7 +1,8 @@
 ---
 title: "OS"
 layout: default
-permalink: "/os.html"
+permalink: "/posts/os.html"
+language: ko
 ---
 
 <div class="container">
@@ -35,7 +36,8 @@ permalink: "/os.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where: "topic", "os" %}
+      {% assign post_list = site.posts | where: "language", page.language %}
+      {% assign posts = post_list | where: "topic", "os" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}

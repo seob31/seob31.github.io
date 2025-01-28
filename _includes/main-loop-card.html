@@ -20,7 +20,7 @@
         <!-- text-muted -->
         <a
           class="text-capitalize smoothscroll font-weight-bold" 
-          href="{{site.baseurl}}/categories.html#{{ category | downcase }}"
+          href="{{site.baseurl}}{% if page.language == 'en' %}/en{% endif %}/categories.html#{{ category | downcase }}"
           >{{ category }}</a
         ><span class="sep">, </span>
         {% endfor %}

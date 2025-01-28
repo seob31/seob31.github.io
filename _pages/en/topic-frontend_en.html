@@ -1,8 +1,8 @@
 ---
-title: "Back-end"
+title: "Front-end"
 layout: default
-permalink: "/posts/backend.html"
-language: ko
+permalink: "/en/posts/frontend.html"
+language: en
 ---
 
 <div class="container">
@@ -10,7 +10,7 @@ language: ko
     <div class="col-md-12">
       <div class="row align-items-center mb-5">
         <div class="col-md-9 half-w-70">
-          <a class="text-title-green c-pointer topic_title" href="/posts">
+          <a class="text-title-green c-pointer topic_title" href="/en/posts">
             <h2 class="font-weight-bold">
               <img
                 src="{{site.baseurl}}/assets/images/icon/back.png"
@@ -25,8 +25,8 @@ language: ko
         </div>
         <div class="col-md-3 text-right half-w-30">
           <img
-            alt="{{ site.topics.backend.name }}"
-            src="{{site.baseurl}}/{{ site.topics.backend.img }}"
+            alt="{{ site.topics.frontend.name }}"
+            src="{{site.baseurl}}/{{ site.topics.frontend.img }}"
             class="rounded-0"
             height="70"
             width="70"
@@ -37,7 +37,7 @@ language: ko
         <span>{{page.title}}</span>
       </h4>
       {% assign post_list = site.posts | where: "language", page.language %}
-      {% assign posts = post_list | where: "topic", "backend" %}
+      {% assign posts = post_list | where: "topic", "frontend" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}

@@ -3,18 +3,49 @@
 <!-- <li class="nav-item">
 <a class="nav-link" href="{{site.baseurl}}/index">Home</a>
 </li> -->
-<li class="nav-item">
-  <a class="nav-link" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/about">About Me</a>
+<li id="about" class="nav-item">
+  <a class="nav-link " href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/about">About Me</a>
 </li>
-<li class="nav-item">
+<li id="post" class="nav-item">
   <a class="nav-link" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/posts">Posts</a>
 </li>
-<li class="nav-item">
+<li id="category" class="nav-item">
   <a class="nav-link" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/categories">Categories</a>
 </li>
-<li class="nav-item">
+<li id="story" class="nav-item">
   <a class="nav-link" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/stories">My Stories</a>
 </li>
 <!-- <li class="nav-item">
 <a class="nav-link" href="{{site.baseurl}}/contact">Contact</a>
 </li> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get("from");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+
+      if (currentPath.includes("about") && linkPath.includes("about")) {
+        link.classList.add("nav-link-this");
+      } 
+      
+      else if ((currentPath.includes("categories") && linkPath.includes("categories")) || 
+                (linkPath.includes("categories") && from == "categories")) {
+        link.classList.add("nav-link-this");
+      } 
+      
+      else if ((currentPath.includes("stories") && linkPath.includes("stories")) || 
+               (currentPath.includes("tags") && linkPath.includes("stories"))) {
+        link.classList.add("nav-link-this");
+      } 
+      
+      else if (currentPath.includes("posts") && linkPath.includes("posts") && from !== "categories") {
+        link.classList.add("nav-link-this");
+      }
+    });
+  });
+</script>

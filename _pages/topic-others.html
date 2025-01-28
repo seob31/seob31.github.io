@@ -1,7 +1,8 @@
 ---
 title: "Others"
 layout: default
-permalink: "/others.html"
+permalink: "/posts/others.html"
+language: ko
 ---
 
 <div class="container">
@@ -35,7 +36,8 @@ permalink: "/others.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where: "topic", "others" %}
+      {% assign post_list = site.posts | where: "language", page.language %}
+      {% assign posts = post_list | where: "topic", "others" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}

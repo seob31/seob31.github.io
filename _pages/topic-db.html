@@ -1,7 +1,8 @@
 ---
 title: "DataBase"
 layout: default
-permalink: "/db.html"
+permalink: "/posts/db.html"
+language: ko
 ---
 
 <div class="container">
@@ -35,7 +36,8 @@ permalink: "/db.html"
       <h4 class="font-weight-bold spanborder">
         <span>{{page.title}}</span>
       </h4>
-      {% assign posts = site.posts | where: "topic", "db" %}
+      {% assign post_list = site.posts | where: "language", page.language %}
+      {% assign posts = post_list | where: "topic", "db" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}
