@@ -16,7 +16,7 @@ permalink: "/en/"
 <div class="row remove-site-content-margin">
     
     <!-- latest post -->
-    {% assign posts = site.stories | where : "language", page.language %}
+    {% assign posts = site.stories | where : "language", page.language | sort: "date" | reverse %}
     {% assign latest_post = posts[0] %}
     <div class="col-md-6">
     <div class="card border-0 mb-4 box-shadow">   
@@ -121,7 +121,7 @@ permalink: "/en/"
                 </p>
                 <a href="{{site.baseurl}}{{story.url}}" class="btn btn-dark">Read More</a>
             </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ story.image }});">	
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-position:center;background-size:cover;background-image:url({{site.baseurl}}/{{ story.image }});">	
             </div>
         </div>
     </div>

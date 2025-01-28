@@ -1,11 +1,11 @@
 ---
 layout: story
-title: "I’ve launched my first blog!"
+title: "[블로그 업데이트] 다국어 지원 영어/한국어 적용"
 topic: story
-image: assets/images/story/250117/firstBlog.jpg
+image: assets/images/story/250128/world.png
 tags: [blog]
-sticky: false
-language: en
+sticky: true
+language: ko
 ---
 
 Hi. It's My first post of my first blog.<br>

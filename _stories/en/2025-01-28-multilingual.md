@@ -1,10 +1,10 @@
 ---
 layout: story
-title: "I’ve launched my first blog!"
+title: "[Blog Update] Multilingual Support (English/Korean) Applied"
 topic: story
-image: assets/images/story/250117/firstBlog.jpg
+image: assets/images/story/250128/world.png
 tags: [blog]
-sticky: false
+sticky: true
 language: en
 ---
 
