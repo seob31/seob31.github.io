@@ -9,7 +9,6 @@ language: en
 ---
 
 I would like to share about centralized management of Spring configuration files.  
-
 While working on projects with many config files, I started wondering: "Is there a way to manage Spring config files more efficiently?"
 This curiosity led me to explore better solutions.
 

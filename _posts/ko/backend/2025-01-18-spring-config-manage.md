@@ -8,8 +8,7 @@ tags: [featured]
 language: ko
 ---
 
-Spring 설정파일 통합 관리에 대해 공유하려 합니다.
-
+Spring 설정파일 통합 관리에 대해 공유하려 합니다.   
 config 파일이 많은 프로젝트에 참여하다 보니 spring config 파일을 효율적으로 관리할 수 있을까?
 라는 의문점에서 시작하게 되었습니다.
 

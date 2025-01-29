@@ -1,7 +1,7 @@
 <!-- main-loop-card -->
 <div class="mb-5 d-flex justify-content-between"> 
-  <div class="pr-3">
-    <h2 class="mb-1 h4 font-weight-bold">
+  <div class="pr-3 col-md-7">
+    <h2 class="mb-1 h5 font-weight-bold">
       {% if page.url contains 'categories' %}
         <a class="text-dark" href="{{site.baseurl}}{{post.url}}?from=categories">
       {% else %}
@@ -11,7 +11,12 @@
       </a>
     </h2>
     <p class="excerpt">
-      {{ post.excerpt | strip_html | strip_newlines | truncate: 186}}
+      
+      {% if page.language == 'en' %}
+        {{ post.excerpt | strip_html | strip_newlines | truncate: 117}}
+      {% else if page.language == 'ko' %}
+        {{ post.excerpt | strip_html | strip_newlines | truncate: 80}}
+      {% endif %}
     </p>
     <small class="d-block text-muted">
       In
@@ -29,7 +34,7 @@
     <small class="text-muted"> {{ post.date | date: '%b %d, %Y' }} </small>
   </div>
   {% if post.image %}
-  <div class="col-md-3 pr-0 text-right">
+  <div class="col-md-5 pr-0 text-right">
     <!-- href="{{site.baseurl}}{{post.url}}" -->
     <a>
       <img class="w-100" src="{% if post.image contains "://" %}{{ post.image

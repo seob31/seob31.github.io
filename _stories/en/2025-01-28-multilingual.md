@@ -8,7 +8,7 @@ sticky: true
 language: en
 ---
 
-Hi, Everyone. Finally, I've applied multilingual support to my blog.
+Hi, Everyone. Finally, I've applied multilingual support to my blog.  
 **I initially tried using the tab function in markup to post in both English and Korean, but I found out that Kramdown doesn’t support tabs...**
 
 I searched on the internet for how to apply multilingual support to a blog. While looking into multilingual support, I found lots of articles suggesting multilingual plugins.
