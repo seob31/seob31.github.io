@@ -1,6 +1,6 @@
 ---
 layout: story
-title: "[블로그 업데이트] 다국어 지원 영어/한국어 적용"
+title: "다국어 지원 영어/한국어 적용"
 topic: story
 image: assets/images/story/250128/world.png
 tags: [blog]
@@ -8,12 +8,16 @@ sticky: true
 language: ko
 ---
 
-Hi. It's My first post of my first blog.<br>
-After deciding to start a blog, I found myself wandering through countless themes. But when I came across the Mundana theme, I immediately scrapped the project I was working on and started fresh. Balancing work and family responsibilities, I dedicated myself to it and managed to complete the blog in just 2 weeks!
+안녕하세요. 블로그에 드디어 다국어 적용을 하였습니다.  
+**영어와 한국어를 포스트하기 위해 markup으로 tab을 이용해서 영어 한국어로 작성하려 했지만, kramdown은 tab 기능이 없더라고요;;;; ㅜㅜ** 
+그래서 결국 만들기로 했는데 다국어 적용하려고 하다 보니 플러그인 받아서 하는 글들이 많이 보이더라고요. 
+전 간단히 적용하고 싶은데, 플러그인은 뭔가 해야할 것들이 많은 것 같아, 플러그인 하지 않는 방법을 찾다 보니 
+플러그인 없이 적용한 사례들이 보여 비슷하게 적용하다가, 현재 테마 구조에 맞지 않은 것 같아, 직접 적용하기로 하였습니다.
 
-##### A big thank you to the creators of the Mundana template!
-Although the blog is still a work in progress with much to be improved, I plan to continuously share new discoveries, technologies, and solutions. Stay tuned!
+처음 해보는 gitpage에 선택한 테마의 디자인은 깔끔하고 좋은데, 원하는 기능들이 많이 없어서 직접 만들고 커스텀 하다보니 다국어 적용에도 많은 고민이 필요했습니다.
+또한 플러그인 없이 적용하려니, 막막했지만 한국어와 영어 페이지를 나눠줄 레이아웃을 지정해서 만들면 되겠다는 좋은 방법이 떠올랐고,
+결국 한국어와 영어의 다국어 지원이 가능하게 되었습니다.
 
+**혹시나 궁금하신 분들을 위해 Posts의 Others에 적용한 방법을 공유하도록 하겠습니다.**
 
-
-
+감사합니다~

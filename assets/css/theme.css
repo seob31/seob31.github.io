@@ -300,7 +300,8 @@ h2:hover {
   box-shadow: none;
 }
 .nav-link-this{
-  text-decoration: overline;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 

@@ -1,6 +1,6 @@
 ---
 layout: story
-title: "[Blog Update] Multilingual Support (English/Korean) Applied"
+title: "Multilingual Support (English/Korean) Applied"
 topic: story
 image: assets/images/story/250128/world.png
 tags: [blog]
@@ -8,12 +8,18 @@ sticky: true
 language: en
 ---
 
-Hi. It's My first post of my first blog.<br>
-After deciding to start a blog, I found myself wandering through countless themes. But when I came across the Mundana theme, I immediately scrapped the project I was working on and started fresh. Balancing work and family responsibilities, I dedicated myself to it and managed to complete the blog in just 2 weeks!
+Hi, Everyone. Finally, I've applied multilingual support to my blog.
+**I initially tried using the tab function in markup to post in both English and Korean, but I found out that Kramdown doesn’t support tabs...**
 
-##### A big thank you to the creators of the Mundana template!
-Although the blog is still a work in progress with much to be improved, I plan to continuously share new discoveries, technologies, and solutions. Stay tuned!
+I searched on the internet for how to apply multilingual support to a blog. While looking into multilingual support, I found lots of articles suggesting multilingual plugins.
+I want to apply multilingual support simply, but using a plugin for it seems to require a lot of work.
+After finding some examples of implementing multilingual support without plugins, I tried to applying a similar method, 
+But it didn’t seem to fit the current theme structure, so I decided to apply it myself.
 
+Not enough skills for it because it's my first experience using GitHub Pages, The design of the theme I selected is clean and nice, But it lacked many of the features I wanted, so I had to create and customize them myself. that's why I had to think a lot about How to apply to multilingual support to my blog.
+I eventually found a good solution without using a plugin. It was dividing the layout into separate sections for Korean and English.
+Finally, I made it.
 
+Just in case anyone is curious, I'm gonna share the method on how to apply multilingual support to the 'Others' section in Posts.
 
-
+Thank you for reading.

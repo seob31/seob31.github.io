@@ -8,41 +8,40 @@ tags: [featured]
 language: en
 ---
 
-Spring 설정파일 통합 관리에 대해 공유하려 합니다.
+I would like to share about centralized management of Spring configuration files.  
 
-config 파일이 많은 프로젝트에 참여하다 보니 spring config 파일을 효율적으로 관리할 수 있을까?
-라는 의문점에서 시작하게 되었습니다.
+While working on projects with many config files, I started wondering: "Is there a way to manage Spring config files more efficiently?"
+This curiosity led me to explore better solutions.
 
-프로젝트를 진행하다보면 의도치 않게 필요에 의해 application.yaml, bootstrap.yaml, xxxx_config.yaml 등
-config 파일이 늘어나는 경우가 있습니다. 그러다 보면 설정값이 변경되었을 경우, 하나, 하나 config 파일을
-눌러 변경을 해야 하는 귀찮음과 시간을 할애해야 하는 상황이 생깁니다. **그 부분을 한 파일에서 관리할 수 있으면 좋겠다.**
-라는 생각이 들었습니다.
+As a project progresses, config files like application.yaml, bootstrap.yaml, and xxxx_config.yaml tend to increase unexpectedly as needed.
+When configuration values change, you have to open and edit each file one by one, which can be time-consuming and inconvenient.
+**I thought, "Wouldn't it be great if we could manage all of this in a single file?"**
 
-그래서 구글링해본 결과 제가 원하는 방식의 게시물이 보이지 않았고, 직접 찾기로 했습니다.
-먼저, Spring 프로젝트가 실행되면 미들웨어 서버가 어떻한 방식으로 돌아가는지에 대한 것 이었습니다.
-**설정 파일에는 우선 순위**가 있다는 것이 키워드였습니다.
+So, I searched on Google, but I couldn’t find any posts that matched what I wanted.
+I decided to figure it out myself. First, I looked into how the middleware server works when a Spring project runs.
+The key point was that **configuration files have a priority order.**
 
-applicaton.yaml 과 bootstrap.yaml이 있다면 bootstrap.yaml 먼저 로드되기에 특정 설정파일을 spring.import.config를 해준다 하더라도
-bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었습니다.
-그럼 이보다 먼저 로드가 되어야 하는데 vm option의 -Dspring.import.config를 해보면 어떻까라는
-생각이 들었고, 테스트를 해본 결과 우선순위가 높았던 bootstrap.yaml, applicaton.yaml 보다 먼저
-로드된다는 것을 알게되어 해결하게 되었습니다.
-**즉 결론은 우선순위가 높아도 vm options에 직접 -Dspring.import.config 준다면 더 높은 우선순위를 가진다는 것입니다.**
+If there are both application.yaml and bootstrap.yaml, bootstrap.yaml is loaded first.
+So, even if I use spring.import.config to import a specific config file, I realized that I cannot fully control the settings in bootstrap.yaml and application.yaml.
+To solve this, I thought, "What if I load the config file even earlier using the VM option -Dspring.import.config?"
+After testing, I found that the file loaded through -Dspring.import.config has a higher priority than both bootstrap.yaml and application.yaml.
+Conclusion:
+**Even if a config file has a high priority, using -Dspring.import.config in VM options gives it an even higher priority.**
 
 
-설정 방법은 아래와 같습니다.  
+The setup method is as follows.
 <br>
 
-### 1. 프로젝트 구성
+### 1. Project Structure
 
 ---
-> 간단하게 프로젝트를 아래 그림과 같이 구성했습니다.
+> I have simply structured the project as shown in the image below.
 
 > ![createProject](/assets/images/blog/backend/250118/createProject.png)
 
 <br>
 
-### 2. config 파일의 설정
+### 2. Configuration file settings
 
 ---
 
@@ -67,11 +66,11 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 
 <br>
 
-### 3. MyProjectApplication 코드
+### 3. MyProjectApplication Code
 
 ---
 
-><small>이미 아시겟지만 @Value 어노테이션을 사용해도 됩니다.</small>
+><small>As you may already know, you can also use the @Value annotation.</small>
 
 >```java
 >package com.example.myProject;
@@ -100,7 +99,7 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 
 <br>
 
-### 4. Vm options의 설정
+### 4. VM options settings
 
 ---
 
@@ -110,11 +109,12 @@ bootstrap.yaml 및 applicaton.yaml의 설정을 관리할 없다가 결론이었
 
 <br>
 
-### 5. 실행 결과
+### 5. Result
 
 ---
 
 >![result](/assets/images/blog/backend/250118/result.png)  
 
-config server를 이용하고 계시다면 위와 같이 적절하게 사용하시면 될 것 같습니다.  
-이상으로 이번 포스팅을 마치겠습니다.
+If you are using a Config Server, you can use it appropriately as shown above.
+
+That’s the end of this post. 
