@@ -20,4 +20,7 @@ language: ko
 
 **혹시나 궁금하신 분들을 위해 Posts의 Others에 적용한 방법을 공유하도록 하겠습니다.**
 
+
+___<a href="/posts/Jekyll-Multilingual-support"> 다국어 포스팅 바로가기 </a>___
+
 감사합니다~
