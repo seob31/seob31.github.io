@@ -3,7 +3,7 @@ name: "GILog"
 description: "Back-end Developer"
 favicon: "assets/images/logo/favicon2.ico"
 baseurl: ""
-email: "seob31@gmail.com"
+email: ""
 photo: assets/images/me/me.jpg
 utterances:
   repo: "seob31/blog-reply"
