@@ -22,4 +22,6 @@ Finally, I made it.
 
 Just in case anyone is curious, I'm gonna share the method on how to apply multilingual support to the 'Others' section in Posts.
 
+___<a href="/en/posts/Jekyll-Multilingual-support"> Go to How to apply Multilingual support </a>___
+
 Thank you for reading.
