@@ -37,7 +37,7 @@ language: en
         <span>{{page.title}}</span>
       </h4>
       {% assign post_list = site.posts | where: "language", page.language %}
-      {% assign posts = spost_list | where: "topic", "architecture" %}
+      {% assign posts = post_list | where: "topic", "architecture" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% include main-loop-card.html %}

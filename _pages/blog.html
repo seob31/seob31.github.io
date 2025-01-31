@@ -24,7 +24,9 @@ language: ko
               <!-- rounded-circle -->
             </div>
             <div class="m-auto">
-              <h4 class="text-dark mb-0">{{ topic[1].name }}</h4>
+              {% assign post_list = site.posts | where: "language", page.language %}
+              {% assign posts = post_list | where: "topic", topic[1].url %}
+              <h4 class="text-dark mb-0">{{ topic[1].name }}({{posts.size}})</h4>
               <!-- <small class="d-inline-block mt-1 mb-3 font-weight-normal">(View Posts)</small> -->
               <!-- <div class="excerpt">{{ "1"}}</div> -->
             </div>

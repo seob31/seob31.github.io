@@ -9,7 +9,6 @@ utterances:
   repo: "seob31/blog-reply"
   issue-term: "pathname"
   theme: "github-light"
-# logo: 'assets/images/logo/gilog.png'
 
 # Plugins
 plugins:
