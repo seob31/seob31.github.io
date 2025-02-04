@@ -1,6 +1,6 @@
 <!-- main-loop-card -->
 <div class="mb-5 d-flex justify-content-between"> 
-  <div class="pr-3 col-md-7">
+  <div class="pr-3 {% if post.image %} col-md-7 {% else %} col-md-12 {% endif %}">
     <h2 class="mb-1 h5 font-weight-bold">
       {% if page.url contains 'categories' %}
         <a class="text-dark" href="{{site.baseurl}}{{post.url}}?from=categories">
