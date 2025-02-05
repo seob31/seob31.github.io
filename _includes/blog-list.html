@@ -3,10 +3,10 @@
     <table class="w-100">
       <tr>
         <th class="half-w-70">
-          <h5 class="blog-list-title">Other posts in the category</h5>
+          {% assign topic = site.topics[page.topic] %}
+          <h5 class="blog-list-title">Other posts in {{topic.name}}</h5>
         </th>
         <th class="text-right">
-          {% assign topic = site.topics[page.topic] %}
           <a id="list-btn" class="list-btn" href="{% if page.language == 'en' %}/en{% endif %}/posts/{{ topic.url }}">List</a>
         </th>
       </tr>
@@ -17,8 +17,7 @@
   <ul class="blog-list">
     <!-- 카테고리와 topic이 같은 게시물만 필터링 -->
     {% assign site_posts = site.posts | where: "language", page.language %}
-    {% assign category_posts = site_posts | where: "categories",
-    page.categories[0] | where: "topic", page.topic | sort: "date" | reverse %}
+    {% assign category_posts = site_posts | where: "topic", page.topic | sort: "date" | reverse %}
 
     <!-- 현재 포스트의 인덱스를 찾음 -->
     {% assign current_index = 0 %} 
