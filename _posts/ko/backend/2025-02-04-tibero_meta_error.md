@@ -45,7 +45,7 @@ current_schema를 검색하게 되는데요. Tibero의 경우, AbstractMethodErr
 ### 2. 변경된 코드
 ---   
 
->아래와 같이 해결한 이유는 다양한 jdbc를 사용하는 상황에서 connection.getSchema가 아닌 connection.getMetaData를 가져와
+>아래와 같이 해결한 이유는 다양한 jdbc를 사용하는 상황에서 connection.getSchema을 지원하지 않는 jdbc를 대응하기 위해서 connection.getMetaData를 가져와
 metaData의 getTables로 현재 current_schema에서 찾으려는 tableName을 검색 조건으로 주면 테이블에 대한 정보가 나옵니다.
 그 정보에서 현재 검색하려는 테이블의 current_schema의 정보를 가져오는 방법으로 진행하였습니다.   
 
