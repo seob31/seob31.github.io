@@ -15,6 +15,9 @@
 <li id="story" class="nav-item">
   <a class="nav-link" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/stories">My Stories</a>
 </li>
+<li id="myZone" class="nav-item">
+  <a class="nav-link" href="{{ site.baseurl }}/myZone">My Zone</a>
+</li>
 <!-- <li class="nav-item">
 <a class="nav-link" href="{{site.baseurl}}/contact">Contact</a>
 </li> -->
@@ -44,6 +47,10 @@
       } 
       
       else if (currentPath.includes("posts") && linkPath.includes("posts") && from !== "categories") {
+        link.classList.add("nav-link-this");
+      }
+
+      else if (currentPath.includes("myZone") && linkPath.includes("myZone")) {
         link.classList.add("nav-link-this");
       }
     });

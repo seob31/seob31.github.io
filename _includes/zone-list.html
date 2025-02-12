@@ -1,0 +1,113 @@
+<div class="blog-list-container">
+  <div class="align-items-center m-0">
+    <table class="w-100">
+      <tr>
+        <th class="half-w-70">
+          {% assign topic = site.topics[page.topic] %}
+          <h5 class="blog-list-title">Other posts</h5>
+        </th>
+        <th class="text-right">
+          <a id="list-btn" class="list-btn" href="/myZone/{{ topic.url }}">List</a>
+        </th>
+      </tr>
+    </table>
+  </div>
+
+  <hr />
+  <ul class="blog-list">
+    {% assign myZone = site.myZone | sort: "date" | reverse %}
+
+    <!-- 현재 포스트의 인덱스를 찾음 -->
+    {% assign current_index = 0 %} 
+    {% for post in myZone %} 
+      {% if post.url == page.url %} 
+        {% assign current_index = forloop.index0 %} 
+      {% endif %} 
+    {% endfor %}
+
+    <!-- slice의 시작 인덱스를 계산 -->
+    {% assign start_index = current_index | minus: 2 %} {% if start_index < 0 %}
+    {% assign start_index = 0 %} {% endif %}
+
+    <!-- 현재 포스트를 중심으로 slice -->
+    {% assign surrounding_posts = myZone | slice: start_index, 5 %}
+
+    <!-- 게시물 출력 -->
+    {% for post in surrounding_posts %}
+    <li>
+      <h6 class="blog-item-title">
+        {% if post.url == page.url %}
+        <a id="other_post"
+          style="text-decoration: underline"
+          class="this overflow-wrap"
+          href="{{ post.url | prepend: site.baseurl }}"
+          >{{ post.title }}</a
+        >
+        <span style="text-decoration: underline" class="blog-item-date this"
+          >{{ post.date | date: "%Y-%m-%d" }}</span
+        >
+        {% else %}
+        <a id="other_post" class="overflow-wrap" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% endif %}
+      </h6>
+    </li>
+    {% endfor %}
+  </ul>
+  <hr />
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get("from");
+
+    const isEnglish = window.location.pathname.includes("/en");
+
+    if (from === "categories") {
+      const list = document.getElementById("list-btn");
+
+      list.href = isEnglish ? "/en/categories" : "/categories";
+
+      const others = document.querySelectorAll("#other_post");
+      others.forEach((other) => {
+        other.href = other.href + "?from=categories";
+      });
+    }
+  });
+</script>
+
+<!-- 모든 게시물을 내림차순으로 정렬 -->
+<!-- <div class="blog-list-container">
+  <h5 class="blog-list-title">Other posts in the category</h5>
+  <hr />
+  <ul class="blog-list">
+    {% assign category_posts = site.posts | where: "categories",
+    page.categories[0] | sort: "date" | reverse %} {% assign current_index = 0
+    %} {% for post in category_posts %} {% if post.url == page.url %} {% assign
+    current_index = forloop.index0 %} {% endif %} {% endfor %} {% assign
+    start_index = current_index | minus: 2 %} {% if start_index < 0 %} {% assign
+    start_index = 0 %} {% endif %} {% assign surrounding_posts = category_posts
+    | slice: start_index, 5 %} {% for post in surrounding_posts %}
+    <li>
+      <h6 class="blog-item-title">
+        {% if post.url == page.url %}
+        <a
+          style="text-decoration: underline"
+          class="this"
+          href="{{ post.url | prepend: site.baseurl }}"
+          >{{ post.title }}</a
+        >
+        <span style="text-decoration: underline" class="blog-item-date this"
+          >{{ post.date | date: "%Y-%m-%d" }}</span
+        >
+        {% else %}
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% endif %}
+      </h6>
+    </li>
+    {% endfor %}
+  </ul>
+  <hr />
+</div> -->

@@ -99,12 +99,22 @@ defaults:
       permalink: 'en/stories/:title'
       language: en
 
+    # My Zone
+  - scope:
+      path: "_myZone"
+      type: myZone
+    values:
+      layout: myZonePost
+      permalink: 'myZone/:title'
+
 
 #collections
 collections:
   stories:
     output: true
   posts:
+    output: true
+  myZone:
     output: true
 
 # Syntax

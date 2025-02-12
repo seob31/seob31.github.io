@@ -1,0 +1,27 @@
+---
+title: "My Zone"
+layout: default
+permalink: "/myZone.html"
+---
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Stories</h1> -->
+      
+      
+      <h4 class="font-weight-bold spanborder text-capitalize">
+        <span>My Zone</span>
+      </h4>
+      {% assign myZone = site.myZone| sort: "date" | reverse %}
+      {% if myZone.size > 0 %}
+        {% for zone in myZone %} 
+          {% include zone-loop-card.html %} 
+        {% endfor %}
+      {% else %}
+        <div class="no-posts">
+          <h2 class="text-muted">No posts</h2>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

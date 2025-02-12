@@ -264,6 +264,9 @@ h2:hover {
 }
 
 /* multiligual button */
+.hidden{
+  display: none !important;
+}
 .sub-header-wrap{
   display: flex; 
   width: 50%;
@@ -304,6 +307,13 @@ h2:hover {
   text-decoration: underline;
 }
 
+.articleTable td, .articleTable th{
+  width: auto !important;
+  height: 35px !important;
+  border: #000 solid 1px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
 
 @media (max-width: 768px) {
   .about-side {
