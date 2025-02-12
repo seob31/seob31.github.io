@@ -1,33 +1,32 @@
 ---
 layout: post
-title: "Tibero의 Connection에서 getSchema 에러 - AbstractMethodError"
+title: "getSchema Error in Tibero connection - AbstractMethodError"
 topic: backend
 categories: [tibero]
 # image: assets/images/blog/backend/
 tags: [featured]
-language: ko
+language: en
 ---
 
-안녕하세요. 오늘은 2월의 오전 -10도로 엄청 추운 날이네요. 
-오늘은 DB 메타 정보를 가지고 작업을 해야 하는 도중에 나왔던 사항을 공유하려 합니다.   
+Hi, It's very cold with temperatures at -10 in this February moring.
+Today, I'd like to share some issues that came up while working with DB metadata.   
 
-현재 진행하는 프로젝트는 하나의 DB만 사용하는 것이 아닌 DBMS를 다양하게 사용해야 하는 상황에
-Tibero DB가 추가되어 문제가 생긴 이슈 입니다. Tibero jdbc 5와 6버전에서 에서 일어나는 상황 같습니다.
-자세한 설명은 아래에서 보시겠습니다.
+In the current project, we are required to use various DBMSs rather than one DBMS. The additional of Tibero Database hs caused issues.
+I think this issue only happens Tibero JDBC version 5 or 6.
+For detailed explanations, please see below.
 
 
 <br>
 
-### 1. 에러 내용   
+### 1. Error  
 
 ---   
-
-Tibero의 jdbc에서 getSchema 를 지원하지 않는 것으로 판단이 됩니다. 그래서 아래와 같이 connection.getSchema를 했을 경우
-current_schema를 검색하게 되는데요. Tibero의 경우, AbstractMethodError의 에러가 발생하게 됩니다.   
+It appears that Tibero JDBC does not support getSchema. So when Calling connection.getSchema as shown below,
+It retrieves current_schema. But in the case of Tibero, an AbstractMethodError의 occurs.   
 
 
 >```java
-> // 문제가 됬던 코드
+> // The code that caused the issue.
 >try (Connection connection = DriverManager.getConnection("url", "username", "password")) {
 >        String schema = connection.getSchema();
 >} catch (SQLException e) {
@@ -42,14 +41,14 @@ current_schema를 검색하게 되는데요. Tibero의 경우, AbstractMethodErr
 
 <br>
 
-### 2. 변경된 코드
+### 2. The changed code.
 ---   
 
 >아래와 같이 해결한 이유는 다양한 jdbc를 사용하는 상황에서 connection.getSchema가 아닌 connection.getMetaData를 가져와
 metaData의 getTables로 현재 current_schema에서 찾으려는 tableName을 검색 조건으로 주면 테이블에 대한 정보가 나옵니다.
 그 정보에서 현재 검색하려는 테이블의 current_schema의 정보를 가져오는 방법으로 진행하였습니다.   
 
-> metaData.getTables(null, null, tableName, new String[]{"TABLE"}) - (Tibero) 을 했을 경우 동작하는 쿼리입니다.   
+> metaData.getTables(null, null, tableName, new String[]{"TABLE"}) - (Tibero) This is the query that operates when executed.   
 >![debug](/assets/images/blog/backend/250204/debug.png)     
 >
 >```java
@@ -68,7 +67,8 @@ metaData의 getTables로 현재 current_schema에서 찾으려는 tableName을 �
 >}
 >
 >```   
-* 해당 코드는 orcle, tibero, postgresql 정도만 테스트했습니다. 테스트한 DBMS외에도 동작할 것으로 예상하고 있습니다.   
+* The code was tested with Oracle, Tibero, and Postgresql only. I expect it to work with other DBMSs.   
+
    
 <br>
 
@@ -76,5 +76,4 @@ metaData의 getTables로 현재 current_schema에서 찾으려는 tableName을 �
 찾고자 하는 스키마의 테이블을 while(metaData.getSchemas().next())를 활용하여 username에 연결되어 있는 스키마의
 테이블을 검색하실 수 있습니다.   
 
-
-이상으로 Java에서 metaData를 이용한 테이블 정보 및 스키마 정보를 호출하는 내용의 포스팅을 마치겠습니다.  
+Thank you for reading this post on how to retrieve Table Information and Schema Information from metaData.   
