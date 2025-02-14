@@ -9,7 +9,7 @@ sticky: false
 
 <br>
 
-#### 영어공부하기 좋은 웹 싸이트
+#### 영어공부하기 좋은 웹 싸이트( ctrl + click )
 --- 
 1. [https://cafe.naver.com/ieltsdoksa](https://cafe.naver.com/ieltsdoksa)  아독사 카페 
 2. [https://ieltstrainingonline.com/](https://ieltstrainingonline.com/)   ieltstrainingonline   
