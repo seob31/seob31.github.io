@@ -1,7 +1,7 @@
 # Site
 name: "GILog"
 description: "Back-end Developer"
-favicon: "assets/images/logo/favicon2.ico"
+favicon: "assets/images/logo/favicon.ico"
 baseurl: ""
 email: ""
 photo: assets/images/me/me.jpg
@@ -13,8 +13,8 @@ utterances:
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
+  # - jekyll-sitemap
   # - jekyll-paginate
 
 include: ["_pages"]
