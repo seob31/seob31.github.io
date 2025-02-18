@@ -14,7 +14,7 @@ utterances:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  # - jekyll-sitemap
+  - jekyll-sitemap
   # - jekyll-paginate
 
 include: ["_pages"]

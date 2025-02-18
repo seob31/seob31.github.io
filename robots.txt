@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seob31.github.io/sitemap.xml
