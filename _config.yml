@@ -126,6 +126,8 @@ kramdown:
   parse_block_html: true
 highlighter: rouge
 
+destination: _site
+
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude:
