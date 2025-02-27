@@ -1,6 +1,6 @@
 <!-- main-loop-card -->
 <div class="mb-5 d-flex justify-content-between"> 
-  <div class="pr-3 {% if post.image %} col-md-7 {% else %} col-md-12 {% endif %}">
+  <div class="pr-3 {% if post.image %} col-md-8 {% else %} col-md-12 {% endif %}">
     <h2 class="mb-1 h5 font-weight-bold">
       {% if page.url contains 'categories' %}
         <a class="text-dark" href="{{site.baseurl}}{{post.url}}?from=categories">
@@ -34,7 +34,7 @@
     <small class="text-muted"> {{ post.date | date: '%b %d, %Y' }} </small>
   </div>
   {% if post.image %}
-  <div class="col-md-5 pr-0 text-right">
+  <div class="col-md-3 pr-0 text-right">
     <!-- href="{{site.baseurl}}{{post.url}}" -->
     <a>
       <img class="w-100" src="{% if post.image contains "://" %}{{ post.image
