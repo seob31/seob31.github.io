@@ -16,7 +16,7 @@
   <hr />
   <ul class="blog-list">
     <!-- 카테고리와 topic이 같은 게시물만 필터링 -->
-    {% assign site_posts = site.posts | where: "language", page.language %}
+    {% assign site_posts = site.posts | where: "language", page.language | where: "show", true %}
     {% assign category_posts = site_posts | where: "topic", page.topic | sort: "date" | reverse %}
 
     <!-- 현재 포스트의 인덱스를 찾음 -->

@@ -40,7 +40,9 @@ language: ko
       {% assign posts = post_list | where: "topic", "others" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
-          {% include main-loop-card.html %}
+          {% if post.show == true %}
+            {% include main-loop-card.html %}
+          {% endif %}
         {% endfor %}
       {% else %}
       <div class="no-posts">

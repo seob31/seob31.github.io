@@ -17,7 +17,9 @@ language: en
       {% assign stories = site.stories | where : "language", page.language %}
       {% assign sorted_stories = stories | sort: "date" | reverse %}
       {% for story in sorted_stories %} 
-        {% include story-loop-card.html %} 
+        {% if story.show == true %}
+          {% include story-loop-card.html %} 
+        {% endif %}
       {% endfor %}
     </div>
   </div>

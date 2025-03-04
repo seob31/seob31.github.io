@@ -6,6 +6,7 @@ categories: [tibero]
 # image: assets/images/blog/backend/
 tags: [featured]
 language: ko
+show: true
 ---
 
 안녕하세요. 오늘은 2월의 오전 -10도로 엄청 추운 날이네요. 

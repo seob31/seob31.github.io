@@ -6,6 +6,7 @@ image: assets/images/story/250128/world.png
 tags: [blog]
 sticky: true
 language: ko
+show: true
 ---
 
 안녕하세요. 블로그에 드디어 다국어 적용을 하였습니다.  

@@ -6,6 +6,7 @@ categories: [Jekyll]
 image: assets/images/blog/others/250129/jekyll.png
 tags: [featured]
 language: ko
+show: true
 ---
 
 오늘은 Jekyll 다국어 지원 적용한 방법에 대해서 공유하려 합니다.   

@@ -6,6 +6,7 @@ image: assets/images/story/250117/firstBlog.jpg
 tags: [blog]
 sticky: false
 language: en
+show: true
 ---
 
 Hi. It's My first post of my first blog.<br>

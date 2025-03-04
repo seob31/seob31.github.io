@@ -34,7 +34,7 @@ language: ko
           {% assign tagged_stories = site.stories | where_exp: "story", "story.tags contains tag" %}
           {% assign stories = tagged_stories | where: "language", page.language %}
           {% for story in stories %}
-            {% if story.title %}
+            {% if story.title != null and story.show == true %}
               {% include story-loop-card.html story=story %}
             {% endif %}
           {% endfor %}

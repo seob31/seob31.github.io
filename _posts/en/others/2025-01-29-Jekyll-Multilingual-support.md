@@ -6,6 +6,7 @@ categories: [Jekyll]
 image: assets/images/blog/others/250129/jekyll.png
 tags: [featured]
 language: en
+show: true
 ---
 
 Hi, Today, I'd like to talk about how I applied Multilingual support to this blog with Jekyll.

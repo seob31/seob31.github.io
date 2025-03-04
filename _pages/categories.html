@@ -21,7 +21,7 @@ language: ko
       {% assign pages_list = category[1] %} 
         {% assign pages = pages_list | where: "language", page.language %}
         {% for post in pages %} 
-          {% if post.title != null %} 
+          {% if post.title != null and post.show == true %} 
             {% if group == null or group == post.group %} 
               {% include main-loop-card.html %} 
             {% endif %} 

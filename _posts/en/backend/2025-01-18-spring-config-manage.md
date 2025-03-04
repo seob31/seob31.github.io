@@ -6,6 +6,7 @@ categories: [spring]
 image: assets/images/blog/backend/250118/spring-config-manage.jpg
 tags: [featured]
 language: en
+show: true
 ---
 
 I would like to share about centralized management of Spring configuration files.  

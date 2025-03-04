@@ -6,6 +6,7 @@ image: assets/images/story/250117/firstBlog.jpg
 tags: [blog]
 sticky: false
 language: ko
+show: true
 ---
 
 안녕하세요. 저의 첫번째 블로그의 첫 글입니다.<br>

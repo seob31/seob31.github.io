@@ -15,7 +15,9 @@ permalink: "/myZone.html"
       {% assign myZone = site.myZone| sort: "date" | reverse %}
       {% if myZone.size > 0 %}
         {% for zone in myZone %} 
-          {% include zone-loop-card.html %} 
+          {% if zone.show == true %}
+            {% include zone-loop-card.html %} 
+          {% endif %}
         {% endfor %}
       {% else %}
         <div class="no-posts">

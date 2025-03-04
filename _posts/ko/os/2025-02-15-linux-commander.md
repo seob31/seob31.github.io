@@ -6,6 +6,7 @@ categories: [linux]
 image: assets\images\blog\os\linux.jpg
 tags: [featured]
 language: ko
+show: true
 ---
 
 안녕하세요. 오늘은 개발하면서 제가 자주 사용하는 명령어를 나열해볼까 합니다.   

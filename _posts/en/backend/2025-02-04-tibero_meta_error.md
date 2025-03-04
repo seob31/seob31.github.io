@@ -6,6 +6,7 @@ categories: [tibero]
 # image: assets/images/blog/backend/
 tags: [featured]
 language: en
+show: true
 ---
 
 Hi, It's very cold with temperatures at -10 in this February moring.

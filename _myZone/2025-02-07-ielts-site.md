@@ -3,6 +3,7 @@ layout: myZonePost
 title: "Good website for studying IELTS(IELTS 사이트 정리)"
 topic: myZone
 sticky: false
+show: true
 ---
 
 ### 모아둔 자료 정리

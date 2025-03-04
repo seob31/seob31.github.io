@@ -6,6 +6,7 @@ image: assets/images/story/250128/world.png
 tags: [blog]
 sticky: true
 language: en
+show: true
 ---
 
 Hi, Everyone. Finally, I've applied multilingual support to my blog.  

@@ -15,7 +15,7 @@
 
   <hr />
   <ul class="blog-list">
-    {% assign myZone = site.myZone | sort: "date" | reverse %}
+    {% assign myZone = site.myZone | where: "show", true | sort: "date" | reverse %}
 
     <!-- 현재 포스트의 인덱스를 찾음 -->
     {% assign current_index = 0 %} 
