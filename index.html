@@ -146,7 +146,9 @@ permalink: "/"
         <h4 class="font-weight-bold spanborder"><span>Latest Posts</span></h4>
         {% assign pagePost = site.posts | where : "language", page.language %}
         {% for post in pagePost limit:5 %}
-            {% include main-loop-card.html %}
+            {% if post.show == true %}
+                {% include main-loop-card.html %}
+            {% endif %}
         {% endfor %}
     </div>
     
