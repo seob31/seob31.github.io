@@ -34,10 +34,6 @@ topics:
     name: Front-end
     img: assets/images/topic/frontend.png
     url: frontend
-  architecture:
-    name: Architecture
-    img: assets/images/topic/architecture.png
-    url: architecture
   devops:
     name: DevOps
     img: assets/images/topic/devOps.png
