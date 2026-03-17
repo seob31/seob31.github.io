@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "바로쓰기 좋은 docker 명령어 모음"
-topic: cloud
+topic: devops
 categories: [docker]
-image: assets/images/blog/cloud/docker.png
+image: assets/images/blog/devops/docker.png
 tags: [featured]
 language: ko
 show: true
@@ -97,59 +97,3 @@ show: true
 |:------------------------------------------------------|:------------------------------------------------------|:------------------------------------------------------|
 | docker network list | 네트워크 목록 확인 | |
 | docker network create [이름] | 네트워크 생성 | 예) docker network create --gateway 192.10.0.1 --subnet 192.10.0.0/21 con_bridge |
-
-* 세부설정을 안하면 기본 브릿지 네트워크가 생성됩니다.  
-* 컨테이너 DB 접속 문제가 발생할 경우 네트워크 설정을 확인해야 합니다.
-
----
-
-# Docker Volume
-
-| 명령어 | 설명 | 비고 |
-|:------------------------------------------------------|:------------------------------------------------------|:------------------------------------------------------|
-| docker volume ls | 도커 볼륨 목록 | |
-| docker volume create [이름] | 도커 볼륨 생성 | |
-| docker volume rm [이름] | 도커 볼륨 삭제 | |
-
----
-
-# 파일 복사
-
-| 명령어 | 설명 | 비고 |
-|:------------------------------------------------------|:------------------------------------------------------|:------------------------------------------------------|
-| docker cp [호스트 경로] [컨테이너 이름]:[컨테이너 경로] | 호스트 ↔ 컨테이너 파일 복사 | 예) docker cp /home/test.txt hello-world:/home/ |
-
----
-
-<br>
-
-# 컨테이너 생성 및 실행 예시문
-
-```bash
-docker run --restart=always \
---log-driver=json-file \
--p 18080:8080 \
--v /home/project/:/home/container \
--e LANG=ko_KR.utf-8 -e LC_ALL=ko_KR.utf8 \
--d -i -t \
---privileged \
---name container1 [image 명]:[태그]
-```
-
-| 옵션 | 설명 |
-|:------------------------------------------------------|:------------------------------------------------------|
-| --restart=always | 비정상 종료 또는 Docker 데몬 재시작 시 자동으로 재시작 |
-| --log-driver=json-file | 로그를 JSON 파일 형식으로 저장 |
-| -p 18080:8080 | 로컬 18080 포트 → 컨테이너 8080 포트 연결 |
-| -v /home/project/:/home/container | 호스트 디렉토리를 컨테이너에 볼륨 마운트 |
-| -e LANG=ko_KR.utf-8 | 환경 변수 설정 (언어) |
-| -d | Detached 모드 – 백그라운드 실행 |
-| -i | 표준 입력 유지 (보통 -t와 함께 사용) |
-| -t | 터미널 할당 |
-| --privileged | 호스트의 거의 모든 권한 허용 |
-| --name container1 | 컨테이너 이름 지정 |
-| [이미지명]:[태그] | 실행할 이미지 예) ubuntu:20.04, nginx:latest |
-
-<br>
-
-이상 도커 명령어 정리였습니다.

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "바로쓰기 좋은 Linux 명령어 모음"
-topic: os
+topic: devops
 categories: [linux]
-image: assets\images\blog\os\linux.jpg
+image: assets\images\blog\devops\linux.jpg
 tags: [featured]
 language: ko
 show: true

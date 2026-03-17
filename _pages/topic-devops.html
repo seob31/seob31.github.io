@@ -37,7 +37,7 @@ language: ko
         <span>{{page.title}}</span>
       </h4>
       {% assign post_list = site.posts | where: "language", page.language %}
-      {% assign posts = post_list | where: "topic", "devOps" %}
+      {% assign posts = post_list | where: "topic", "devops" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% if post.show == true %}

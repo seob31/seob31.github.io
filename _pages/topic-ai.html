@@ -1,7 +1,7 @@
 ---
-title: "DataBase"
+title: "AI"
 layout: default
-permalink: "/posts/db.html"
+permalink: "/posts/ai.html"
 language: ko
 ---
 
@@ -25,8 +25,8 @@ language: ko
         </div>
         <div class="col-md-3 text-right half-w-30">
           <img
-            alt="{{ site.topics.db.name }}"
-            src="{{site.baseurl}}/{{ site.topics.db.img }}"
+            alt="{{ site.topics.ai.name }}"
+            src="{{site.baseurl}}/{{ site.topics.ai.img }}"
             class="rounded-0"
             height="70"
             width="70"
@@ -37,11 +37,11 @@ language: ko
         <span>{{page.title}}</span>
       </h4>
       {% assign post_list = site.posts | where: "language", page.language %}
-      {% assign posts = post_list | where: "topic", "db" %}
+      {% assign posts = post_list | where: "topic", "ai" %}
       {% if posts.size > 0 %}
         {% for post in posts %}
           {% if post.show == true %}
-           {% include main-loop-card.html %}
+            {% include main-loop-card.html %}
           {% endif %}
         {% endfor %}
       {% else %}

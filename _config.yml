@@ -34,22 +34,18 @@ topics:
     name: Front-end
     img: assets/images/topic/frontend.png
     url: frontend
-  cloud:
-    name: Cloud&Container
-    img: assets/images/topic/cloud.png
-    url: cloud
+  architecture:
+    name: Architecture
+    img: assets/images/topic/architecture.png
+    url: architecture
   devops:
     name: DevOps
     img: assets/images/topic/devOps.png
     url: devops
-  db:
-    name: DataBase
-    img: assets/images/topic/db.png
-    url: db
-  os:
-    name: OS
-    img: assets/images/topic/os.png
-    url: os
+  ai:
+    name: AI
+    img: assets/images/topic/ai.png
+    url: ai
   others:
     name: Others
     img: assets/images/topic/others.png
