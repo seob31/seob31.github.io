@@ -3,24 +3,24 @@
   <div class="pr-3 col-md-8">
     <h2 class="mb-1 h5 font-weight-bold">
       {% if page.url contains 'tags' %}
-        <a id="tagUrl" class="text-dark" href="{{ site.baseurl }}{{ story.url }}">
+        <a id="tagUrl" class="text-dark" href="{{ site.baseurl }}{{ project.url }}">
       {% else %}
-        <a class="text-dark" href="{{ site.baseurl }}{{ story.url }}">
+        <a class="text-dark" href="{{ site.baseurl }}{{ project.url }}">
       {% endif %}
-        {{ story.title }}
+        {{ project.title }}
       </a>
     </h2>
     <p class="excerpt">
       {% if page.language == 'en' %}
-      {{ story.excerpt | strip_html | strip_newlines | truncate: 125 }}
+      {{ project.excerpt | strip_html | strip_newlines | truncate: 125 }}
       {% else if page.language == 'ko' %}
-      {{ story.excerpt | strip_html | strip_newlines | truncate: 80 }}
+      {{ project.excerpt | strip_html | strip_newlines | truncate: 80 }}
       {% endif %}
       
     </p>
     <small class="d-block text-muted">
       <span class="catlist">
-        {% if story.tags %} Tags [ {% for tag in story.tags %}
+        {% if project.tags %} Tags [ {% for tag in project.tags %}
         <!-- text-muted -->
         <a
           class="text-capitalize font-weight-bold smoothscroll" 
@@ -31,15 +31,15 @@
         tags {% endif %}
       </span>
     </small>
-    <small class="text-muted">{{ story.date | date: '%b %d, %Y' }}</small>
+    <small class="text-muted">{{ project.date | date: '%b %d, %Y' }}</small>
   </div>
-  {% if story.image %}
+  {% if project.image %}
   <div class="col-md-3 pr-0 text-right">
-    <a href="{{ site.baseurl }}{{ story.url }}">
+    <a href="{{ site.baseurl }}{{ project.url }}">
       <img
         class="w-100"
-        src="{{ site.baseurl }}/{{ story.image }}"
-        alt="{{ story.title }}"
+        src="{{ site.baseurl }}/{{ project.image }}"
+        alt="{{ project.title }}"
       />
     </a>
   </div>

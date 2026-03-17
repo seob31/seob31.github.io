@@ -3,20 +3,20 @@
     <table class="w-100">
       <tr>
         <th class="half-w-70">
-          <h5 class="blog-list-title">Other Story</h5>
+          <h5 class="blog-list-title">Other Project</h5>
         </th>
         <th class="text-right">
-          <a id="list-btn" class="list-btn" href="{% if page.language == 'en' %}/en{% endif %}/stories">List</a>
+          <a id="list-btn" class="list-btn" href="{% if page.language == 'en' %}/en{% endif %}/projects">List</a>
         </th>
       </tr>
     </table>
   </div>
-  <hr />
+  <!-- <hr /> -->
   <ul class="blog-list">
-    {% assign stories = site.stories | where: "language", page.language | where: "show", true %}
-    {% assign story_posts = stories | sort: "date"| reverse %} 
+    {% assign projects = site.projects | where: "language", page.language | where: "show", true %}
+    {% assign project_posts = projects | sort: "date"| reverse %} 
     {% assign current_index = 0 %} 
-    {% for post in story_posts %} 
+    {% for post in project_posts %} 
       {% if post.url == page.url %} 
         {% assign current_index = forloop.index0 %} 
       {% endif %} 
@@ -26,12 +26,12 @@
     {% if start_index < 0 %} 
       {% assign start_index = 0 %} 
     {% endif %} 
-    {% assign surrounding_posts = story_posts | slice: start_index, 5 %} 
+    {% assign surrounding_posts = project_posts | slice: start_index, 5 %} 
     {% for post in surrounding_posts %}
     <li>
       <h6 class="blog-item-title">
         {% if post.url == page.url %}
-        <a id="other_story"
+        <a id="other_project"
           style="text-decoration: underline"
           class="this overflow-wrap"
           href="{{ post.url | prepend: site.baseurl }}">
@@ -41,7 +41,7 @@
           {{ post.date | date: "%Y-%m-%d" }}
         </span>
         {% else %}
-        <a id="other_story" class="overflow-wrap" href="{{ post.url | prepend: site.baseurl }}">
+        <a id="other_project" class="overflow-wrap" href="{{ post.url | prepend: site.baseurl }}">
           {{ post.title }}
         </a>
         <span class="blog-item-date">{{ post.date | date: "%Y-%m-%d" }}</span>
@@ -50,7 +50,7 @@
     </li>
     {% endfor %}
   </ul>
-  <hr />
+  <!-- <hr /> -->
 </div>
 
 <script>
@@ -62,7 +62,7 @@
       const list = document.getElementById("list-btn");
       list.href = "/tags";
 
-      const others = document.querySelectorAll("#other_story");
+      const others = document.querySelectorAll("#other_project");
       others.forEach((other) => {
         other.href = other.href+"?from=tags";
       });

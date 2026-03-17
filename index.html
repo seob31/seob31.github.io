@@ -15,7 +15,7 @@ permalink: "/"
 <div class="row remove-site-content-margin">
     
     <!-- latest post -->
-    {% assign posts = site.stories | where : "language", page.language |  sort: "date" | reverse %}
+    {% assign posts = site.projects | where : "language", page.language |  sort: "date" | reverse %}
     {% assign latest_post = posts[0] %}
     <div class="col-md-6">
     <div class="card border-0 mb-4 box-shadow">   
@@ -112,20 +112,20 @@ permalink: "/"
  
 
 <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-{% assign stories = site.stories | where : "language", page.language %}
-{% for story in stories %} 
-{% if story.sticky %}
+{% assign projects = site.projects | where : "language", page.language %}
+{% for project in projects %} 
+{% if project.sticky %}
 <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
     <div class="pl-4 pr-0 h-100 tofront">
         <div class="row justify-content-between">
             <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h2 class="mb-3 h3">{{story.title}}</h2>
+                <h2 class="mb-3 h3">{{project.title}}</h2>
                 <p class="mb-3 lead">
-                    {{ story.excerpt | strip_html | strip_newlines | truncate: 118 }}
+                    {{ project.excerpt | strip_html | strip_newlines | truncate: 118 }}
                 </p>
-                <a href="{{site.baseurl}}{{story.url}}" class="btn btn-dark">Read More</a>
+                <a href="{{site.baseurl}}{{project.url}}" class="btn btn-dark">Read More</a>
             </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-position:center;background-size:cover;background-image:url({{site.baseurl}}/{{ story.image }});">	
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-position:center;background-size:cover;background-image:url({{site.baseurl}}/{{ project.image }});">	
             </div>
         </div>
     </div>

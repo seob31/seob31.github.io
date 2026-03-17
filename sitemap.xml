@@ -13,10 +13,10 @@
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
   </url>
   {% endfor %}
-  {% for story in site.stories %}
+  {% for project in site.projects %}
   <url>
-    <loc>{{ site.url }}{{ story.url}}</loc>
-    <lastmod>{{ story.date | date_to_xmlschema }}</lastmod>
+    <loc>{{ site.url }}{{ project.url}}</loc>
+    <lastmod>{{ project.date | date_to_xmlschema }}</lastmod>
   </url>
   {% endfor %}
   {% for my in site.myZone %}

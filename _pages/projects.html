@@ -1,0 +1,25 @@
+---
+title: "Projects"
+layout: default
+permalink: "/projects.html"
+language: ko
+---
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Projects</h1> -->
+      
+      
+      <h4 class="font-weight-bold spanborder text-capitalize">
+        <span>Projects</span>
+      </h4>
+      {% assign projects = site.projects | where : "language", page.language %}
+      {% assign sorted_projects = projects | sort: "date" | reverse %}
+      {% for project in sorted_projects %} 
+        {% if project.show == true %}
+          {% include project-loop-card.html %} 
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

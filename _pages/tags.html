@@ -9,7 +9,7 @@ language: ko
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="col-md-9 half-w-70">
-        <a class="text-title-green c-pointer topic_title" href="/stories">
+        <a class="text-title-green c-pointer topic_title" href="/projects">
           <h2 class="font-weight-bold">
             <img
               src="{{site.baseurl}}/assets/images/icon/back.png"
@@ -23,7 +23,7 @@ language: ko
       </div>
 
       <!-- <h1 class="font-weight-bold title h6 text-uppercase mb-4">Tags</h1> -->
-      {% assign all_tags = site.stories | map: "tags" | join: "," | split: "," | uniq %}
+      {% assign all_tags = site.projects | map: "tags" | join: "," | split: "," | uniq %}
 
       {% for tag in all_tags %}
         <h4 class="font-weight-bold spanborder text-capitalize" id="{{ tag | downcase | strip }}">
@@ -31,11 +31,11 @@ language: ko
         </h4>
 
         <div class="tag-section">
-          {% assign tagged_stories = site.stories | where_exp: "story", "story.tags contains tag" %}
-          {% assign stories = tagged_stories | where: "language", page.language %}
-          {% for story in stories %}
-            {% if story.title != null and story.show == true %}
-              {% include story-loop-card.html story=story %}
+          {% assign tagged_projects = site.projects | where_exp: "project", "project.tags contains tag" %}
+          {% assign projects = tagged_projects | where: "language", page.language %}
+          {% for project in projects %}
+            {% if project.title != null and project.show == true %}
+              {% include project-loop-card.html project=project %}
             {% endif %}
           {% endfor %}
         </div>

@@ -83,20 +83,20 @@ defaults:
     values:
       layout: page
 
-    # all stroy
+    # all project
   - scope:
-      path: "_stories/ko"
-      type: stories
+      path: "_projects/ko"
+      type: projects
     values:
-      layout: story
-      permalink: 'stories/:title'
+      layout: project
+      permalink: 'projects/:title'
       language: ko
   - scope:
-      path: "_stories/en"
-      type: stories
+      path: "_projects/en"
+      type: projects
     values:
-      layout: story
-      permalink: 'en/stories/:title'
+      layout: project
+      permalink: 'en/projects/:title'
       language: en
 
     # My Zone
@@ -110,7 +110,7 @@ defaults:
 
 #collections
 collections:
-  stories:
+  projects:
     output: true
   posts:
     output: true
