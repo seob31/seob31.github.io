@@ -2,7 +2,7 @@
 layout: project
 title: "ESB/EAI 시스템 개발(eCross)"
 topic: project
-tags: [backend, java, react, microservices, enterprise]
+tags: [backend, java, react, microservices]
 sticky: true
 language: ko
 show: true

@@ -307,6 +307,34 @@ h2:hover {
   text-decoration: underline;
 }
 
+@media (min-width: 992px) {
+  .sub-header-wrap {
+    width: auto;
+    margin-left: auto;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .search-bar-w100 {
+    width: 100%;
+  }
+
+  .navbar-nav.mr-auto {
+    gap: 0.75rem;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+}
+
 .articleTable td, .articleTable th{
   width: auto !important;
   height: 35px !important;
