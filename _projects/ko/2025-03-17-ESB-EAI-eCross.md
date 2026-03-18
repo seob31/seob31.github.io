@@ -38,9 +38,10 @@ main: true
 - **메시지 기반 시스템 통합**: 다양한 채널(HTTP, JDBC, JMS 등)을 통한 애플리케이션 간 메시지 교환
 - **실시간 모니터링 대시보드**: 인터페이스 상태, 처리량, 응답시간 등 주요 지표 시각화
 - **고급 로깅 시스템**: 인터페이스별 상세 로그 관리 및 분석 기능
+  - [→ Saga Pattern 상세 구현 코드 및 성능 분석](/projects/additional/2025-03-17-ESB-EAI-eCross/mdc/)
 - **메시지 분할 전송**: 대용량 메시지를 안전하게 분할하여 전송
 - **트랜잭션 관리**: Saga Pattern을 통한 분산 트랜잭션 처리
-  - [→ Saga Pattern 상세 구현 코드 및 성능 분석](/projects/additional/2025-03-17-ESB-EAI-eCross/saga-pattern-implementation/)
+  - [→ Saga Pattern 상세 구현 코드 및 성능 분석](/projects/additional/2025-03-17-ESB-EAI-eCross/saga/)
 
 ---
 - 채널 라이브러리 패치 기능 구현
