@@ -2,10 +2,12 @@
 layout: project
 title: "인사관리형 메타버스 서비스"
 topic: project
-tags: [backend, java, aws, microservices, unity, metaverse]
+tags: [backend, aws, microservices]
 sticky: false
 language: ko
 show: true
+#image: assets/images/project/ESB/esb.png
+main: false
 ---
 
 ## 📋 프로젝트 개요

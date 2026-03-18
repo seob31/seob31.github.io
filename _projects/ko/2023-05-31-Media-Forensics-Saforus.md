@@ -2,10 +2,12 @@
 layout: project
 title: "미디어 파일 포렌식 시스템 (Saforus)"
 topic: project
-tags: [backend, java, aws, devops, media-forensics]
+tags: [backend, devops]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/forensic/saforus.jpg
+main: true
 ---
 
 ## 📋 프로젝트 개요

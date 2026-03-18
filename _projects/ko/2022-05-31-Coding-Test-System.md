@@ -2,11 +2,14 @@
 layout: project
 title: "코딩테스트 시스템 개발"
 topic: project
-tags: [backend, java, docker, multi-language, platform]
+tags: [backend, core]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/coding/coding.png
+main: true
 ---
+
 
 ## 📋 프로젝트 개요
 12개의 프로그래밍 언어를 동시 지원하는 온라인 코딩 테스트 웹 서비스이자 구축형 시스템 개발 프로젝트입니다. 다양한 언어의 안전한 코드 실행 환경을 제공하는 통합 플랫폼입니다.

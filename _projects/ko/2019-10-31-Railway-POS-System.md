@@ -2,10 +2,12 @@
 layout: project
 title: "철도 POS 결제 시스템 (IC 칩 단말기)"
 topic: project
-tags: [backend, java, payment, railway, ic-chip]
+tags: [backend, payment, ic-chip]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/onePic/ICchip.png
+main: true
 ---
 
 ## 📋 프로젝트 개요

@@ -15,7 +15,7 @@ permalink: "/"
 <div class="row remove-site-content-margin">
     
     <!-- latest post -->
-    {% assign posts = site.projects | where : "language", page.language |  sort: "date" | reverse %}
+    {% assign posts = site.projects | where : "language", page.language | where: "main", true |  sort: "date" | reverse %}
     {% assign latest_post = posts[0] %}
     <div class="col-md-6">
     <div class="card border-0 mb-4 box-shadow">   

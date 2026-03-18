@@ -2,10 +2,12 @@
 layout: project
 title: "산업자원부 전자계약 시스템 개발"
 topic: project
-tags: [backend, java, pki, security, government]
+tags: [backend, pki]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/onePic/logo-government.png
+main: false
 ---
 
 ## 📋 프로젝트 개요

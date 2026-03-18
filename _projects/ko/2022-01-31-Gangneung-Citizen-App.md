@@ -2,10 +2,12 @@
 layout: project
 title: "강릉시민앱 (내 손안에 강릉)"
 topic: project
-tags: [backend, java, government, mydata, mobile]
+tags: [backend, mydata, mobile]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/gangneung/main.jpg
+main: true
 ---
 
 ## 📋 프로젝트 개요

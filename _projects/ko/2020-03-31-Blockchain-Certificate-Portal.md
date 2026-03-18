@@ -2,10 +2,12 @@
 layout: project
 title: "블록체인 기반 증명서 발급 포털"
 topic: project
-tags: [blockchain, documents, barcode, security, fullstack]
+tags: [blockchain, fullstack]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/onePic/cert24.png
+main: false
 ---
 
 ## 📋 프로젝트 개요

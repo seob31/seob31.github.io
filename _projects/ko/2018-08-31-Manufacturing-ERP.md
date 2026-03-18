@@ -2,10 +2,12 @@
 layout: project
 title: "제조업 전사 시스템 (철강산업 ERP)"
 topic: project
-tags: [erp, testing, qa, java, backend]
+tags: [erp, testing, qa]
 sticky: false
 language: ko
 show: true
+#image: assets/images/project/ESB/esb.png
+main: true
 ---
 
 ## 📋 프로젝트 개요

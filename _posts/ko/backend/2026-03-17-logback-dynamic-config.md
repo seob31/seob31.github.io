@@ -3,7 +3,7 @@ layout: post
 title: "Logback 동적 설정 및 Tomcat Access Log 관리"
 topic: backend
 categories: [java]
-# image: assets/images/blog/backend/
+image: assets/images/blog/backend/onePic/logback.png
 tags: [featured]
 language: ko
 show: true

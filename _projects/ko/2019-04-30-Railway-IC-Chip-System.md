@@ -2,10 +2,12 @@
 layout: project
 title: "철도 IC 칩 라이브러리 강화 (인코드/디코드)"
 topic: project
-tags: [backend, java, library, railway, optimization]
+tags: [backend, library, optimization]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/onePic/ICchip.png
+main: false
 ---
 
 ## 📋 프로젝트 개요
@@ -98,3 +100,8 @@ show: true
 - **라이브러리 API**: 주요 메서드 및 사용 방법
 - **배운 점**: 저수준 프로그래밍 경험, 성능 최적화 노하우
 - **향후 확장**: 추가 IC 칩 표준 지원, 국제 규격 대응
+
+
+관련 기사
+
+https://www.nikkei.com/article/DGXMZO35944420R01C18A0000000/

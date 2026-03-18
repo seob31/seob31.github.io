@@ -2,10 +2,12 @@
 layout: project
 title: "ESB/EAI 시스템 개발(eCross)"
 topic: project
-tags: [backend, java, react, microservices]
+tags: [backend, react, microservices]
 sticky: true
 language: ko
 show: true
+image: assets/images/project/ESB/esb.png
+main: true
 ---
 
 ## 📋 프로젝트 개요

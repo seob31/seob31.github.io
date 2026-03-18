@@ -2,10 +2,12 @@
 layout: project
 title: "학습이력 관리 플랫폼 (Molida)"
 topic: project
-tags: [blockchain, education, credentials, fullstack, security]
+tags: [blockchain, fullstack]
 sticky: false
 language: ko
 show: true
+image: assets/images/project/molida/logo.png
+main: true
 ---
 
 ## 📋 프로젝트 개요

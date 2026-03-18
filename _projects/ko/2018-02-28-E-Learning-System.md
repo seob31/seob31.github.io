@@ -2,10 +2,12 @@
 layout: project
 title: "E-러닝 시스템 (게임화 학습 플랫폼)"
 topic: project
-tags: [education, fullstack, java, gamification]
+tags: [fullstack]
 sticky: false
 language: ko
 show: true
+#image: assets/images/project/ESB/esb.png
+main: false
 ---
 
 ## 📋 프로젝트 개요
