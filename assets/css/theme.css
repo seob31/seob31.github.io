@@ -263,6 +263,50 @@ h2:hover {
   font-size: 20px;
 }
 
+/* project */
+article-project {
+  font-size: 20px;
+  line-height: 1.86;
+  font-family: Lora;
+}
+
+.license-list li::before,
+.license-list ul::before {
+    content: none !important;
+    display: none !important;
+}
+
+.license-list {
+    padding: 0;
+}
+
+.license-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.license-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.license-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.license-info {
+    font-size: 14px;
+    color: #555;
+}
+
+
+
 /* multiligual button */
 .hidden{
   display: none !important;

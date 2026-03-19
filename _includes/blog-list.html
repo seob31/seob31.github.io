@@ -13,7 +13,6 @@
     </table>
   </div>
 
-  <hr />
   <ul class="blog-list">
     <!-- 카테고리와 topic이 같은 게시물만 필터링 -->
     {% assign site_posts = site.posts | where: "language", page.language | where: "show", true %}
@@ -56,7 +55,6 @@
     </li>
     {% endfor %}
   </ul>
-  <hr />
 </div>
 
 <script>
