@@ -255,6 +255,11 @@ h2:hover {
   margin-right: 5px;
 }
 
+.skills-container ul li,
+.projects-container ul li {
+  margin-bottom: 10px;
+}
+
 /* post */
 .post-img-box {
   text-align: right !important;
