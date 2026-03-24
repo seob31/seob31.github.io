@@ -6,7 +6,6 @@ tags: [backend, aws, microservices]
 sticky: false
 language: ko
 show: true
-#image: assets/images/project/ESB/esb.png
 main: false
 ---
 

@@ -1,27 +1,29 @@
 ---
 layout: page
-title: "Reactor 기반 비동기 워크플로우 & Saga 처리 구조"
+title: "MDC 기반 로깅 구조 정리 예시"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/mdc/
 ---
 
-<p>
-  <a href="/projects/ESB-EAI-eCross/" class="btn btn-outline-success btn-sm">← 뒤로가기</a>
-</p>
+<a href="javascript:history.back()" class="btn btn-outline-success btn-sm">
+  ← 뒤로가기
+</a>
 
-# Reactor 기반 비동기 워크플로우 & Saga 처리 구조
+#  MDC 기반 로깅 구조 정리 예시
+<br>
 
 ## 개요
-ESB/EAI 시스템에서 마이크로서비스 간 트랜잭션 관리를 위한 Saga Pattern을 적용할 수 있는 구조 기반으로, Reactor를 활용한 비동기 워크플로우를 구현.
+기존 ESB/EAI 시스템에서는 인터페이스별로 로그를 분리하기 위해 다수의 Appender를 생성하여 관리하고 있었으며, 이로 인해 설정 복잡도 증가 및 유지보수 어려움 문제가 발생. 이를 해결하기 위해 MDC(Mapped Diagnostic Context)를 활용한 동적 로그 분리 구조를 적용하여 로깅 설정을 단순화하고 운영 효율성을 개선.
+
+<br>
 
 ## 핵심 코드 예제
-### 1. Step 상태 관리 및 비동기 처리
-```java
 
+```java
 MDC.put("id", id);
 MDC.clear();
 ```
 
-예전
+**기존**  
 ```xml
 <appender class="ch.qos.logback.classic.sift.SiftingAppender" name="DEV">
 </appender>
@@ -31,7 +33,7 @@ MDC.clear();
 </appender>
 ```
 
-개선
+**개선** 
 ```xml
   <appender class="ch.qos.logback.classic.sift.SiftingAppender" name="DEV">
     <discriminator>
@@ -54,18 +56,17 @@ MDC.clear();
         </rollingPolicy>
       </appender>
 ```
+<br>
 
 ## 핵심 포인트
-1. **Hub 채널 간 트랜잭션 관리 단순화**
-   - ProcessStep 단위로 실행 상태를 관리하여 복잡한 흐름 제어를 단순화
-   - 실패 시 skip / 후속 처리 분기를 통해 전체 중단 없이 안정적인 처리 가능
+1. **로깅 설정 구조 단순화**
+   - 인터페이스별로 분산되어 있던 다수의 Appender를 단일 구조로 통합
+   - 신규 인터페이스 추가 시 설정 변경 없이 확장 가능
 
-2. **분할 처리 (Split Processing) 지원**
-   - 대용량 데이터 처리 시 split 단위로 처리 가능
-   - writer/reader 이후 흐름을 구분하여 중복 실행 방지
+2. **MDC 기반 동적 로그 분리**
+   - MDC에 인터페이스 식별자(id)를 설정하여 로그를 동적으로 분리
+   - `${id}.log` 형태로 자동 파일 생성되어 인터페이스 단위 로그 관리 가능
 
-3. **비동기 워크플로우 처리**
-   - WebClient를 활용한 non-blocking 호출 구조
-
-4. **운영 중심 장애 처리**
-   - 모니터링에 상태가 기록됨으로 어느 구간에서 장애 발생 파악 가능
+3. **유지보수성 향상**
+   - `logback.xml` 설정 복잡도 감소
+   - 설정 변경 리스크 최소화 및 운영 안정성 확보
