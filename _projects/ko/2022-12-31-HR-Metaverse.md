@@ -15,7 +15,7 @@ main: false
 | 항목 | 내용 |
 |------|------|
 | **기간** | 2022.08 - 2022.12 |
-| **역할** | 백엔드 시스템 설계 및 개발 리드 |
+| **역할** | 백엔드개발, 시스템 설계, SRE |
 | **상태** | 1차 개발 중 우선순위가 높은 프로젝트 참여로 프로젝트 개발 보류 |
 
 <br>
@@ -38,7 +38,7 @@ main: false
 
 ---
 
-##  사용 기술
+## 사용 기술
 - **Backend**: Java, Spring Boot, Spring Cloud (Gateway, Eureka), MyBatis, JWT
 - **Database**: PostgreSQL, Redis
 - **Infrastructure / DevOps**: AWS (EC2, EFS, VPC), Docker, Jenkins, GitLab CI/CD
