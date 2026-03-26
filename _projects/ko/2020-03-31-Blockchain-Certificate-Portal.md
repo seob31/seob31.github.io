@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "블록체인 기반 증명서 발급 포털"
+title: "블록체인 기반 증명서 발급 포털 - 개발"
 topic: project
 tags: [blockchain, fullstack]
 sticky: false

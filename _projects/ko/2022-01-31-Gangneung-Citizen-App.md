@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "강릉시 커뮤니티 앱 (내손안에 강릉)"
+title: "강릉시 커뮤니티 앱 (내손안에 강릉) - 개발"
 topic: project
 tags: [backend, mydata, mobile]
 sticky: false

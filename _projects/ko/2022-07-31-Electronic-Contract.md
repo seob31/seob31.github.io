@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "산업자원부 전자계약 시스템 개발(전자문서지갑)"
+title: "산업자원부 전자계약 시스템 개발(전자문서지갑) - 개발"
 topic: project
 tags: [backend, pki]
 sticky: false

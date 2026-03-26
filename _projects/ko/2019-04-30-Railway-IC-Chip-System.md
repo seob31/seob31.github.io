@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "IC 칩 관련 철도 시스템 개발"
+title: "IC 칩 관련 철도 시스템 개발 - 개발"
 topic: project
 tags: [backend, library, optimization]
 sticky: false

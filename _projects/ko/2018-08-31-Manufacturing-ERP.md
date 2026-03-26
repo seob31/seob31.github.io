@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "제조 산업 시스템 (철강 산업)"
+title: "제조 산업 시스템 (철강 산업) - 테스트"
 topic: project
 tags: [erp, testing, qa]
 sticky: false

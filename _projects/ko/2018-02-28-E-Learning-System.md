@@ -1,8 +1,8 @@
 ---
 layout: project
-title: "E-러닝 시스템 (게임화 학습 플랫폼)"
+title: "E-러닝 시스템 (게임화 학습 플랫폼) - 개발"
 topic: project
-tags: [fullstack]
+tags: [Java]
 sticky: false
 language: ko
 show: true

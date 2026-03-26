@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "EAI/ESB 연계 솔루션 개발 (eCross)"
+title: "EAI/ESB 연계 솔루션 개발 (eCross) - 개발"
 topic: project
 tags: [backend, react, microservices]
 sticky: true

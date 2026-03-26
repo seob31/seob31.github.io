@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "코딩 테스트 서비스 개발"
+title: "코딩 테스트 서비스 개발 - 개발"
 topic: project
 tags: [backend, SRE]
 sticky: false

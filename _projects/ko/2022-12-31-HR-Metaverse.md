@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "인사관리형 메타버스 서비스"
+title: "인사관리형 메타버스 서비스 - 개발"
 topic: project
 tags: [backend, devops]
 sticky: false

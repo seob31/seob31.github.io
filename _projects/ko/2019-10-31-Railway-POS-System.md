@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "철도 POS 결제 시스템 (IC 칩 단말기)"
+title: "철도 POS 결제 시스템 (IC 칩 단말기) - 개발"
 topic: project
 tags: [backend, payment, ic-chip]
 sticky: false

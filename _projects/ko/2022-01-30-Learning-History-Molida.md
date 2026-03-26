@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "블록체인 기반 교육 이력 및 자격증 인증 서비스 (Molida)"
+title: "블록체인 기반 교육 이력 및 자격증 인증 서비스 (Molida) - 개발"
 topic: project
 tags: [blockchain, fullstack]
 sticky: false
