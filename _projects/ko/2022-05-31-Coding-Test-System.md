@@ -28,6 +28,7 @@ main: true
 - 시스템 설계
 - API 서버 개발
 - Isolate SandBox를 이용한 Execution Server 개발
+  - [→ Isolate SandBox 예제](/projects/additional/2022-05-31-Coding-Test-System/isolate/)
 
 ### 인프라 및 운영
 - Docker 기반 온프레미스 배포 구조 설계 및 개발
@@ -36,7 +37,7 @@ main: true
 
 ---
 
-## 주요 구현 및 성과
+## 주요 성과
 
 - **12개 언어 지원 코딩 테스트 코어 개발 및 프로젝트 40% 이상 기여**
   - Isolate 샌드박스를 활용해 특정 버전의 **12개 개발 언어**를 지원하는 실행 환경을 구현.   

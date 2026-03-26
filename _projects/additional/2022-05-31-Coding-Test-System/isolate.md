@@ -12,21 +12,19 @@ permalink: /projects/additional/2022-05-31-Coding-Test-System/isolate/
 <br>
 
 ## 개요
-Spring Batch의 Partitioning 구
+코딩 테스트 시스템에서 사용자 코드를 안전하게 실행하기 위한 isolate Sandbox 예제 입니다.
 
 <br>
 ## 핵심 코드 예제
 #### 컴파일 예제
 ```java
 isolate --cg \
-  -b 62 \
+  -b 1 \
   -M metadata.txt \
   -t 5 \
   -x 1 \
   -w 10 \
-  --cg-mem=128000 \
   -E HOME=/tmp \
-  --stderr-to-stdout \
   --run \
   -- /bin/bash compile
   > compile_out.txt
@@ -34,30 +32,24 @@ isolate --cg \
 
 #### 실행 예제
 ```java
-isolate --cg \
-    -b 62 \
-    -M metadata.txt \
-	-t 5 \
-    -x 1 \
-    -w 10 \
-    --cg-mem=128000 \
-    -E HOME=/tmp \
-    --run \
-    -- /bin/bash run \
-    > stdout_file.txt 2> stderr_file.txt
+isolate --cg \  
+    -b 1 \ 
+    -M metadata.txt \  
+    -t 5 \
+    -x 1 \  
+    -w 10 \  
+    -E HOME=/tmp \  
+    --run \  
+    -- /bin/bash run \  
+    > stdout_file.txt 2> stderr_file.txt  
 ```
 
 <br>
 
 ## 핵심 구조  
- - Partitioning 기반 병렬 처리  
- - Chunk 단위 데이터 처리  
- - 예외 발생 시 skip 처리 (전체 중단 방지)  
- - Listener 기반 로깅 및 후처리  
-
-<br> 
+ - 컴파일 / 실행 단계 분리하여 단계별 실행 가능  
+ - isolate 옵션을 통한 실행 환경 제어  
 
 ## 핵심 포인트
-- 대용량 데이터 처리 성능 향상 (멀티스레드)
-- 장애 발생 시에도 작업 지속 가능
-- 실행 이력 및 상태 추적 가능
+- 사용자 코드 실행을 완전히 격리하여 시스템의 안정성 확보  
+- 실행 결과를 기반으로 한 채점 및 후처리 가능 구조  
