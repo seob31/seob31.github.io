@@ -36,6 +36,8 @@ main: true
 - 모니터링 도구 도입 및 운영 안정화
 - 데이터 분리·보관 자동화 로직 개발
 
+## 서버운영
+- 
 
 
 ---
@@ -56,9 +58,9 @@ main: true
 ---
 
 ## 사용 기술
-**Backend:** Java, MyBatis, Maven  
+**Backend:** Java, MyBatis, Spring framework, Maven, Shell Script  
 **Frontend:** HTML, JavaScript, jQuery, Ajax  
-**Database:** MariaDB, MySQL
-**Infrastructure:** AWS, Docker, Shell, HAProxy, Portainer  
-**Monitoring:** Prometheus, Grafana  
-
+**Database:** MariaDB, MySQL  
+**Infrastructure:** AWS, Docker, HAProxy  
+**Monitoring:** Prometheus, Grafana   
+**DevOps / Tools:**: Portainer  
