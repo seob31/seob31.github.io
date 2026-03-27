@@ -2,7 +2,7 @@
 layout: project
 title: "미디어 파일 포렌식 서비스 개발 (Saforus) - 개발"
 topic: project
-tags: [backend, devops]
+tags: [backend, devops, MSA]
 sticky: false
 language: ko
 show: true

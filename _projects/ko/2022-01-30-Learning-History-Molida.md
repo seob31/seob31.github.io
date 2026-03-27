@@ -2,7 +2,7 @@
 layout: project
 title: "블록체인 기반 교육 이력 및 자격증 인증 서비스 (Molida) - 개발"
 topic: project
-tags: [blockchain, fullstack]
+tags: [fullstack]
 sticky: false
 language: ko
 show: true
@@ -11,27 +11,32 @@ main: true
 ---
 
 ## 프로젝트 개요
-교육 이력과 자격증 정보를 관리하고 증명서 발급을 지원하는 블록체인 기반 서비스 프로젝트입니다.  
-백엔드와 프론트엔드 개발, 서버 운영, 데이터 보관 구조 개선까지 폭넓게 담당했습니다.
+교육 이력, 수상이력과 자격증 정보 등을 관리하고 증명서 발급을 넘어 기관(대학, 지자체, 공기업 등)의 증명서 발급 및 제작까지 지원하는 블록체인 기반 서비스 프로젝트입니다.  
 
 | 항목 | 내용 |
 |------|------|
 | **기간** | 2019.11 ~ 2022.01 |
-| **역할** | 프로젝트 설계, 백엔드/프론트엔드 개발, 서버 운영 |
+| **역할** | 시스템 설계, 백엔드 개발, 프론트엔드 개발, 서버 운영 |
 
----
+<br>
 
 ## 담당 역할
 
-### 서비스 개발
+## 설계
+- 시스템 설계  
+- 화면 설계  
+
+### 백엔드 개발
 - 프론트엔드와 백엔드 기능 설계 및 개발
 - 증명서 생성 및 발급 기능 구현
 - 블록체인 기반 이력 관리 기능 개발
 
-### 운영 및 데이터 관리
+### 프론트 개발
 - AWS 환경 서버 운영
 - 모니터링 도구 도입 및 운영 안정화
 - 데이터 분리·보관 자동화 로직 개발
+
+
 
 ---
 
@@ -53,14 +58,7 @@ main: true
 ## 사용 기술
 **Backend:** Java, MyBatis, Maven  
 **Frontend:** HTML, JavaScript, jQuery, Ajax  
-**Database:** MariaDB, MySQL, SQL  
+**Database:** MariaDB, MySQL
 **Infrastructure:** AWS, Docker, Shell, HAProxy, Portainer  
 **Monitoring:** Prometheus, Grafana  
-**Tools:** SVN, Redmine
 
----
-
-## 프로젝트 특징
-- 백엔드와 프론트엔드를 함께 책임진 풀스택 프로젝트
-- 운영 비용 절감과 보안 인증 대응을 동시에 만든 경험
-- 데이터 보관, 로깅, 모니터링까지 운영 관점이 반영된 서비스

@@ -2,7 +2,7 @@
 layout: project
 title: "EAI/ESB 연계 솔루션 개발 (eCross) - 개발"
 topic: project
-tags: [backend, react, microservices]
+tags: [backend, react, MSA]
 sticky: true
 language: ko
 show: true
