@@ -70,6 +70,11 @@ main: true
   - **3개 스레드, 8GB 힙 메모리 환경에서 1천만 건 데이터를 처리에 상용 솔루션 대비 약 6~8% 빠른 성능**을 확인했습니다.
   - [→ ETL 프로토타입 정리 예시](/projects/additional/2025-03-17-ESB-EAI-eCross/etl/)
 
+- **릴리즈 빌드 테스트 자동화**
+  - 프로젝트 릴리즈 시 DB Meta Data와 현행 DB 스키마를 자동 검증하는 기능을 구현.
+  - 수작업으로 진행하던 DB 스키마 검증을 100% 자동화하여 휴먼 에러를 제거하고 검증 신뢰도를 향상시켰습니다.
+  - [→ DB Mata Data 검증 예시](/projects/additional/2025-03-17-ESB-EAI-eCross/db/)
+
 - **품질 및 인증 대응**
   - 클라우드 호완성 인증 주도 - SCP(Samgsung Cloud Platform, 클라우드 설정 팀원 교육)
   - SP/GS 인증 획득에 참여해 제품의 표준화와 신뢰도 향상에 기여

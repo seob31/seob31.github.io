@@ -39,7 +39,7 @@ main: false
 ---
 
 ## 사용 기술
-- **Backend**: Java, Spring Boot, Spring Cloud (Gateway, Eureka), MyBatis, JWT
+- **Backend**: Java, Spring Boot, Spring Cloud (Gateway, Eureka), MyBatis, JWT, ELK
 - **Database**: PostgreSQL, Redis
 - **Infrastructure / DevOps**: AWS (EC2, EFS, VPC), Docker, Jenkins, GitLab CI/CD
 - **Monitoring & Tooling**: Zipkin, Portainer, Swagger
