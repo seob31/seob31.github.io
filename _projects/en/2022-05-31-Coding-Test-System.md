@@ -1,54 +1,55 @@
----
+﻿---
 layout: project
-title: "Coding Test System Development"
+title: "Coding Test Service Development - Development"
 topic: project
-tags: [backend, java, docker, multi-language]
+tags: [backend, SRE]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/coding/coding.png
+main: true
 ---
 
 ## Project Overview
-An online coding test web service and platform development project supporting 12 programming languages. Implemented a unified platform providing secure code execution environments for diverse programming languages.
+A coding test service that supports 12 programming languages. It measures code execution CPU time, elapsed wall time, and peak memory usage during execution, then provides these metrics to users.
 
-**Period:** 2022.02 - 2022.05  
-**Team Size:** 3 members  
-**Role:** System design and core development
 
----
+| Item | Details |
+|------|------|
+| **Period** | 2022.02 ~ 2022.05 |
+| **Role** | System design, backend development, SRE |
+| **Status** | Development stopped after phase 1 due to marketability concerns before launch |
 
-## Key Responsibilities
-- **System and server design**
-- **Coding system core development for 12 programming languages**
-  - Java, Python, C++, C#, JavaScript, Ruby, Go, Rust, and more
-- Docker deployment and GitLab management
-- Container-based language environment setup
+<br>
 
----
+## Responsibilities
 
-## Technology Stack
-**Backend:** Java, Spring Boot, Shell Script, Gradle  
-**Database:** MariaDB, SQL  
-**Infrastructure:** Docker, WinSCP, Putty  
-**Security:** Code Isolation (Isolate)  
-**Tools:** Eclipse, GitLab, DBeaver, Monday
+### Backend Development
+- System design
+- API server development
+- Developed execution server using Isolate Sandbox
+  - [-> Isolate Sandbox example](/projects/additional/2022-05-31-Coding-Test-System/isolate_en/)
 
----
-
-## Major Achievements
-- **30% reduction in installation time through modular development**
-  - Docker-based deployment automation
-  - Plug-and-play style system implementation
-
-- **Multi-language core development**
-  - Resolved the impossibility of supporting 12 languages simultaneously
-  - Implemented secure code execution environment (Isolate)
+### Infrastructure and Operations
+- Designed and developed Docker-based on-premise deployment architecture
+- Managed IDC server operations and deployment
+- Installed compilers for each language
 
 ---
 
-## Project Highlights
-- Support for 12 programming languages
-- Secure code execution environment
-- Docker-based encapsulation
-- Fast deployment and configuration
-- Extensible architecture
+## Key Achievements
+
+- **Developed Core Engine Supporting 12 Languages and Contributed Over 40%**
+  - Built an execution environment supporting **12 language versions** using Isolate Sandbox.   
+    -> Java, C, C++, C#, Scala, Swift, Python2, Python3, Go, Kotlin, Javascript, R  
+  - Personally handled design, architecture, core development, deployment, and server operations.
+
+- **Reduced On-Premise Installation Time**
+  - Built a Docker-based on-premise solution that simplified installation and reduced setup time by **over 25%**.
+
+---
+
+## Tech Stack
+**Backend:** Java, JWT, Spring boot, Mybatis, Isolate Sandbox, Websocket  
+**Database:** MariaDB    
+**Infra & Ops:** Docker-based deployment, Shell automation  

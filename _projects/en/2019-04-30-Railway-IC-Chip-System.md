@@ -1,51 +1,49 @@
----
+﻿---
 layout: project
-title: "IC Chip System Development (Railway System)"
+title: "Railway IC Chip System Development (Library) - Development"
 topic: project
-tags: [backend, java, library]
+tags: [backend, library]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/onePic/ICchip.png
+main: false
 ---
 
 ## Project Overview
-IC chip encode/decode library enhancement project for railway systems. Improved and optimized IC chip data processing functionality used in railway systems.
+A library development project for processing IC card data used in Japanese railway systems.
 
-**Period:** 2018.08 - 2019.04  
-**Team Size:** 3 members  
-**Role:** Library improvement and testing
+| Item | Details |
+|------|------|
+| **Period** | 2018.09 ~ 2019.04 |
+| **Role** | Backend development, documentation authoring/revision, test code development |
+| **On-site Assignment** | HITACHI SOLUTIONS (Shinagawa Seaside) |
 
----
+<br>
 
-## Key Responsibilities
-- Design document maintenance, development documentation
-- **IC chip (railway) encode/decode library improvement and enhancement**
-- Test code creation and testing
-- On-site team member evaluation and management
+## Responsibilities
 
----
+### Backend Development
+- Implemented client requirements
+- Enhanced encoding/decoding libraries
+- Wrote and revised development documents and test cases
+- Wrote JUnit-based test code
 
-## Technology Stack
-**Backend:** Java, Spring Framework  
-**Library:** IC Chip Encode/Decode Libraries  
-**Version Control:** SVN  
-**Tools:** Eclipse  
-
----
-
-## Major Achievements
-1. **Development Time Reduction**
-   - Achieved **over 1 month development time reduction**
-   - Improved processing performance through library optimization
-
-2. **Library Official Release**
-   - Official release of encode/decode libraries
-   - Utilized in upper-level projects
+### On-site Operations
+- Served as on-site Peer Lead for colleague status reporting and instruction delivery
 
 ---
 
-## Project Highlights
-- Low-level IC chip data processing
-- Performance optimization focus
-- Railway system core library
-- Systematic test-based development
+## Key Achievements
+
+- **Large-scale Test Code Authoring**
+  - Wrote **70,000 to 80,000 lines of JUnit test code per week**, shortening the project schedule by **one month**.
+
+- **Assignment to Higher-tier Project Scope**
+  - Expanded role into higher-difficulty upper system development based on project performance.
+
+---
+
+## Tech Stack
+**Backend:** Java  
+**Tools:** Redmine, SVN

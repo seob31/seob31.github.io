@@ -1,56 +1,53 @@
----
+﻿---
 layout: project
-title: "IC Chip and Terminal System Development (Railway POS System)"
+title: "Railway POS Payment System (IC Chip Terminal) - Development"
 topic: project
-tags: [backend, java, ic-chip]
+tags: [backend, ic-chip]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/onePic/ICchip.png
+main: true
 ---
 
 ## Project Overview
-Enhancement and feature addition project for IC chip (various card companies and transportation cards) and terminal payment systems. Core project responsible for payment infrastructure of railway systems.
+A core payment infrastructure project in a railway system, responsible for reinforcement and feature expansion of terminal payments using IC chips (credit cards, debit cards, transit cards, etc.). It integrates multiple card types and terminals for stable, reliable payment processing.
 
-**Period:** 2019.05 - 2019.10  
-**Team Size:** 7 members  
-**Role:** Design and development, on-site team management
+| Item | Details |
+|------|------|
+| **Period** | 2019.05 - 2019.10 |
+| **Role** | Functional design, development, documentation authoring/revision |
+| **On-site Assignment** | HITACHI SOLUTIONS (Shinagawa Seaside) |
+
+<br>
+
+## Responsibilities
+
+### Design & Development
+- Revised design documents and authored development documents
+- **Developed process logic for adding new convenience-store terminals**  
+  -> Designed process architecture for new terminals and developed clerk training features
+- Reflected client requirements and upgraded system capabilities
+- Improved polling structure in IC card data collection to enhance read stability and processing efficiency
+- Improved log collection features using Perl
+
+### On-site Operations
+- Served as on-site Peer Lead for colleague status reporting and instruction delivery
 
 ---
 
-## Key Responsibilities
-- Design document maintenance, development documentation
-- **Process development for new terminal additions**
-- Customer requirement reflection and system optimization
-- On-site team member evaluation and management
+## Key Achievements
+
+- **Preferred Staffing from Our Company**
+  - Due to high client trust, our employees were prioritized when additional staffing was needed.
+
+- **Discovered Critical Defect in Payment System**
+  - Identified a critical flaw early in the payment process, helping prevent service disruption.
 
 ---
 
-## Technology Stack
-**Backend:** Java, Spring Framework  
-**Database:** Oracle, SQL  
-**Infrastructure:** WebLogic Application Server  
+## Tech Stack
+**Backend:** Java, Apache Struts, Perl   
+**Database:** Oracle  
+**Infrastructure:** WebLogic Server  
 **Tools:** Eclipse, Jenkins, Redmine, SVN  
-**Terminal Management:** Perl Script, Teraterm  
-
----
-
-## Supported Card Types
-- IC Chip Cards (credit cards, debit cards)
-- Transportation Cards (public transit)
-- Other payment cards
-
----
-
-## Achievements
-- **Priority Selection for Company Personnel**
-  - Successful project resulted in company personnel prioritization for future staffing
-  - Enhanced company credibility
-
----
-
-## Project Highlights
-- Railway system core payment infrastructure
-- Integrated payment methods
-- High availability requirement
-- Financial-grade security level
-- Team management experience

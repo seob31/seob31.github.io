@@ -1,47 +1,52 @@
----
+﻿---
 layout: project
-title: "Ministry of Trade, Industry and Energy Electronic Contract System"
+title: "MOTIE Electronic Contract System Development (Electronic Document Wallet) - Development"
 topic: project
-tags: [backend, java, pki, security]
+tags: [backend, pki]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/onePic/logo-government.png
+main: false
 ---
 
 ## Project Overview
-An urgent support project to resolve development delays in the Ministry of Trade, Industry and Energy's electronic contract system. Implemented PKI system integration and digital signature functionality to establish a legally binding electronic contract environment.
+An emergency support project to resolve development delays in the Ministry of Trade, Industry and Energy (government) electronic contract system. I handled PKI system integration and electronic signature integration to build a legally valid electronic contracting environment.
 
-**Period:** 2022.06 - 2022.07  
-**Team Size:** 5 members  
-**Role:** Core development and schedule coordination
+| Item | Details |
+|------|------|
+| **Period** | 2022.06 - 2022.07 |
+| **Role** | Backend development |
 
----
+<br>
 
-## Key Responsibilities
-- **PKI system integration**
-- **Digital signature feature integration**
-- Development support for delayed schedule
-- Team coordination and collaboration
+## Responsibilities
 
----
+### Backend Development
+**PKI System & Electronic Signature Integration**
+- Integrated the provided PKI library into the service to support login and insert signature values into PDFs using personal keys.
+- Verified signed PDFs using public keys.
 
-## Technology Stack
-**Backend:** Java, Spring Framework  
-**Security:** PKI, Digital Signature  
-**Tools:** Eclipse, Jenkins, GitHub, WinSCP, Putty  
-**Infrastructure:** Jenkins, Version Control
+### Handling Delayed Schedule
+- Supported delayed frontend and backend schedules
+- Supported troubleshooting for partner-company staff
 
 ---
 
-## Achievements
-- **Normalization of delayed development schedule**
-  - Resolved 1-month delayed project to meet government deadline
-  - Completed PKI and digital signature integration
+## Key Achievements
+- **Normalized Delayed Development Timeline**
+  - Brought a project delayed by over one month back on track.
 
 ---
 
-## Project Highlights
-- Government project (Ministry of Trade, Industry and Energy)
-- Security-focused PKI system implementation
-- Demonstrated rapid problem-solving capability
-- Legally binding digital signature functionality
+## Tech Stack
+**Backend:** Java, eGovFrame  
+**Frontend:** Javascript, CSS, HTML  
+**etc:** Jenkins, GitHub  
+
+<br>
+---
+
+## Key Screens
+>> **Login**  
+![contract](/assets/images/project/onePic/contract.png)  

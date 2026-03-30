@@ -1,52 +1,54 @@
----
+﻿---
 layout: project
-title: "Blockchain-Based Certificate Issuance Portal Service"
+title: "Blockchain-Based Certificate Issuance Portal - Development"
 topic: project
-tags: [fullstack, java, blockchain, security]
+tags: [fullstack]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/onePic/cert24.png
+main: false
 ---
 
 ## Project Overview
-A service enabling university certificate issuance via PDF using 2D barcodes, blockchain registration and verification of document tampering. Integrated with the Learning History Management Service (Molida).
+A high-trust certificate management service that issues university certificates as PDFs using 2D barcodes, registers them on blockchain, and verifies whether documents have been tampered with.
 
-**Period:** 2019.11 - 2020.03  
-**Team Size:** 7 members  
-**Role:** Screen design and blockchain integration
+| Item | Details |
+|------|------|
+| **Period** | 2019.11 - 2020.03 |
+| **Role** | Screen design, backend development, frontend development |
+
+<br>
+
+## Responsibilities
+
+### Backend Development
+- Implemented certificate lookup and issuance screens
+- Developed integration with certificate blockchain servers
+- Integrated 2D barcode-based certificate authentication
+- Integrated blockchain tamper verification
+- Developed backend features across user service screens (board, FAQ, etc.)
+- Supported Indonesian version rollout
+
+### Frontend Development
+- Developed frontend features across user service screens (board, FAQ, etc.)
+- Developed blockchain- and certificate-related screens
+
+### Design
+- Designed user interfaces
+- Designed DB schema
 
 ---
 
-## Key Responsibilities
-- **Screen design**
-- **2D barcode, blockchain, and tampering verification feature integration**
-- Customer requirement reflection
-- User interface improvement
+## Key Achievements
+
+- **Built a Trusted Certificate System**
+  - Completed a blockchain-based anti-tampering system
+  - Implemented secure certificate authentication through 2D barcodes
 
 ---
 
-## Technology Stack
+## Tech Stack
 **Backend:** Java, Spring Framework, Mybatis, Maven  
 **Frontend:** HTML, JavaScript, jQuery, Ajax  
-**Database:** MySQL, SQL  
-**Blockchain:** Certificate blockchain registration and verification  
-**Security:** 2D Barcode, Document Validation  
-**Tools:** Eclipse, SVN, WinSCP, Putty, Redmine
-
----
-
-## Core Features
-- 2D barcode-based certificate authentication
-- Blockchain-based tampering verification
-- PDF certificate issuance
-- Real-time verification inquiry
-- University integration
-
----
-
-## Project Highlights
-- Blockchain-based document management
-- 2D barcode authentication system
-- Official university certificate support
-- Document tampering prevention technology
-- Integration with learning history management service
+**Database:** MySQL  

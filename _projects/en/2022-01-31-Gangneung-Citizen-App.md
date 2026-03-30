@@ -1,59 +1,70 @@
----
+﻿---
 layout: project
-title: "Gangneung Citizen App (Gangneung in My Hands)"
+title: "Gangneung Community App (Gangneung in My Hand) - Development"
 topic: project
-tags: [backend, java, government, mydata]
+tags: [backend, mydata, mobile]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/gangneung/main.jpg
+main: true
 ---
 
 ## Project Overview
-A government project for Gangneung City providing MyData services and citizen authentication for tourism and convenience facility discounts through a lifestyle-integrated mobile application.
+As part of Gangneung's Smart City Challenge initiative, this integrated civic-life app issues mobile library cards and citizen IDs for convenient use, and through Government24 integration provides MyData-based personalized services, welfare/administration, and travel/tourism information for both residents and visitors.
 
-**Period:** 2021.08 - 2022.01  
-**Team Size:** 7 members  
-**Role:** System and server design, government integration
 
----
+| Item | Details |
+|------|------|
+| **Period** | 2021.08 ~ 2022.01 |
+| **Role** | Project design, backend development, SRE, overseas developer support |
+| **Status** | Completed and stabilized phase 1 (design, core features, architecture), then transitioned due to assignment to another project design |
 
-## Key Responsibilities
-- **System, server, and database design**
-- Docker deployment system configuration and management
-- **National administrative network integration**
-- **Government24 MyData integration**
-- International developer (Front-end) support
+<br>
 
----
+## Responsibilities
 
-## Technology Stack
-**Backend:** Java, Spring Boot, Mybatis, Gradle  
-**Database:** PostgreSQL, SQL  
-**Infrastructure:** Docker, Shell Script, WinSCP, Putty  
-**Integration:** National Administrative Network, Government24 MyData  
-**Tools:** Eclipse, GitLab, DBeaver, Monday  
+### Backend and Integration Development
+- System design
+- Developed public MyData features through Government24 API integration
+- Developed personalized welfare features through Government24 API integration
+- Developed Gangneung citizen verification through national administrative network integration
+- Developed mobile-to-server data communication using RSA encryption
+- Developed DB backup scripts
 
----
-
-## Key Features
-- MyData-based personal information inquiry
-- Government24 service integration
-- Tourism information and discount provision
-- Convenience facility information and discounts
-- Citizen authentication system
+### Operations and Deployment
+- Docker and Shell-based deployment automation
+- Built and operated both test servers and Gangneung production servers
+- Supported overseas developers (mobile developers)
 
 ---
 
-## Achievements
-- **Successful launch of Gangneung Citizen App**
-  - Established comprehensive lifestyle information platform
-  - Stable integration with Government24 and national administrative network
+## Key Achievements
+
+- **Implemented MyData Features Based on Public API Integration**
+  - Developed key features (MyData and personalized welfare) by linking the national administrative network and Government24.  
+    -> The major challenge was identifying the responsible department during incident handling and inquiry processes.
+
+- **Led the Full Phase-1 Development Cycle**
+  - Played a core role across design, development, and infrastructure setup, contributing **over 35%** to overall development.
 
 ---
 
-## Project Highlights
-- Large-scale government project
-- MyData technology implementation
-- National agency integration (administrative network, Government24)
-- Docker-based deployment system
-- Citizen-friendly service implementation
+## Tech Stack
+**Backend:** Java, MyBatis, Spring boot, SOAP (government API integration)  
+**Database:** PostgreSQL  
+**Infrastructure:** Shell automation (Shell scripting) 
+
+<br>
+---
+
+## Key Screens
+>> **Main**  
+![main](/assets/images/project/gangneung/main.png)  
+<br>
+>> **MyData Certificate Issuance**  
+![mydata](/assets/images/project/gangneung/mydata.png)  
+<br>
+>> **MyData Wallet**  
+![mydata2](/assets/images/project/gangneung/mydata2.png)  
+<br>

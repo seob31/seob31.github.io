@@ -1,54 +1,47 @@
----
+﻿---
 layout: project
-title: "HR Management Metaverse Service"
+title: "HR Management Metaverse Service - Development"
 topic: project
-tags: [backend, java, aws, microservices, unity]
+tags: [backend, devops]
 sticky: false
 language: en
-show: false
+show: true
+main: false
 ---
 
 ## Project Overview
-An innovative HR management service that enables company operations including attendance check-in, attendance management, and meetings in a virtual metaverse environment.
+An innovative HR management platform where daily company operations such as check-in, attendance management, and meetings can be performed in a virtual 3D metaverse environment.
 
-**Period:** 2022.08 - 2022.12  
-**Team Size:** 7 members  
-**Role:** System and server design, Back-end development
+| Item | Details |
+|------|------|
+| **Period** | 2022.08 - 2022.12 |
+| **Role** | Backend development, system design, SRE |
+| **Status** | Project was paused during phase 1 due to reassignment to a higher-priority project |
 
----
+<br>
 
-## Key Responsibilities
-- **System and server design**
-- AWS management and configuration, VPC setup
-- Jenkins and CI/CD configuration, Docker development
-- Unity international developer technical support
-- **Unity and Back-end REST API server development**
-- Domestic and international Back-end developer technical support
+## Responsibilities
 
----
+### System Design and Backend Development
+- System design (MSA)
+- Architecture design
+- REST API server development for Unity integration
 
-## Technology Stack
-**Backend:** Java, Spring Boot, Spring Cloud, Mybatis, Gradle, JWT  
-**Database:** PostgreSQL, SQL  
-**Infrastructure:** AWS (EC2, EFS, VPC), Docker, Jenkins, GitLab  
-**Frontend:** Unity, REST API  
-**Monitoring:** Zipkin, Portainer, Swagger  
-**Tools:** Eclipse, VS Code, DBeaver, WinSCP, Putty
+### Infrastructure and Operations
+- Built AWS infrastructure (EC2, ALB, EFS, etc.)
+- Managed CI/CD deployment pipeline (git -> Jenkins -> Docker and local)
 
----
-
-## Key Features
-- Virtual space-based attendance management
-- Real-time meeting room reservation and management
-- Metaverse-based attendance tracking
-- REST API-based Unity integration
-- Microservices architecture
+### International Team Collaboration
+- Supported overseas developers on the project (Frontend 2, Backend 1, Unity 1)  
+  -> Technical support, project communication, and instruction delivery
+- Supported Unity developers in game server setup, configuration, and troubleshooting
 
 ---
 
-## Project Highlights
-- Innovative metaverse technology implementation
-- Microservices architecture implementation
-- International team collaboration (Unity international developers)
-- Distributed tracing (Zipkin) based monitoring
-- Container-based deployment and management
+## Tech Stack
+- **Backend**: Java, Spring Boot, Spring Cloud (Gateway, Eureka), MyBatis, JWT, ELK
+- **Database**: PostgreSQL, Redis
+- **Infrastructure / DevOps**: AWS (EC2, EFS, VPC), Docker, Jenkins, GitLab CI/CD
+- **Monitoring & Tooling**: Zipkin, Portainer, Swagger
+- **Architecture**: MSA
+- **Client**: Unity

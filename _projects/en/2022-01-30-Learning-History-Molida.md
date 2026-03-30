@@ -1,65 +1,97 @@
----
+﻿---
 layout: project
-title: "Learning History Management Service (Molida)"
+title: "Blockchain-Based Learning History and Certificate Verification Service (Molida) - Development"
 topic: project
-tags: [fullstack, java, blockchain, security]
+tags: [fullstack]
 sticky: false
 language: en
-show: false
+show: true
+image: assets/images/project/molida/logo.png
+main: true
 ---
 
 ## Project Overview
-An innovative learning history management platform that registers user learning records (education, certifications, academic background) on blockchain to prevent tampering and provide certificate issuance services.
+A blockchain-based service project that manages learning history, award records, and certificate data, and supports not only certificate issuance but also certificate production for institutions (universities, local governments, public enterprises, etc.).
 
-**Period:** 2020.04 - 2022.01  
-**Team Size:** 8 members  
-**Role:** Full-stack development (Front-end & Back-end)
+| Item | Details |
+|------|------|
+| **Period** | 2019.11 ~ 2022.01 |
+| **Role** | System design, backend development, frontend development, server operations |
 
----
+<br>
 
-## Key Responsibilities
-- **UI and system design**
-- **Front-end & Back-end development**
-- **Blockchain-based user learning history management feature development**
-- **Certificate issuance feature development**
-- Mobile phone authentication integration
-- IDC server management
-- Direct certificate creation functionality
-- Personal data segregation storage and recovery feature development
-- Procedure log functionality development
+## Responsibilities
 
----
+## Design
+- System design  
+- Screen design  
 
-## Technology Stack
-**Backend:** Java, Spring Framework, Mybatis, Maven, Shell Script  
-**Frontend:** HTML, JavaScript, jQuery, Ajax  
-**Database:** MariaDB, SQL  
-**Blockchain:** Blockchain-based certificate management  
-**Security:** ISMS-P License, personal data encryption  
-**Infrastructure:** Docker, IDC Server  
-**Monitoring:** Prometheus, Grafana  
-**Tools:** Eclipse, SVN, DBeaver, Redmine, WinSCP, Putty
+### Backend Development
+- Developed core features for blockchain-based learning history management
+- Developed auto-registration features for blockchain-based learning history management
+- Developed blockchain-linked certificate verification and certificate generation features
+- Developed automated isolated-data storage using MariaDB Event Scheduler and Stored Procedures
+- Developed log management for MariaDB Stored Procedure-based isolated-data storage automation
+- Developed backend for direct certificate authoring features
+- Responded to security vulnerabilities
+- Handled client requirements and maintenance
+- Integrated mobile identity verification
+- Developed backend features for core website capabilities (boards, registration, etc.)  
+  -> User, institution, and operator pages
+- Responded to production server troubleshooting
+- Responded to periodic maintenance activities
 
----
+### Frontend Development
+- Developed frontend for direct certificate authoring features
+- Developed frontend for core website capabilities (boards, popups, registration, etc.)  
+  -> User, institution, and operator pages
+- Implemented frontend development and updates through publishing tasks
 
-## Major Achievements
-1. **Library Cost Savings**
-   - Saved **approximately 20 million won in library purchase costs** through direct certificate creation feature
-   - Built proprietary certificate generation engine
-
-2. **ISMS-P License Acquisition**
-   - Achieved international information security certification
-   - Highest level of personal information protection
-
-3. **Blockchain Technology Implementation**
-   - Learning history tampering prevention
-   - Transparent certificate management system
+## Server Operations
+- Managed IDC server operations
+- Managed deployment automation based on Docker and Shell
+- Responded to server security requirements for ISMS-P certification
 
 ---
 
-## Project Highlights
-- Blockchain technology implementation
-- Full-stack development experience
-- ISMS-P Certification (Information Security)
-- Innovative learning history management
-- Cost optimization achievement
+## Key Achievements
+
+- **Internalized Certificate Generation Feature**  
+  - Directly designed the certificate generation function and developed both frontend (JavaScript) and backend (Java) in-house  
+    -> Removed external library dependencies and **saved about KRW 20 million in development cost**  
+  - [-> Partial example of certificate generation feature](/projects/additional/2022-01-30-Learning-History-Molida/cert_en/)
+
+- **ISMS-P Acquisition**  
+  - Built an automated data isolation/storage system using MariaDB Stored Procedures and Event Scheduler  
+  - Implemented procedure-level logging, strengthened physical server security, and handled security vulnerabilities  
+    -> Contributed **over 20%** to obtaining ISMS-P certification
+
+---
+
+## Tech Stack
+**Backend:** Java, MyBatis, Spring framework, Maven, Shell Script  
+**Frontend:** HTML, JavaScript, jQuery, Ajax, JSP  
+**Database:** MariaDB
+**Infrastructure:** Docker, HAProxy  
+**Monitoring:** Prometheus, Grafana   
+**DevOps / Tools:** Portainer 
+
+
+## Key Screens
+>> **Learning History List**  
+![list](/assets/images/project/molida/list.png)  
+<br>
+>> **Learning History Detail**  
+![detail](/assets/images/project/molida/detail.png)  
+<br>
+>> **Watermark Screen**  
+![watermark](/assets/images/project/molida/watermark.png)  
+<br>
+>> **Certificate Issuance List Screen**  
+![certList](/assets/images/project/molida/certList.png)  
+<br>
+>> **Certificate Issuance Screen**  
+![cert](/assets/images/project/molida/cert.png)  
+<br>
+>> **Institution Certificate Request Screen**  
+![request](/assets/images/project/molida/request.png)  

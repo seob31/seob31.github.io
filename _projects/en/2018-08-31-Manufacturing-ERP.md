@@ -1,63 +1,52 @@
----
+﻿---
 layout: project
-title: "Manufacturing Industry Infrastructure System"
+title: "Manufacturing Industry System (Steel Industry) - Testing"
 topic: project
-tags: [backend, java, erp, testing]
+tags: [erp, testing, qa]
 sticky: false
 language: en
-show: false
+show: true
+main: true
 ---
 
 ## Project Overview
-An ERP system for steel industry companies managing purchase orders, sales orders, purchases, and sales. Comprehensive system managing complex business workflows in manufacturing.
+Handled testing and QA in a manufacturing system project for the steel industry domain. Served as Group 1 Lead within the client QA organization, coordinating test activities and contributing to quality improvement.
 
-**Period:** 2018.03 - 2018.08  
-**Team Size:** 17 members  
-**Role:** QA and Testing Leader
+| Item | Details |
+|------|------|
+| **Period** | 2018.03 ~ 2018.08 |
+| **Role** | Testing, QA Group 1 Lead |
+| **On-site Assignment** | NRI (Nomura Research Institute) |
 
----
+<br>
 
-## Key Responsibilities
-- Test specification documentation
-- **Batch, screen, report, and scenario testing execution**
-- Team member review
-- Testing group leader responsibility
+## Responsibilities
 
----
+### QA and Test Group Lead
+- Performed QA Group 1 lead duties, including tracking team member progress
+- Reviewed team members' test evidence
+- Delivered manager instructions and reporting
 
-## Technology Stack
-**Backend:** Java, Spring Framework  
-**Frontend:** HTML, JavaScript  
-**Database:** PL/SQL, SQLite, Oracle  
-**Tools:** Eclipse, Sakura Editor  
-**Testing:** Manual Testing, QA
+### Quality Validation
+- Performed function and scenario testing
+- Wrote test specifications
+- Conducted document testing and batch testing
 
----
-
-## Core Functionality
-- Purchase order management system
-- Sales order management system
-- Purchase management system
-- Sales management system
-- Batch processing system
-- Report generation and inquiry
+### On-site Operations
+- Served as on-site Peer Lead for colleague status reporting and instruction delivery
 
 ---
 
-## Achievements
-1. **Customer Satisfaction**
-   - **Customer requested re-assignment of all company personnel**
-   - Gained trust through high-quality testing
+## Key Achievements
 
-2. **Testing Team Leadership**
-   - Served as **testing group leader**
-   - Established efficient testing processes
+- **Appointed as Client QA Group 1 Lead**
+  - Selected as Group 1 Lead through evaluations during the client QA team reorganization.
+
+- **Contract Extension Request**
+  - Recognized for test evidence review and response to tight release schedules, leading to a client request to extend the Group 1 contract.
 
 ---
 
-## Project Highlights
-- Large-scale enterprise system
-- Complex business logic
-- Comprehensive test coverage
-- 17-member large team collaboration
-- Customer trust achievement
+## Tech Stack
+**Backend & Script:** Java, PL/SQL, Batch, Shell  
+**Frontend:** HTML, JavaScript
