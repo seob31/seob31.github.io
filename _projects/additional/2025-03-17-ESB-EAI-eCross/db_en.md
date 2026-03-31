@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "DB Metadata Validation Example"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/db_en/

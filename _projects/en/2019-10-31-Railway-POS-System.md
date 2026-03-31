@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Railway POS Payment System (IC Chip Terminal) - Development"
 topic: project

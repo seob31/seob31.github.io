@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "E-Learning System (Gamified Learning Platform) - Development"
 topic: project

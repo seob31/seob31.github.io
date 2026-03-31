@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "OOM Improvement Example"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/oom_en/

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "Reactor-based Async Workflow & Saga Processing Structure"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/saga_en/

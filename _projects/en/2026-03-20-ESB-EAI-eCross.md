@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "EAI/ESB Integration Solution Development (eCross) - Development"
 topic: project

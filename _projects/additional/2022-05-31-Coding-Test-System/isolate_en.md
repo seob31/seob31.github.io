@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "Isolate Sandbox Example"
 permalink: /projects/additional/2022-05-31-Coding-Test-System/isolate_en/

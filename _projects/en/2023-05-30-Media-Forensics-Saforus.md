@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Media File Forensics Service Development (Saforus) - Development"
 topic: project

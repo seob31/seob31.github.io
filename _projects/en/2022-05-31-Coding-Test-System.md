@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Coding Test Service Development - Development"
 topic: project

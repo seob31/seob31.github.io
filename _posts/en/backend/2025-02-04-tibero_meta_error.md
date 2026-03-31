@@ -9,21 +9,21 @@ language: en
 show: true
 ---
 
-Hi, It's very cold with temperatures at -10 in this February moring.
-Today, I'd like to share some issues that came up while working with DB metadata.   
+Hi, it's very cold with temperatures at -10 in this February morning.
+Today, I'd like to share issues that came up while working with DB metadata.
 
-In the current project, we are required to use various DBMSs rather than one DBMS. The additional of Tibero Database caused issues.
-I think this issue only happens Tibero JDBC version 5 or 6.
-For detailed explanations, please see below.
+In the current project, we need to support multiple DBMSs instead of only one. The addition of Tibero DB caused an issue.
+I think this issue occurs in Tibero JDBC version 5 or 6.
+Please see details below.
 
 
 <br>
 
-### 1. Error  
+### 1. Error
 
----   
-It appears that Tibero JDBC does not support getSchema. So when Calling connection.getSchema as shown below,
-It retrieves current_schema. But in the case of Tibero, an AbstractMethodErrorì˜ occurs.   
+---
+It appears Tibero JDBC does not support `getSchema`. So when calling `connection.getSchema()` as shown below,
+it should retrieve `current_schema`. But in Tibero, an `AbstractMethodError` occurs.
 
 
 >```java
@@ -36,42 +36,42 @@ It retrieves current_schema. But in the case of Tibero, an AbstractMethodErrorì
 >
 >```
 
->Exception Error Message : Handler dispatch failed; nested exception is java.lang.AbstractMethodError: Receiver class com.tmax.tibero.jdbc.TbConnection does not define or inherit an implementation of the resolved method 'abstract java.lang.String getSchema()' of interface java.sql.Connection.   
+>Exception Error Message : Handler dispatch failed; nested exception is java.lang.AbstractMethodError: Receiver class com.tmax.tibero.jdbc.TbConnection does not define or inherit an implementation of the resolved method 'abstract java.lang.String getSchema()' of interface java.sql.Connection.
 >
-> ![tiberoerror](/assets/images/blog/backend/250204/tiberoError.png)   
+> ![tiberoerror](/assets/images/blog/backend/250204/tiberoError.png)
 
 <br>
 
 ### 2. The changed code.
----   
->The reason for the solution below is to handle various JDBC drivers, and some of JDBC drivers don't support connection.getSchema.
-In such cases, you can retrieve the metadata using connection.getMetaData, and then use metaData.getTables 
-to find the existing table information within the current_schema by inputting the desired tableName as a search condition.   
+---
+>The reason for the solution below is to handle various JDBC drivers, and some JDBC drivers do not support `connection.getSchema()`.
+In such cases, you can use `connection.getMetaData()`, then use `metaData.getTables()`
+to find existing table information within `current_schema` by using the target `tableName` as a search condition.
 
-> metaData.getTables(null, null, tableName, new String[]{"TABLE"}) - (Tibero) This is the query that operates when executed.   
->![debug](/assets/images/blog/backend/250204/debug.png)     
+> `metaData.getTables(null, null, tableName, new String[]{"TABLE"})` - (Tibero) This is the query executed.
+>![debug](/assets/images/blog/backend/250204/debug.png)
 >
 >```java
-> 
+>
 >try (Connection connection = DriverManager.getConnection("url", "username", "password")) {
->    
+>
 >    DatabaseMetaData metaData = connection.getMetaData();
 >    ResultSet table = metaData.getTables(null, null, tableName, new String[]{"TABLE"});
 >    if (table.next()) {
 >        return table.getString("TABLE_SCHEM");
 >    }
 >    return null;
->            
+>
 >} catch (SQLException e) {
 >   throw new RuntimeException("Failed to get schema information", e);
 >}
 >
->```   
-* The code was tested with Oracle, Tibero, and Postgresql only. I expect it to work with other DBMSs.   
+>```
+* The code was tested only with Oracle, Tibero, and PostgreSQL. I expect it to work with other DBMSs.
 
-   
+
 <br>
-Additionally, If you need to get all schemas, you can use metaData.getSchemas. 
-Moreover, you can find the desired table in all schemas connected to the username by using "while(metaData.getSchemas().next())"
+Additionally, if you need all schemas, you can use `metaData.getSchemas()`.
+You can also find the desired table in all schemas available to the connected username by using `while(metaData.getSchemas().next())`.
 
-Thank you for reading this post on how to retrieve Table Information and Schema Information from metaData.   
+Thank you for reading this post about retrieving table and schema information from metadata.

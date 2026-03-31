@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "MOTIE Electronic Contract System Development (Electronic Document Wallet) - Development"
 topic: project

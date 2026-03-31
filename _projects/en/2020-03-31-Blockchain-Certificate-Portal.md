@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Blockchain-Based Certificate Issuance Portal - Development"
 topic: project

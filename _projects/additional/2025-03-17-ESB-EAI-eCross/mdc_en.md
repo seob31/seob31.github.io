@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "MDC-based Logging Structure Example"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/mdc_en/

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Railway IC Chip System Development (Library) - Development"
 topic: project

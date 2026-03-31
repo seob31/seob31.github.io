@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Gangneung Community App (Gangneung in My Hand) - Development"
 topic: project

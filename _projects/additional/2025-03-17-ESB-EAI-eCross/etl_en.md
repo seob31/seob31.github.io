@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "ETL Prototype Summary Example"
 permalink: /projects/additional/2025-03-17-ESB-EAI-eCross/etl_en/

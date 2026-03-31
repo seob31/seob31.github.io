@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Manufacturing Industry System (Steel Industry) - Testing"
 topic: project

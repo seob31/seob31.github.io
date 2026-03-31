@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "Partial Example of Certificate Generation Feature"
 permalink: /projects/additional/2022-01-30-Learning-History-Molida/cert_en/

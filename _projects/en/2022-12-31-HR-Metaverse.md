@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "HR Management Metaverse Service - Development"
 topic: project

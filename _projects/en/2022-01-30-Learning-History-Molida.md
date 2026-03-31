@@ -1,4 +1,4 @@
-﻿---
+---
 layout: project
 title: "Blockchain-Based Learning History and Certificate Verification Service (Molida) - Development"
 topic: project
