@@ -1,9 +1,9 @@
----
+﻿---
 layout: post
 title: "Useful Linux Commands You Can Use Right Away"
 topic: devops
 categories: [linux]
-image: assets\images\blog\devops\linux.jpg
+image: assets/images/blog/devops/linux.jpg
 tags: [featured]
 language: en
 show: true
