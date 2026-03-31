@@ -3,39 +3,89 @@ title: "About Me"
 layout: page-sidebar
 permalink: "/en/about.html"
 language: en
-image: 
+image:
 ---
 
 <div class="intro-container">
     <h2>Introduction</h2>
-    <p class="text-left">
-        Hi, I'm a back-end developer. 
-        Here, I plan to share ideas, solutions, and lessons learned from my projects, 
-        as well as thoughts on technology and development.
-    </p>
+    <ul>
+        <li>
+            <strong>Inzent (2023.09 ~ Present)</strong>
+            <br>Backend-focused Full-stack Java Developer
+            <ul>
+                <li>Backend-focused development, performance optimization, and maintenance</li>
+                <li>Frontend development, cloud management, and operations</li>
+                <li>Feature design and development documentation</li>
+                <li>Team QA role within the center</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Markany (2019.11 ~ 2023.05)</strong>
+            <br>Backend-focused Full-stack Java Developer
+            <ul>
+                <li>System design, development documentation, and architecture</li>
+                <li>Backend-focused development and frontend development</li>
+                <li>Infrastructure and cloud environment setup, operations, and management (SRE)</li>
+                <li>IDC server management and operations</li>
+            </ul>
+        </li>
+        <li>
+            <strong>NextKey (2018.01 ~ 2019.10)</strong>
+            <br>Backend Java Developer
+            <ul>
+                <li>On-site backend development and testing for client companies</li>
+                <li>Technical documentation and maintenance</li>
+                <li>On-site Peer Leader at client company</li>
+            </ul>
+        </li>
+    </ul>
 </div>
 
 <div class="skills-container">
     <h2>Skills</h2>
     <ul>
-        <li><strong>Back-end:</strong> Java, SQL</li>
-        <li><strong>Front-end:</strong> JavaScript, HTML, React, CSS</li>
-        <li><strong>DevOps:</strong> AWS, Docker, NCP, Jenkins ...</li>
-        <li><strong>etc:</strong> Spring Cloud, Ajax, JQuery, Webflux, VMware ...</li>
+        <li><strong>Back-end:</strong> Java, Spring Framework, Spring Boot, Spring WebFlux, JPA, MyBatis, Spring Batch, Kafka, Quartz</li>
+        <li><strong>Front-end:</strong> React, JavaScript, HTML, CSS, jQuery, Ajax, JSP</li>
+        <li><strong>Database:</strong> Oracle, PostgreSQL, MariaDB, MySQL, H2, Redis, etc.</li>
+        <li><strong>Infra & DevOps:</strong> AWS, Docker, HaProxy, MSA</li>
     </ul>
 </div>
 
 <div class="projects-container">
-    <h2>Projects</h2>
+    <h2>Highlighted Projects</h2>
+    {% assign p1 = site.projects | where: "language", page.language | where: "title", "EAI/ESB Integration Solution Development (eCross) - Development" | first %}
+    {% assign p2 = site.projects | where: "language", page.language | where: "title", "Media File Forensics Service Development (Saforus) - Development" | first %}
+    {% assign p3 = site.projects | where: "language", page.language | where: "title", "Coding Test Service Development - Development" | first %}
+    {% assign p4 = site.projects | where: "language", page.language | where: "title", "Gangneung Community App (Gangneung in My Hand) - Development" | first %}
+    {% assign p5 = site.projects | where: "language", page.language | where: "title", "Blockchain-Based Learning History and Certificate Verification Service (Molida) - Development" | first %}
+    {% assign p6 = site.projects | where: "language", page.language | where: "title", "Railway POS Payment System (IC Chip Terminal) - Development" | first %}
+    {% assign p7 = site.projects | where: "language", page.language | where: "title", "Manufacturing Industry System (Steel Industry) - Testing" | first %}
     <ul>
-        <li><strong>Development of EAI/ESB Integration Solutions</strong> - Front-End and Back-End Development <span class="status">(now)</span></li>
-        <li><strong>Development of a Media File Forensic System</strong> - System Design, Server, and Back-End Development</li>
-        <li><strong>Development of a Coding Test Service</strong> - System Design, Server, and Back-End Development</li>
-        <li><strong>Gangneung Citizen App</strong> - System Design, Server, and Back-End Development</li>
-        <li><strong>Learning History Management Service</strong> - System Design, Back-End & Front-End Development, and Server Management</li>
-        <li><strong>Blockchain-Based Certificate Issuance Portal Service</strong> - System Design, Front-End & Back-End Development</li>
-        <li><strong>Development of IC Chip-Related Systems (Japan Railway Systems)</strong> - Back-End Development</li>
-        <li><strong>Industrial Systems in Manufacturing</strong> - Tester</li>
+        <li><a href="{{ p1.url | prepend: site.baseurl }}"><strong>EAI/ESB Integration Solution Development - Development</strong></a> - Feature design, backend-focused full-stack development, main product QA owner, cloud management</li>
+        <li><a href="{{ p2.url | prepend: site.baseurl }}"><strong>Media File Forensics Service (Saforus) - Development</strong></a> - System design, architecture, backend development, SRE</li>
+        <li><a href="{{ p3.url | prepend: site.baseurl }}"><strong>Coding Test Service Development - Development</strong></a> - System design, architecture, core backend development, SRE</li>
+        <li><a href="{{ p4.url | prepend: site.baseurl }}"><strong>Gangneung Community App - Development</strong></a> - System design, backend development, architecture, SRE</li>
+        <li><a href="{{ p5.url | prepend: site.baseurl }}"><strong>Molida - Development</strong></a> - System design, backend development, frontend development, architecture, operations maintenance, server management</li>
+        <li><a href="{{ p6.url | prepend: site.baseurl }}"><strong>Railway POS Payment System (IC Chip Terminal) - Development</strong></a> - Backend development, development documentation, maintenance, Peer Lead</li>
+        <li><a href="{{ p7.url | prepend: site.baseurl }}"><strong>Manufacturing Industry System - Testing</strong></a> - Testing, test team Group 1 lead, Peer Lead</li>
     </ul>
 </div>
 
+
+<div class="skills-container">
+    <h2>License</h2>
+    <ul class="license-list">
+        <li>
+            <div class="license-card">
+                <div class="license-title">OCJP Silver - Java SE 8</div>
+                <div class="license-info">ORACLE · Japan - 2018.01</div>
+            </div>
+        </li>
+        <li>
+            <div class="license-card">
+                <div class="license-title">Engineer Information Processing</div>
+                <div class="license-info">HRDK · Korea - 2017.05</div>
+            </div>
+        </li>
+    </ul>
+</div>
