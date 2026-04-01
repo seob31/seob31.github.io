@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+body { margin:0; background:#f6f3ee; font-family:'Malgun Gothic', sans-serif; color:#1f2937; }
+.page { width:860px; margin:0 auto; background:#fff; padding:44px 52px 54px; box-sizing:border-box; min-height:100px; }
+h1 { font-size:34px; line-height:1.25; margin:0 0 24px; color:#14213d; }
+h2 { font-size:24px; margin:32px 0 14px; color:#9a5d38; border-bottom:1px solid #e6ddd1; padding-bottom:6px; }
+h3 { font-size:18px; margin:22px 0 10px; color:#31435f; }
+p, li, td, th { font-size:15px; line-height:1.72; }
+p { margin:10px 0; }
+ul { margin:8px 0 14px 18px; padding:0; }
+li { margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:14px 0 20px; }
+th, td { border:1px solid #ddd3c6; padding:10px 12px; vertical-align:top; }
+th { background:#f6f1ea; text-align:left; }
+pre { background:#faf7f2; border:1px solid #e4dbcf; padding:14px; font-size:12px; line-height:1.5; overflow:hidden; white-space:pre-wrap; }
+figure { margin:18px 0 24px; }
+figure img, .hero img { width:100%; height:auto; border:1px solid #e4dbcf; display:block; }
+figcaption { margin-top:8px; font-size:12px; color:#6b7280; }
+.link-text { color:#9a5d38; font-weight:600; }
+.about-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:18px; }
+.photo-placeholder { width:190px; height:240px; border:2px dashed #d6c6b4; color:#a88a70; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; flex:0 0 190px; background:#fbf8f3; }
+.about-title p { margin:8px 0 0; color:#6b7280; }
+.about-content .projects-container { display:none; }
+a, button, nav, .navbar, .btn, .about-side, .search-box, .radio-group, footer, .menu, .project-list, .sidebar-featured, .blog-list-container { display:none !important; }
+</style></head><body><div class='page'><div class='doc project'>
+<h1>코딩 테스트 서비스 개발 - 개발</h1>
+<div class='hero'><img src='file:///E:/Gilog/seob31.github.io/assets/images/project/coding/coding.png' alt='hero' /></div>
+<h2>프로젝트 개요</h2>
+<p>12개의 개발 언어를 지원하는 코딩 테스트 서비스입니다. 코드문제 및 코드 실행의 CPU 시간, 실제 경과 시간, 실행 중 최대 메모리 등을 측정하여, 사용자에게 제공합니다.</p>
+<table>
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td><strong>기간</strong></td><td>2022.02 ~ 2022.05</td></tr>
+<tr><td><strong>역할</strong></td><td>시스템 설계, 백엔드 개발, SRE</td></tr>
+<tr><td><strong>상태</strong></td><td>1차 개발 완료 후 오픈 전 시장성에 대한 문제로 중단</td></tr>
+</table>
+<p><br></p>
+<h2>담당 역할</h2>
+<h3>백엔드 개발</h3>
+<ul>
+<li>시스템 설계</li>
+<li>API 서버 개발</li>
+<li>Isolate SandBox를 이용한 Execution Server 개발</li>
+<p>  - <span class='link-text'>→ Isolate SandBox 예제</span></p>
+</ul>
+<h3>인프라 및 운영</h3>
+<ul>
+<li>Docker 기반 온프레미스 배포 구조 설계 및 개발</li>
+<li>IDC 서버 운영 및 배포 관리</li>
+<li>각 언어의 Compiler 설치</li>
+</ul>
+<p>---</p>
+<h2>주요 성과</h2>
+<ul>
+<li><strong>12개 언어 지원 코딩 테스트 코어 개발 및 프로젝트 40% 이상 기여</strong></li>
+<p>  - Isolate 샌드박스를 활용해 특정 버전의 <strong>12개 개발 언어</strong>를 지원하는 실행 환경을 구현.</p>
+<p>    -&gt; Java, C, C++, C#, Scala, Swift, Python2, Python3, Go, Kotlin, Javascript, R</p>
+<p>  - 설계, 아키텍쳐링, 핵심 개발, 배포, 서버 운영을 모두 전담.</p>
+</ul>
+<ul>
+<li><strong>온프레미스 설치 시간 단축</strong></li>
+<p>  - Docker 기반 온프레미스 솔루션을 구성해 설치 과정의 단순화 및 설치 시간 <strong>25% 이상 단축</strong>.</p>
+</ul>
+<p>---</p>
+<h2>사용 기술</h2>
+<p><strong>Backend:</strong> Java, JWT, Spring boot, Mybatis, Isolate Sandbox, Websocket</p>
+<p><strong>Database:</strong> MariaDB</p>
+<p><strong>Infra &amp; Ops:</strong> Docker-based deployment, Shell automation</p>
+</div></div></body></html>

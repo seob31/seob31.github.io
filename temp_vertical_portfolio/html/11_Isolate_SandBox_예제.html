@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+body { margin:0; background:#f6f3ee; font-family:'Malgun Gothic', sans-serif; color:#1f2937; }
+.page { width:860px; margin:0 auto; background:#fff; padding:44px 52px 54px; box-sizing:border-box; min-height:100px; }
+h1 { font-size:34px; line-height:1.25; margin:0 0 24px; color:#14213d; }
+h2 { font-size:24px; margin:32px 0 14px; color:#9a5d38; border-bottom:1px solid #e6ddd1; padding-bottom:6px; }
+h3 { font-size:18px; margin:22px 0 10px; color:#31435f; }
+p, li, td, th { font-size:15px; line-height:1.72; }
+p { margin:10px 0; }
+ul { margin:8px 0 14px 18px; padding:0; }
+li { margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:14px 0 20px; }
+th, td { border:1px solid #ddd3c6; padding:10px 12px; vertical-align:top; }
+th { background:#f6f1ea; text-align:left; }
+pre { background:#faf7f2; border:1px solid #e4dbcf; padding:14px; font-size:12px; line-height:1.5; overflow:hidden; white-space:pre-wrap; }
+figure { margin:18px 0 24px; }
+figure img, .hero img { width:100%; height:auto; border:1px solid #e4dbcf; display:block; }
+figcaption { margin-top:8px; font-size:12px; color:#6b7280; }
+.link-text { color:#9a5d38; font-weight:600; }
+.about-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:18px; }
+.photo-placeholder { width:190px; height:240px; border:2px dashed #d6c6b4; color:#a88a70; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; flex:0 0 190px; background:#fbf8f3; }
+.about-title p { margin:8px 0 0; color:#6b7280; }
+.about-content .projects-container { display:none; }
+a, button, nav, .navbar, .btn, .about-side, .search-box, .radio-group, footer, .menu, .project-list, .sidebar-featured, .blog-list-container { display:none !important; }
+</style></head><body><div class='page'><div class='doc project'>
+<h1>Isolate SandBox 예제</h1>
+<p>&lt;a href=&quot;javascript:history.back()&quot; class=&quot;btn btn-outline-success btn-sm&quot;&gt;</p>
+<p>  ← 뒤로가기</p>
+<p>&lt;/a&gt;</p>
+<p># Isolate SandBox 예제</p>
+<p><br></p>
+<h2>개요</h2>
+<p>코딩 테스트 시스템에서 사용자 코드를 안전하게 실행하기 위한 isolate Sandbox 예제 입니다.</p>
+<p><br></p>
+<h2>핵심 코드 예제</h2>
+<p>#### 컴파일 예제</p>
+<pre><code>
+isolate --cg \
+  -b 1 \
+  -M metadata.txt \
+  -t 5 \
+  -x 1 \
+  -w 10 \
+  -E HOME=/tmp \
+  --run \
+  -- /bin/bash compile
+  &gt; compile_out.txt
+</code></pre>
+<p>#### 실행 예제</p>
+<pre><code>
+isolate --cg \
+    -b 1 \
+    -M metadata.txt \
+    -t 5 \
+    -x 1 \
+    -w 10 \
+    -E HOME=/tmp \
+    --run \
+    -- /bin/bash run \
+    &gt; stdout_file.txt 2&gt; stderr_file.txt
+</code></pre>
+<p><br></p>
+<h2>핵심 구조</h2>
+<p> - 컴파일 / 실행 단계 분리하여 단계별 실행 가능</p>
+<p> - isolate 옵션을 통한 실행 환경 제어</p>
+<h2>핵심 포인트</h2>
+<ul>
+<li>사용자 코드 실행을 완전히 격리하여 시스템의 안정성 확보</li>
+<li>실행 결과를 기반으로 한 채점 및 후처리 가능 구조</li>
+</ul>
+</div></div></body></html>

@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+body { margin:0; background:#f6f3ee; font-family:'Malgun Gothic', sans-serif; color:#1f2937; }
+.page { width:860px; margin:0 auto; background:#fff; padding:44px 52px 54px; box-sizing:border-box; min-height:100px; }
+h1 { font-size:34px; line-height:1.25; margin:0 0 24px; color:#14213d; }
+h2 { font-size:24px; margin:32px 0 14px; color:#9a5d38; border-bottom:1px solid #e6ddd1; padding-bottom:6px; }
+h3 { font-size:18px; margin:22px 0 10px; color:#31435f; }
+p, li, td, th { font-size:15px; line-height:1.72; }
+p { margin:10px 0; }
+ul { margin:8px 0 14px 18px; padding:0; }
+li { margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:14px 0 20px; }
+th, td { border:1px solid #ddd3c6; padding:10px 12px; vertical-align:top; }
+th { background:#f6f1ea; text-align:left; }
+pre { background:#faf7f2; border:1px solid #e4dbcf; padding:14px; font-size:12px; line-height:1.5; overflow:hidden; white-space:pre-wrap; }
+figure { margin:18px 0 24px; }
+figure img, .hero img { width:100%; height:auto; border:1px solid #e4dbcf; display:block; }
+figcaption { margin-top:8px; font-size:12px; color:#6b7280; }
+.link-text { color:#9a5d38; font-weight:600; }
+.about-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:18px; }
+.photo-placeholder { width:190px; height:240px; border:2px dashed #d6c6b4; color:#a88a70; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; flex:0 0 190px; background:#fbf8f3; }
+.about-title p { margin:8px 0 0; color:#6b7280; }
+.about-content .projects-container { display:none; }
+a, button, nav, .navbar, .btn, .about-side, .search-box, .radio-group, footer, .menu, .project-list, .sidebar-featured, .blog-list-container { display:none !important; }
+</style></head><body><div class='page'><div class='doc project'>
+<h1>MDC 기반 로깅 구조 정리 예시</h1>
+<p>&lt;a href=&quot;javascript:history.back()&quot; class=&quot;btn btn-outline-success btn-sm&quot;&gt;</p>
+<p>  ← 뒤로가기</p>
+<p>&lt;/a&gt;</p>
+<p>#  MDC 기반 로깅 구조 정리 예시</p>
+<p><br></p>
+<h2>개요</h2>
+<p>기존 ESB/EAI 시스템에서는 인터페이스별로 로그를 분리하기 위해 다수의 Appender를 생성하여 관리하고 있었으며, 이로 인해 설정 복잡도 증가 및 유지보수 어려움 문제가 발생. 이를 해결하기 위해 MDC(Mapped Diagnostic Context)를 활용한 동적 로그 분리 구조를 적용하여 로깅 설정을 단순화하고 운영 효율성을 개선.</p>
+<p><br></p>
+<h2>핵심 코드 예제</h2>
+<pre><code>
+MDC.put(&quot;id&quot;, id);
+MDC.clear();
+</code></pre>
+<p><strong>기존</strong></p>
+<pre><code>
+&lt;appender class=&quot;ch.qos.logback.classic.sift.SiftingAppender&quot; name=&quot;DEV&quot;&gt;
+&lt;/appender&gt;
+&lt;appender class=&quot;ch.qos.logback.classic.sift.SiftingAppender&quot; name=&quot;DEV2&quot;&gt;
+&lt;/appender&gt;
+&lt;appender class=&quot;ch.qos.logback.classic.sift.SiftingAppender&quot; name=&quot;DEV3&quot;&gt;
+&lt;/appender&gt;
+</code></pre>
+<p><strong>개선</strong></p>
+<pre><code>
+  &lt;appender class=&quot;ch.qos.logback.classic.sift.SiftingAppender&quot; name=&quot;DEV&quot;&gt;
+    &lt;discriminator&gt;
+      &lt;key&gt;id&lt;/key&gt;
+      &lt;defaultValue&gt;defaultId&lt;/defaultValue&gt;
+    &lt;/discriminator&gt;
+    &lt;sift&gt;
+      &lt;appender class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;file&gt;./logs/${id}.log&lt;/file&gt;
+        &lt;encoder&gt;
+          &lt;Pattern&gt;${IF_DEV_LOG_PATTERN}&lt;/Pattern&gt;
+          &lt;charset&gt;UTF-8&lt;/charset&gt;
+        &lt;/encoder&gt;
+        &lt;rollingPolicy class=&quot;롤링패턴 class&quot;&gt;
+          &lt;fileNamePattern&gt;./logs/%d{yyyy/MM/dd}/${id}.%i.log&lt;/fileNamePattern&gt;
+          &lt;maxFileCount&gt;100&lt;/maxFileCount&gt;
+          &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+            &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+          &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;/rollingPolicy&gt;
+      &lt;/appender&gt;
+</code></pre>
+<p><br></p>
+<h2>핵심 포인트</h2>
+<p>1. <strong>로깅 설정 구조 단순화</strong></p>
+<p>   - 인터페이스별로 분산되어 있던 다수의 Appender를 단일 구조로 통합</p>
+<p>   - 신규 인터페이스 추가 시 설정 변경 없이 확장 가능</p>
+<p>2. <strong>MDC 기반 동적 로그 분리</strong></p>
+<p>   - MDC에 인터페이스 식별자(id)를 설정하여 로그를 동적으로 분리</p>
+<p>   - `${id}.log` 형태로 자동 파일 생성되어 인터페이스 단위 로그 관리 가능</p>
+<p>3. <strong>유지보수성 향상</strong></p>
+<p>   - `logback.xml` 설정 복잡도 감소</p>
+<p>   - 설정 변경 리스크 최소화 및 운영 안정성 확보</p>
+</div></div></body></html>

@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+body { margin:0; background:#f6f3ee; font-family:'Malgun Gothic', sans-serif; color:#1f2937; }
+.page { width:860px; margin:0 auto; background:#fff; padding:44px 52px 54px; box-sizing:border-box; min-height:100px; }
+h1 { font-size:34px; line-height:1.25; margin:0 0 24px; color:#14213d; }
+h2 { font-size:24px; margin:32px 0 14px; color:#9a5d38; border-bottom:1px solid #e6ddd1; padding-bottom:6px; }
+h3 { font-size:18px; margin:22px 0 10px; color:#31435f; }
+p, li, td, th { font-size:15px; line-height:1.72; }
+p { margin:10px 0; }
+ul { margin:8px 0 14px 18px; padding:0; }
+li { margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:14px 0 20px; }
+th, td { border:1px solid #ddd3c6; padding:10px 12px; vertical-align:top; }
+th { background:#f6f1ea; text-align:left; }
+pre { background:#faf7f2; border:1px solid #e4dbcf; padding:14px; font-size:12px; line-height:1.5; overflow:hidden; white-space:pre-wrap; }
+figure { margin:18px 0 24px; }
+figure img, .hero img { width:100%; height:auto; border:1px solid #e4dbcf; display:block; }
+figcaption { margin-top:8px; font-size:12px; color:#6b7280; }
+.link-text { color:#9a5d38; font-weight:600; }
+.about-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:18px; }
+.photo-placeholder { width:190px; height:240px; border:2px dashed #d6c6b4; color:#a88a70; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; flex:0 0 190px; background:#fbf8f3; }
+.about-title p { margin:8px 0 0; color:#6b7280; }
+.about-content .projects-container { display:none; }
+a, button, nav, .navbar, .btn, .about-side, .search-box, .radio-group, footer, .menu, .project-list, .sidebar-featured, .blog-list-container { display:none !important; }
+</style></head><body><div class='page'><div class='doc project'>
+<h1>DB Mata Data 검증 예시</h1>
+<p>&lt;a href=&quot;javascript:history.back()&quot; class=&quot;btn btn-outline-success btn-sm&quot;&gt;</p>
+<p>  ← 뒤로가기</p>
+<p>&lt;/a&gt;</p>
+<p># DB Mata Data 검증 예시</p>
+<p><br></p>
+<h2>개요</h2>
+<p>프로젝트 릴리즈 시 DB Meta Data와 실제 운영 DB 스키마의 정합성을 검증하기 위한 테스트 자동화 구조. Gradle 테스트 설정과 JUnit Tag 기반 실행 전략을 활용하여 SQL 문법 검증과 스키마 검증을 분리하여 안정적인 릴리즈 품질을 확보하였습니다.</p>
+<p><br></p>
+<h2>핵심 코드 예제</h2>
+<p>#### Extract Step</p>
+<pre><code>
+if (project.name in releaseAutomation) {
+    configure&lt;TestingExtension&gt; {
+        suites {
+            val test by getting(JvmTestSuite::class) {
+                sources {
+                    java {
+                        setSrcDirs(listOf(&quot;src/test/java&quot;))
+                    }
+                }
+
+                targets {
+                    all {
+                        testTask.configure {
+                            useJUnitPlatform {
+                                includeTags(&quot;db&quot;)
+                                includeTags(&quot;MetaDataValidation&quot;)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p><br></p>
+<pre><code>
+// SQL 문법 검증
+@Slf4j
+@Tag(&quot;MetaDataValidation&quot;)
+@TestPropertySource(properties = {&quot;logging.config=classpath:logback.xml&quot;, &quot;spring.main.banner-mode=off&quot;})
+public class MetaDataValidation {
+
+}
+
+// 스키마 검증
+@Slf4j
+@Tag(&quot;db&quot;)
+@JdbcTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@ContextConfiguration(classes = DBvalidation.JdbcOnlyConfig.class)
+@TestPropertySource(properties = {&quot;logging.config=classpath:logback.xml&quot;, &quot;spring.main.banner-mode=off&quot;})
+public class DBvalidation {
+
+}
+</code></pre>
+<p><br></p>
+<h2>핵심 구조</h2>
+<p> - Gradle JvmTestSuite 기반 테스트 실행 구성</p>
+<p> - 릴리즈 시점 자동 실행 가능한 테스트 구조</p>
+<p> - 실제 DB 환경 기반 검증</p>
+<p><br></p>
+<h2>핵심 포인트</h2>
+<ul>
+<li>DB Meta Data와 실제 스키마 간 불일치 사전 차단</li>
+<li>휴먼 에러 방지</li>
+<li>릴리즈 안정성 및 데이터 정합성 확보</li>
+<li>필요한 검증만 선택 실행 가능(효율성)</li>
+</ul>
+</div></div></body></html>

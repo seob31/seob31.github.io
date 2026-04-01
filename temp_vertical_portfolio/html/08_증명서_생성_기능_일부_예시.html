@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<style>
+body { margin:0; background:#f6f3ee; font-family:'Malgun Gothic', sans-serif; color:#1f2937; }
+.page { width:860px; margin:0 auto; background:#fff; padding:44px 52px 54px; box-sizing:border-box; min-height:100px; }
+h1 { font-size:34px; line-height:1.25; margin:0 0 24px; color:#14213d; }
+h2 { font-size:24px; margin:32px 0 14px; color:#9a5d38; border-bottom:1px solid #e6ddd1; padding-bottom:6px; }
+h3 { font-size:18px; margin:22px 0 10px; color:#31435f; }
+p, li, td, th { font-size:15px; line-height:1.72; }
+p { margin:10px 0; }
+ul { margin:8px 0 14px 18px; padding:0; }
+li { margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:14px 0 20px; }
+th, td { border:1px solid #ddd3c6; padding:10px 12px; vertical-align:top; }
+th { background:#f6f1ea; text-align:left; }
+pre { background:#faf7f2; border:1px solid #e4dbcf; padding:14px; font-size:12px; line-height:1.5; overflow:hidden; white-space:pre-wrap; }
+figure { margin:18px 0 24px; }
+figure img, .hero img { width:100%; height:auto; border:1px solid #e4dbcf; display:block; }
+figcaption { margin-top:8px; font-size:12px; color:#6b7280; }
+.link-text { color:#9a5d38; font-weight:600; }
+.about-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:18px; }
+.photo-placeholder { width:190px; height:240px; border:2px dashed #d6c6b4; color:#a88a70; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:1px; flex:0 0 190px; background:#fbf8f3; }
+.about-title p { margin:8px 0 0; color:#6b7280; }
+.about-content .projects-container { display:none; }
+a, button, nav, .navbar, .btn, .about-side, .search-box, .radio-group, footer, .menu, .project-list, .sidebar-featured, .blog-list-container { display:none !important; }
+</style></head><body><div class='page'><div class='doc project'>
+<h1>증명서 생성 기능 일부 예시</h1>
+<p>&lt;a href=&quot;javascript:history.back()&quot; class=&quot;btn btn-outline-success btn-sm&quot;&gt;</p>
+<p>  ← 뒤로가기</p>
+<p>&lt;/a&gt;</p>
+<p># 증명서 생성 기능 일부 예시</p>
+<p><br></p>
+<h2>개요</h2>
+<p>사용자가 직접 증명서를 생성&#183;편집할 수 있도록 하는 동적 문서 생성 시스템입니다. 생성된 증명서 양식은 수정, 삭제가 가능합니다. doc, 이미지 등의 배경이 될 수 있는 파일을 업로드하여 배경을 만들 수 있으며, 그 배경으로 증명서를 제작할 수 있습니다.</p>
+<p><br></p>
+<h2>핵심 코드 예제</h2>
+<p>#### 화면 코드</p>
+<pre><code>
+// 그림 그리는 곳
+&lt;c:forEach items=&quot;${certInfo.pageList}&quot; var=&quot;page&quot; end=&quot;${certInfo.pageList.size()}&quot; varStatus=&quot;status&quot;&gt;
+  &lt;div class=&quot;pageNum&quot; style=&quot;display: none;&quot;&gt;${status.count} / ${status.end}&lt;/div&gt;
+
+  &lt;div id=&quot;drawingBox${status.count}&quot;
+       data-page-id=&quot;${page.pageId}&quot;
+       class=&quot;drawing-box&quot;
+       style=&quot;background-image: url(&#39;/file/view?fileId=${page.fileId}&#39;)&quot;
+       onclick=&quot;onSelect(this)&quot;
+       onmouseenter=&quot;onHover(this)&quot;&gt;
+
+    &lt;c:forEach items=&quot;${certInfo.paramList}&quot; var=&quot;param&quot;&gt;
+      &lt;c:if test=&quot;${param.pageId eq page.pageId}&quot;&gt;
+
+        &lt;c:choose&gt;
+          &lt;!-- 공통 파라미터 --&gt;
+          &lt;c:when test=&quot;${param.isCommon eq &#39;Y&#39;}&quot;&gt;
+
+            &lt;c:choose&gt;
+              &lt;!-- 텍스트 타입 --&gt;
+              &lt;c:when test=&quot;${param.type eq &#39;TEXT&#39;}&quot;&gt;
+                &lt;div id=&quot;${param.id}&quot;
+                     data-param-id=&quot;${param.paramSeq}&quot;
+                     class=&quot;input-box&quot;
+                     title=&quot;${param.name}&quot;
+                     style=&quot;${param.style}&quot;
+                     contenteditable=&quot;true&quot;
+                     onclick=&quot;onSelect(this)&quot;&gt;
+                  ${param.displayValue}
+                &lt;/div&gt;
+              &lt;/c:when&gt;
+
+              &lt;!-- 이미지 타입 --&gt;
+              &lt;c:otherwise&gt;
+                &lt;div id=&quot;${param.id}&quot;
+                     data-param-id=&quot;${param.paramSeq}&quot;
+                     class=&quot;image-box&quot;
+                     title=&quot;${param.name}&quot;
+                     style=&quot;background-image: url(&#39;/file/view?fileId=${param.fileId}&#39;); ${param.style}&quot;
+                     onclick=&quot;onSelect(this)&quot;&gt;
+                &lt;/div&gt;
+              &lt;/c:otherwise&gt;
+
+            &lt;/c:choose&gt;
+          &lt;/c:when&gt;
+
+          &lt;!-- 개별 파라미터 --&gt;
+          &lt;c:when test=&quot;${param.isCommon eq &#39;N&#39;}&quot;&gt;
+            &lt;div id=&quot;${param.id}&quot;
+                 data-param-id=&quot;${param.paramSeq}&quot;
+                 class=&quot;input-box&quot;
+                 title=&quot;데이터 값&quot;
+                 style=&quot;${param.style}&quot;
+                 contenteditable=&quot;true&quot;
+                 onclick=&quot;onSelect(this)&quot;&gt;
+              ${param.value}
+            &lt;/div&gt;
+          &lt;/c:when&gt;
+
+        &lt;/c:choose&gt;
+
+      &lt;/c:if&gt;
+    &lt;/c:forEach&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class=&quot;barcode-area&quot;&gt;바코드 : &lt;/div&gt;
+&lt;/c:forEach&gt;
+</code></pre>
+<p>#### JavaScript 코드</p>
+<pre><code>
+// 마우스 엔터 드롭 앤 드롭 클로닝
+function onmouseEnter(obj){
+	$selectedObj = obj;
+	$($selectedObj).droppable({
+		accept: &#39;#menuBar .drag&#39;,
+		ontainment: $selectedObj,
+	    drop: function( event, ui ) {
+	    	dragMoveBox(ui, $selectedObj);
+		}
+	});
+}
+
+// 배경화면 기본 세로 세팅
+function verticalSize(){
+	$(&#39;.drawingBox_css&#39;).css(&#39;width&#39;,hWidth);
+	$(&#39;.drawingBox_css&#39;).css(&#39;height&#39;,hHeight);
+	$(&#39;.drawingBox_css&#39;).css(&#39;background-repeat&#39;,&#39;no-repeat&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;display&#39;,&#39;block&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;position&#39;,&#39;relative&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;margin-bottom&#39;,&#39;10px&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;background-size&#39;, hWidth+&quot; &quot;+hHeight);
+	attachPage();
+	putterBarCode();
+}
+
+// 배경화면  기본 가로 세팅
+function horizontalSize() {
+	$(&#39;.drawingBox_css&#39;).css(&#39;width&#39;,wWidth);
+	$(&#39;.drawingBox_css&#39;).css(&#39;height&#39;,wHeight);
+	$(&#39;.drawingBox_css&#39;).css(&#39;background-size&#39;,wWidth+&#39; &#39;+ wHeight);
+	$(&#39;.drawingBox_css&#39;).css(&#39;background-repeat&#39;,&#39;no-repeat&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;display&#39;,&#39;block&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;position&#39;,&#39;relative&#39;);
+	$(&#39;.drawingBox_css&#39;).css(&#39;margin-bottom&#39;,&#39;10px&#39;);
+	attachPage();
+	putterBarCode();
+}
+
+// auto Page 지정
+function autoPages(xyCheck){
+	var autoPage = &#39;0&#39;;
+	var heightSize = &#39;1155&#39;;
+	if (xyCheck ==&quot;H&quot;){
+		heightSize = &#39;780&#39;;
+	}
+
+	var totalpage = $(&#39;html&#39;).prop(&#39;scrollHeight&#39;) / heightSize;
+	var raalScroll = ($(&#39;html&#39;).scrollTop()+200) / heightSize;
+
+	if(totalpage &gt; 1.3) {
+		if(totalpage &gt; 2  &amp;&amp; xyCheck == &#39;V&#39;){
+			raalScroll = ($(&#39;html&#39;).scrollTop()+300) / heightSize;
+		}
+		if(raalScroll &gt; 6  &amp;&amp; xyCheck == &#39;V&#39;){
+			raalScroll = ($(&#39;html&#39;).scrollTop()+ 600) / heightSize;
+		}
+
+		if(totalpage &gt; 3  &amp;&amp; xyCheck == &#39;H&#39;){
+			raalScroll = ($(&#39;html&#39;).scrollTop()+ 300) / heightSize;
+		}
+		if(raalScroll &gt;= 5 &amp;&amp; xyCheck == &#39;H&#39;){
+			raalScroll = ($(&#39;html&#39;).scrollTop()+ 500) / heightSize;
+		}
+
+		raalScroll++;
+		var indexCheck = raalScroll.toString().indexOf(&#39;.&#39;);
+		if(indexCheck &gt; 0){
+			autoPage = raalScroll.toString().substring(0, raalScroll.toString().indexOf(&#39;.&#39;));
+		} else {
+			autoPage = raalScroll;
+		}
+		raalScroll = 0;
+	}else {
+		autoPage = &#39;1&#39;;
+	}
+	console.log(&quot;PAGE :&quot; + autoPage + &#39;, TOTAL : &#39; + $(&#39;html&#39;).prop(&#39;scrollHeight&#39;)+&#39;, TOP : &#39; +$(&#39;html&#39;).scrollTop()+ &quot;,:::&quot;+ totalpage);
+	return autoPage;
+}
+</code></pre>
+<p><br></p>
+<h2>핵심 포인트</h2>
+<ul>
+<li>Drag &amp; Drop 방식으로 사용자의 증명서 생성에 있어 편의성 제공 및 동적 증명서 생성</li>
+<li>브라우저 상에서 증명서 생성 및 편집 기능 제공</li>
+<li>등록한 증명서 양식은 엑셀 데이터와 맵핑하여 증명서 대량 제작에 사용 가능</li>
+<li>다량의 페이지 제작(계약서, 설명서 등) 가능하게 설계</li>
+</ul>
+<p> <br></p>
+<p>---</p>
+<h2>주요 화면</h2>
+<h3>증명서 제작 화면 예시</h3>
+<p><figure><img src='file:///E:/Gilog/seob31.github.io/assets/images/project/molida/certMaker.png' alt='certMaker' /><figcaption>certMaker</figcaption></figure></p>
+<p><br></p>
+<h3>증명서 제작 설명 예시</h3>
+<p><figure><img src='file:///E:/Gilog/seob31.github.io/assets/images/project/molida/explain.png' alt='explain' /><figcaption>explain</figcaption></figure></p>
+<p><br></p>
+<h3>증명서 제작 결과 예시</h3>
+<p><figure><img src='file:///E:/Gilog/seob31.github.io/assets/images/project/molida/result.png' alt='result' /><figcaption>result</figcaption></figure></p>
+</div></div></body></html>
