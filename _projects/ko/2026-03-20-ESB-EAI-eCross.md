@@ -7,7 +7,7 @@ sticky: true
 language: ko
 show: true
 image: assets/images/project/ESB/esb.png
-main: false
+main: true
 ---
 
 ## 프로젝트 개요

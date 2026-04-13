@@ -7,7 +7,7 @@ sticky: true
 language: en
 show: true
 image: assets/images/project/ESB/esb.png
-main: false
+main: true
 ---
 
 ## Project Overview
