@@ -36,7 +36,8 @@
 <body class="{% if page.url == "/" or page.url == "/en" %} homefirstpage {% endif %}">
 
     <!-- Navbar -->
-    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <!-- <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top"> -->
+    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top custom-nav" >
     <div class="container">
         <a class="navbar-brand" href="{{ site.baseurl }}{% if page.language == 'en' %}/en{% endif %}/"><strong>{{site.name}}</strong></a>
         <button 
